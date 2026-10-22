@@ -1,1 +1,23 @@
-My Document
+My Trial:
+1. UseCase
+ - login
+ - Register
+ - Guide
+ - bot
+ - Promoter
+ - my-list
+ - contact / help
+ - About
+ - Payment
+ - report
+
+2. Actors
+  - User
+  - Admin
+  - Owner
+
+3. Classes 
+  - User
+  - Promoter
+  - Guide
+  - Report
