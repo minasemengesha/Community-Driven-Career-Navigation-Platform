@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+<style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #f2f0f2;
+            color: #111;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            font-size: 42px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .registration {
+            width: 100%;
+            max-width: 550px;
+            border: 2px solid #b33c42;
+            border-radius: 7px;
+            padding: 15px 12px;
+        }
+
+        .registration h2 {
+            font-size: 32px;
+            font-weight: normal;
+            margin: 0 0 25px;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            gap: 8px;
+        }
+
+        .form-row label {
+            width: 100px;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-width: 0;
+            padding: 10px 7px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        textarea {
+            height: 85px;
+            resize: vertical;
+        }
+
+        .contact-row {
+            align-items: flex-start;
+        }
+
+        .contact-row label {
+            padding-top: 8px;
+        }
+
+        .form-bottom {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #367eaa;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 12px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .form-label {
+            font-size: 36px;
+        }
+
+        @media (max-width: 750px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            .search {
+                position: static;
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .registration h2 {
+                font-size: 27px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="contact.html">help</a>
+    </nav>
+    <!-- User Registration Form -->
+    <header>
+        <h1>User Registration Portal</h1>
+    </header>
+
+    <main class="container">
+        <section class="registration">
+            <h2>Form</h2>
+
+            <form action="#" method="post">
+                <div class="form-row">
+                    <label for="username">User_Name:</label>
+                    <input
+                        type="text"
+                        id="username"
+                        username="username"
+                        placeholder="Enter Unique User Name"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+                    <label for="userPassword">Password:</label>
+                    <input
+                        type="text"
+                        id="userPassword"
+                        name="userPassword"
+                        placeholder="Enter Strong Password"
+                        required
+                    >
+                </div>
+
+                <div class="form-bottom">
+                    <button type="submit">Submit</button>
+                    <span class="form-label">&lt;form/&gt;</span>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
+</body>
+</html>
