@@ -12,3 +12,4 @@ Community-Driven Career Navigation Platform
 - Support Chat
 - Point System
 - System Pages
+- Good Guide
