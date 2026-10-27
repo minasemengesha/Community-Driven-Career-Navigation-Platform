@@ -1,0 +1,39 @@
+## Project Cost and Resource Estimation
+
+For our Community-Driven Career Navigation Platform, developed as part of our university web programming course, we have structured our cost and resource estimation keeping our academic scope, less than 60-day timeline, and 6-member team in mind.
+Since this is an academic student project utilizing professional standalone tools and free deployment tiers, our direct financial expenditure is minimal, primarily covering documentation printing and binding.
+1. Direct Out-of-Pocket Expenses (Actual Cost)
+- Software & Development Tools: Standalone Apache server, MySQL server, and VS Code with PHP, HTML, CSS, and JavaScript extensions - 0.00 (Free / Open-source)
+- Hosting & Deployment: InfinityFree free web hosting tier for online deployment and local testing via our individual local environments - 0.00 (Free)
+- Documentation Printing & Binding: Printing final project reports and presentation materials - Minimal (Covering physical printing only)
+- Team Communication & Internet: Online coordination and resource research - Covered by personal student packages
+- Total Actual Financial Cost: Restricted strictly to physical documentation printing - Minimal
+2. Resource Labor Estimation (Commercial Value Perspective)
+To maintain a professional software engineering documentation standard, we also look at the resource allocation of our team:
+- Team Size: 6 team members.
+- Development Duration: 60 days (2 month).
+- Development Approach & Infrastructure: Professional modular setup using standalone Apache, MySQL, and VS Code extensions handled collaboratively using an Hybrid Agile Software Process Model utilizing Kanban Methodology combined with Phased Milestones.
+- Commercial Equivalent: While our project is executed with a zero-budget infrastructure using free tools and volunteer student labor, a commercial equivalent of this platform would factor in standard developer man-hours and commercial hosting infrastructure fees.
+### Summary
+Our project operates on a zero-budget software infrastructure, relying entirely on free, open-source development tools (Standalone Apache, MySQL, and VS Code extensions), free cloud hosting (InfinityFree), and our internal team collaboration, with financial expenses occurring only for final documentation and printing needs.
+
+## Software Process Model and Management Strategy
+
+For our Community-Driven Career Navigation Platform, we have chosen a Hybrid Agile Software Process Model utilizing Kanban Methodology combined with Phased Milestones. This section outlines why this model was selected and how we will manage our 60-day project lifecycle with a 6-member team.
+1. Selection and Justification of the Software Process Model
+We selected this hybrid approach after carefully evaluating our team dynamics, technical constraints, and academic goals for the following reasons:
+- Handling Variable Team Performance: Our 6-member team has diverse skill levels and paces. Kanban relies on a visual task board (such as GitHub Projects or Trello) where tasks are broken down into granular cards. This allows faster members to pull additional tasks seamlessly while slower or learning members can focus on completing their assigned cards without feeling overwhelmed by rigid, time-boxed deadlines.
+- Gradual Technical Learning Curve via Phased Milestones: Since our team members are actively learning PHP and backend development, a strict sequential model would cause bottlenecks. By blending Kanban with structured phases, we can separate tasks logically-focusing initially on frontend layouts before smoothly transitioning into database integration and PHP backend logic as our skills develop.
+- Evolving Requirements: Because not all stakeholders or final edge cases are fully known at day one, our flexible workflow gives us the adaptability to continuously add new tasks to the backlog without disrupting the overall project execution.
+- Balanced Documentation and Testing: To ensure a high-quality academic report without getting bogged down by heavy enterprise testing overhead, this model keeps our workflow lean and transparent, ensuring that documentation of our architecture and code progresses hand-in-hand with development.
+2. Project Management and Execution Strategy
+To manage our 60-day timeline effectively, we will execute our hybrid Kanban workflow across three structured operational phases:
+Phase 1: Foundation and Frontend (Days 1-10)
+ - Focus: UI/UX design, static pages (About, Help, Contact), and foundational HTML, CSS, and JavaScript layouts.
+ - Kanban Management: All frontend layout tasks are placed in the backlog and pulled by team members based on availability.
+Phase 2: Core Logic and Backend Integration (Days 11-20)
+ - Focus: Setting up the MySQL database, implementing user registration, login, session management, and search functionalities using PHP.
+ - Kanban Management: Tasks transition from "To Do" to "In Progress" as team members finish learning and testing basic backend scripts on their local Apache servers.
+Phase 3: Advanced Features, Polish, and Final Submission (Days 21-30)
+  - Focus: Integrating voting, recommendations, point systems, promotions, payment verification, and finalizing the project report.
+  - Kanban Management: Strict code reviews and manual testing columns are utilized before moving cards to "Done," ensuring a polished product and complete documentation by day 60.
