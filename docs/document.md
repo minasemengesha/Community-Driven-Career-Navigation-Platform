@@ -260,3 +260,24 @@ To maintain a professional software engineering documentation standard, we also 
 - Summary:
 Our project operates on a zero-budget software infrastructure, relying entirely on free, open-source development tools (Standalone Apache, MySQL, and VS Code extensions), free cloud hosting (InfinityFree), and our internal team collaboration, with financial expenses occurring only for final documentation and printing needs.
 # Chapter Two: Requirement Analysis and Specifications
+## 2.1. Overview
+
+Minase's work
+## 2.2. Business Rule
+
+Helu's work
+## 2.3. Functional Requirements
+
+Milion's Work
+## 2.4. Non-Functional Requirements
+
+Bamlak's work
+## 2.4. Actor and Use case Identification
+
+Hone's work
+## 2.5. System Model
+  ### 2.5.1. Use case Model
+
+  Miases's work
+  ### 2.5.2. Class Diagram
+  Meri's work
