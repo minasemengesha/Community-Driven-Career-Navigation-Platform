@@ -26,19 +26,11 @@ The main causes that may contribute to career navigation difficulties include:
 
 1. Lack of centralized information: Career information is spread across different websites, institutions, and social networks.
 
-2. Limited career guidance: Some students and graduates have limited access to qualified career advisors and mentors. Research on selected schools in Addis Ababa has identified shortages of counselors and other barriers to career guidance.&#x20;
-
-   [image](https://www.google.com/s2/favicons?domain=https://etd.aau.edu.et\&sz=32)
-
-   AAU ETD+1
+2. Limited career guidance: Some students and graduates have limited access to qualified career advisors and mentors. Research on selected schools in Addis Ababa has identified shortages of counselors and other barriers to career guidance.
 
 3. Lack of awareness: Users may not fully understand the range of career paths available to them.
 
-4. Skills and job-market information gaps: Users may struggle to identify the skills, qualifications, and practical experience required for different careers.&#x20;
-
-   [image](https://www.google.com/s2/favicons?domain=https://www.skillsforemployment.org\&sz=32)
-
-   International Labour Organization+1
+4. Skills and job-market information gaps: Users may struggle to identify the skills, qualifications, and practical experience required for different careers.
 
 5. Limited professional networking: Students and graduates may have difficulty connecting with experienced professionals who can provide practical advice.
 
@@ -64,21 +56,13 @@ The proposed Community-Driven Career Navigation Platform will address this probl
 
 - Summary
 
-Problem
+Problem: Career information and guidance can be fragmented, difficult to access, and insufficiently personalized.
 
-Career information and guidance can be fragmented, difficult to access, and insufficiently personalized.
+Target users: Students, graduates, job seekers, professionals, mentors, and educational institutions.
 
-Target users
+Proposed solution: A community-driven platform that combines career information, peer support, professional mentorship, and career exploration.
 
-Students, graduates, job seekers, professionals, mentors, and educational institutions.
-
-Proposed solution
-
-A community-driven platform that combines career information, peer support, professional mentorship, and career exploration.
-
-Expected outcome
-
-Help users make more informed career decisions and develop clearer plans for their professional futures.
+Expected outcome: Help users make more informed career decisions and develop clearer plans for their professional futures.
 
 Important for your project report: Treat these points as an initial problem analysis. Before finalizing it, gather feedback from your intended users to confirm which problems they experience most frequently and whether your proposed platform addresses their actual needs.
 
@@ -95,7 +79,67 @@ Baamlk's Note
 ## 1.4. Methodologies
 ### 1.4.1. Requirement Elicitation Methodology
 
-Honelign's Note
+In these document we are mainly going to define the requirement elicitation approach,Identify the stakeholders and information sources, determine what requirements need to be collected, and select appropriate requirements elicitation techniques, such as interviews, questionnaires, observation, or document analysis.
+
+Introduction
+
+Requirements elicitation is the disciplined process of discovering and clarifying stakeholder needs, expectations,
+constraints, and business rules for a system. For this project, elicitation must establish what learners, resource
+contributors, administrators, customer-support staff, the project owner and other stakeholders need from a platform that helps people discover
+educational resources and supports community recommendations and paid promotion.
+
+This platform includes educational resource listings (for example, YouTube channels and websites), topic-based
+discovery, quality review and ranking, guest recommendations, authenticated creator recommendations, recommendation
+counts, contribution points, possible free-promotion rewards, paid promotion, manual payment-evidence review,announcements, feature requests, and About, Help, and Contact pages. This plan focuses on validating those features
+rather than assuming every initial idea is already a final requirement.
+
+Objectives.
+
+• Identify stakeholders and reliable direct and indirect information sources.
+
+• Understand user problems when finding, comparing, and evaluating learning resources.
+
+• Clarify submission, duplicate handling, moderation, ranking, promotion, payment review, support, and reward rules.
+
+• Identify functional, non-functional, data, security, usability, and operational requirements.
+
+• Resolve ambiguity and conflicts, prioritize requirements, and document decisions that can be checked and tested.
+
+Stakeholders.
+
+Stakeholder| Thieir role
+Guest or ordinary visitors| Browse resources, may submit recommendations with out an account.
+Registered content creators| Submit creator recommendations and may seek promotion or rewards.
+Administrator| Review submission, datermine quality based ranking and other system level jobs.
+Customer support agent| Manually checks payment evidence and handles promotion complaints.
+Development and testing team| Builds, tests and maintains the platform.
+System owner or project sponsor| Defines purpose,business policies and success measures.
+External resource providers (where relevant)| own or operate listed websites,channels or courses.
+
+Information sources
+
+Direct sources
+
+Potential learners and students who search for tutorials,coarses and certificate also the stakeholders alluded above on the table.
+
+Indirect sourses
+
+. Any reusable documents,existing diagrams,notes and what ever reusable materials.
+
+• Course materials and reputable software-engineering references about requirements quality and elicitation.
+
+Requirements to Collect Functional requirements and business rules.
+
+Resource catalogue (Which categories and topics are needed? What fields are required for a resource (name, URL,description, category, provider, certificate availability/type, cost, language, last-checked date)?
+Which fields are optional?)
+
+Discovery and browsing(Can visitors search, filter, sort, and browse without registration? Which filters are most useful?
+How are unavailable or outdated links handled?)
+
+User recommendations(What data can a guest submit? Is a URL required? How are invalid, duplicate, spam, or abusive submissions handled? Can a visitor edit or withdraw a submission?)
+
+Creator recommendations(What registration and login rules apply? What fields must creators submit? Can creators view submission status or their points? How are creator submissions distinguished from guest submissions?)
+
 ### 1.4.2. Requirement analysis and Modeling
 
 Honelign's Note
@@ -283,7 +327,76 @@ Minase's work
 Helu's work
 ## 2.3. Functional Requirements
 
-Milion's Work
+1. Authentication & Access Control Subsystem
+
+- FR-01: User Registration
+The system shall allow public users (Registered User/Content Creator and Promoter) to create accounts.
+
+- FR-02: Pre-configured Staff & Administrative Access
+The system shall provide secure system access for pre-configured administrative roles (Customer Support Agent, Administrator, and System Owner) through direct authentication (Login) without requiring public registration.
+
+- FR-03: System User Authentication
+The system shall authenticate registered actors (Registered User, Promoter, Customer Support Agent, Administrator, and System Owner) using secure session management and password verification (Login).
+
+- FR-04: Password Recovery
+The system shall allow registered account holders to recover access to their accounts via password reset (RecoverPassword).
+
+- FR-05: On-Demand Guest Authentication
+The system shall automatically generate a temporary guestToken (Guest_Authentication) only when an unregistered guest initiates a Vote or Recommend action, preventing multiple submissions while keeping general browsing unauthenticated.
+
+2. Content Discovery & Interaction Subsystem
+
+- FR-06: Dynamic Resource Browsing
+The system shall allow Guest Users and Registered Users to browse curated lists of educational resources (Browse).
+
+- FR-07: Smart Resource Search
+The system shall allow users to search for educational resources by keywords or links (SearchResource) and prompt users to vote on existing entries to prevent duplicates.
+
+- FR-08: Resource Recommendation
+The system shall allow unregistered guests (via Guest_Authentication) and registered content creators to submit new resource links (Recommend).
+
+- FR-09: Community Voting
+The system shall allow guests and registered users to vote on resources (Vote), enforcing a maximum of one vote per resource per user or guestToken.
+
+- FR-10: Topic Request Submission
+The system shall allow registered users to submit requests for new technical learning topics (Request_Title).
+
+- FR-11: Static Page Navigation
+The system shall display informational pages including About, Help, and Contact (View_Static_Pages) to all platform visitors.
+
+3. Points & Reward Subsystem
+
+- FR-12: Points Management & Rewards
+The system shall calculate, award, and manage reward points (Manage_Points) for registered creators upon approval of their recommendations, unlocking options for free promotion redemption.
+
+4. Monetization & Support Subsystem
+
+- FR-13: Paid Promotion Submission
+The system shall allow promoters to submit ad placement requests and upload payment transfer screenshots (Promote).
+
+- FR-14: Promotion Tracking
+The system shall allow promoters to track the real-time review status of their ad submissions (Track_Promotion).
+
+- FR-15: Manual Payment Verification
+The system shall allow Customer Support Agents to inspect payment screenshots and verify transactions (Verify_Payment).
+
+5. Administration, Moderation & Reporting Subsystem
+
+- FR-16: Content Moderation
+The system shall allow Administrators to review, edit, approve, reject, rank, or delete submitted resource links (Manage_Content).
+
+- FR-17: Recommendation Organization
+The system shall group duplicate URL submissions in the Admin dashboard and display total user recommendation counts (Organize_Recommendations).
+
+- FR-18: Announcement Management
+The system shall allow Administrators to publish and manage popup announcements and featured promotions on main pages (Announcement).
+
+- FR-19: System Notifications
+The system shall dispatch internal alerts and updates (Notify) regarding payment approvals, content status, or account actions.
+
+- FR-20: System Owner Reporting
+The system shall provide the System Owner with analytical reports summarizing platform revenue, performance metrics, user growth, and top recommendations (Report).
+
 ## 2.4. Non-Functional Requirements
 
 Bamlak's work
