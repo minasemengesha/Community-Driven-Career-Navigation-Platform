@@ -225,7 +225,20 @@ Bamlak's Note
 | 49  | Customer Support      | Assistance provided to customers or users concerning platform services, including promotion-related questions and complaints. |
 ## 1.7 Reusable Components and Existing Solutions
 
-Helen's Note
+The following reusable components are identified for the Right Guide project:
+
+1. Registration Form: Allows users to create accounts.
+2. Login Form: Allows registered users to access their accounts.
+3. Interest Selection: Allows users to select their preferred learning categories.
+4. Recommendation Cards: Display recommended websites and YouTube channels with their descriptions and links.
+5. Voting Component: Allows users to vote for recommended resources.
+6. Recommendation Form: Allows users to submit new websites and YouTube channels.
+
+- Existing solutions are already-developed systems, tools, libraries, or services that provide functionality similar to what you need.
+
+1. YouTube Data API v3 :Searches YouTube videos and channels.  
+2. JavaScript LocalStorage  Stores data in the browser.
+
 ## 1.8. Development Tools
 
 - Frontend - Html, CSS, and Javascirpt
@@ -239,7 +252,9 @@ Helen's Note
 - Helen Eshetu     - Database Design & Management
 - Honelign Tekele  - Frontend Development & UI Testing
 - Merihun Meshesha - Integration, Deployment & System Testing
-- Bamlak Tadesse   - System Design & Modeling
+- Bamlak Tadesse   - System Design & Design Modeling
+##### Note: 
+  Requirement Gathering, Analyis and Aanlyis Modeling is all members task, we don't perform solely.
 
 ### 1.10. Project Cost and Resource Estimation
 
