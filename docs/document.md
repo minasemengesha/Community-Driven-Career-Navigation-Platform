@@ -74,66 +74,15 @@ To design and develop a web-based, community-driven career navigation platform t
 ## 1.3. Methodologies
 ### 1.3. Requirement Elicitation Methodology
 
-In these document we are mainly going to define the requirement elicitation approach,Identify the stakeholders and information sources, determine what requirements need to be collected, and select appropriate requirements elicitation techniques, such as interviews, questionnaires, observation, or document analysis.
+To successfully define and build the Community-Driven Career Navigation Platform within a strict 60-day university timeline, a structured, lightweight, and user-centric requirement elicitation methodology is employed. Given the project's academic constraints and defined feature scope, the elicitation process combines four core techniques:
 
-Introduction
+- Document & Project Constraint Analysis: Reviewing academic guidelines, project briefs, and technical boundaries (e.g., manual payment verification, no real-time chat, no automated email dispatching) to establish baseline system constraints.
 
-Requirements elicitation is the disciplined process of discovering and clarifying stakeholder needs, expectations,
-constraints, and business rules for a system. For this project, elicitation must establish what learners, resource
-contributors, administrators, customer-support staff, the project owner and other stakeholders need from a platform that helps people discover
-educational resources and supports community recommendations and paid promotion.
+- Stakeholder & Actor Profiling: Identifying and analyzing distinct system roles—unregistered guests, registered creators, promoters, customer support agents, administrators, and the system owner—to map out precise permissions and dashboard requirements.
 
-This platform includes educational resource listings (for example, YouTube channels and websites), topic-based
-discovery, quality review and ranking, guest recommendations, authenticated creator recommendations, recommendation
-counts, contribution points, possible free-promotion rewards, paid promotion, manual payment-evidence review,announcements, feature requests, and About, Help, and Contact pages. This plan focuses on validating those features
-rather than assuming every initial idea is already a final requirement.
+- Use-Case & Workflow Modeling: Translating core functional goals into structured use cases and business rules, specifically designing complex workflows like "Lazy Authentication" (on-demand guest tokenization), dual-track recommendations, and duplicate detection.
 
-Objectives.
-
-• Identify stakeholders and reliable direct and indirect information sources.
-
-• Understand user problems when finding, comparing, and evaluating learning resources.
-
-• Clarify submission, duplicate handling, moderation, ranking, promotion, payment review, support, and reward rules.
-
-• Identify functional, non-functional, data, security, usability, and operational requirements.
-
-• Resolve ambiguity and conflicts, prioritize requirements, and document decisions that can be checked and tested.
-
-Stakeholders.
-
-Stakeholder| Thieir role
-Guest or ordinary visitors| Browse resources, may submit recommendations with out an account.
-Registered content creators| Submit creator recommendations and may seek promotion or rewards.
-Administrator| Review submission, datermine quality based ranking and other system level jobs.
-Customer support agent| Manually checks payment evidence and handles promotion complaints.
-Development and testing team| Builds, tests and maintains the platform.
-System owner or project sponsor| Defines purpose,business policies and success measures.
-External resource providers (where relevant)| own or operate listed websites,channels or courses.
-
-Information sources
-
-Direct sources
-
-Potential learners and students who search for tutorials,coarses and certificate also the stakeholders alluded above on the table.
-
-Indirect sourses
-
-. Any reusable documents,existing diagrams,notes and what ever reusable materials.
-
-• Course materials and reputable software-engineering references about requirements quality and elicitation.
-
-Requirements to Collect Functional requirements and business rules.
-
-Resource catalogue (Which categories and topics are needed? What fields are required for a resource (name, URL,description, category, provider, certificate availability/type, cost, language, last-checked date)?
-Which fields are optional?)
-
-Discovery and browsing(Can visitors search, filter, sort, and browse without registration? Which filters are most useful?
-How are unavailable or outdated links handled?)
-
-User recommendations(What data can a guest submit? Is a URL required? How are invalid, duplicate, spam, or abusive submissions handled? Can a visitor edit or withdraw a submission?)
-
-Creator recommendations(What registration and login rules apply? What fields must creators submit? Can creators view submission status or their points? How are creator submissions distinguished from guest submissions?)
+- Iterative Prototyping (Design-First Approach): Utilizing static HTML/CSS layouts and mock data structures as visual prototypes to validate interface flows, ensure team alignment, and refine system logic before full backend (PHP/MySQL) implementation.
 
 ### 1.3.2. Requirement analysis and Modeling
 
@@ -454,7 +403,7 @@ The system shall provide the System Owner with analytical reports summarizing pl
 
 - Maintainability & Modularity: The system shall maintain a clean, modular code structure across its frontend and backend components to facilitate collaborative development and maintenance within the project deadline.
 
-## 2.4. Actor and Use case Identification
+## 2.5. Actor and Use case Identification
 
 1. Actor Identification
 - Guest User: An unregistered visitor who can freely browse and search the platform; the system automatically generates a temporary guestToken only when they initiate a vote or resource recommendation.
@@ -501,11 +450,11 @@ Administration & Reporting Subsystem:
 - Announcement: Publishing of platform-wide popup announcements and featured promotions.
 - Report: Generation of comprehensive financial and performance analytics for the system owner.
 
-## 2.5. System Model
-### 2.5.1. Use case Model
+## 2.6. System Model
+### 2.6.1. Use case Model
 
 ![Use Case](docs/image/diagrams/use-case.png)
 
-### 2.5.2. Class Diagram
+### 2.6.2. Class Diagram
 
 ![Class Diagram](docs/image/diagrams/class-diagram.png)
