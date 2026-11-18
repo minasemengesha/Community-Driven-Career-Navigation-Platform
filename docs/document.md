@@ -1,5 +1,5 @@
 # Chapter One: Introduction
-## 1.1 Understand the Problem Background and Define the Exact Problem
+## 1.1 Understanding the Problem Background and Knowing the Exact Problem
 ### 1.1.1 Background of the Problem
 
 Choosing a suitable career is an important decision for students, graduates, and job seekers. However, many people face difficulties identifying career paths that match their interests, skills, educational backgrounds, and future goals.
@@ -8,7 +8,7 @@ Career information can be scattered across different sources, making it difficul
 
 A Community-Driven Career Navigation Platform aims to address these challenges by creating a shared digital environment where users can access career information, exchange experiences, receive guidance from community members and professionals, and explore suitable career opportunities.
 
-### 1.1.2. Understanding the Real Environment
+### 1.1.2. The Real Environment
 
 The project focuses on the environment in which students, graduates, job seekers, and professionals interact with career information.
 
@@ -48,36 +48,31 @@ These challenges can affect different users in several ways:
 
 As a result, users may experience confusion when making career decisions, spend more time searching for information, develop skills that do not match their intended career, or miss relevant opportunities.
 
-### 1.1.5. Define the Exact Problem
+### 1.1.5. The Exact Problem
 
 The exact problem this project aims to solve is the lack of an accessible, centralized, and community-supported system that helps students, graduates, and job seekers discover suitable career paths, obtain reliable career information, connect with experienced professionals, and understand the skills needed to achieve their career goals.
 
 The proposed Community-Driven Career Navigation Platform will address this problem by bringing career resources, community discussions, mentorship, career exploration, and relevant opportunity information together in one digital platform.
 
-- Summary
+## 1.2. Objectives of the project
+### 1.2.1. General objective
 
-Problem: Career information and guidance can be fragmented, difficult to access, and insufficiently personalized.
+To design and develop a web-based, community-driven career navigation platform that facilitates the collaborative curation, ranking, and discovery of high-quality educational resources, while implementing a frictionless lazy-authentication system, a creator point-reward mechanism, and a transparent manual monetization workflow.
 
-Target users: Students, graduates, job seekers, professionals, mentors, and educational institutions.
+### 1.2.2. Specific objectives
 
-Proposed solution: A community-driven platform that combines career information, peer support, professional mentorship, and career exploration.
+- To Implement Flexible Authentication & Access Control: Develop a secure role-based architecture supporting public registration for creators and promoters, pre-configured staff logins for administrators, support agents, and owners, and on-demand guestTokens for anonymous visitors.
 
-Expected outcome: Help users make more informed career decisions and develop clearer plans for their professional futures.
+- To Enable Dual-Track Content Discovery & Search: Build dynamic browsing and keyword/URL search features that automatically detect duplicate resource submissions and encourage community voting over redundant entries.
 
-Important for your project report: Treat these points as an initial problem analysis. Before finalizing it, gather feedback from your intended users to confirm which problems they experience most frequently and whether your proposed platform addresses their actual needs.
+- To Establish Community Participation & Point Systems: Implement a secure voting mechanism (restricted to one vote per user or guestToken) alongside a point accumulation and redemption system that rewards approved creator contributions with free promotions.
 
-## 1.2. Statement of the Problem
+- To Support Transparent Monetization & Verification: Provide a structured ad-submission pipeline where promoters can request tiered placements, upload payment screenshots, and track statuses, backed by a manual verification interface for customer support agents.
 
-Baamlk's Note
-## 1.3. Objectives of the project
-### 1.3.1. General objective
+- To Provide Comprehensive Administration & Reporting: Create a robust management dashboard enabling administrators to moderate content, group duplicate recommendations, manage announcements, and allow the system owner to generate performance and financial analytical reports.
 
-Baamlk's Note
-### 1.3.2. Specific objectives
-
-Baamlk's Note
-## 1.4. Methodologies
-### 1.4.1. Requirement Elicitation Methodology
+## 1.3. Methodologies
+### 1.3. Requirement Elicitation Methodology
 
 In these document we are mainly going to define the requirement elicitation approach,Identify the stakeholders and information sources, determine what requirements need to be collected, and select appropriate requirements elicitation techniques, such as interviews, questionnaires, observation, or document analysis.
 
@@ -140,10 +135,32 @@ User recommendations(What data can a guest submit? Is a URL required? How are in
 
 Creator recommendations(What registration and login rules apply? What fields must creators submit? Can creators view submission status or their points? How are creator submissions distinguished from guest submissions?)
 
-### 1.4.2. Requirement analysis and Modeling
+### 1.3.2. Requirement analysis and Modeling
 
-Honelign's Note
-### 1.4.3. Software Process Model and Management Strategy
+1. Requirement Analysis
+The Community-Driven Career Navigation Platform is designed to systematically curate, rank, and recommend educational resources through community participation while balancing frictionless accessibility with strict spam control.
+Core Functional Scope (20 Requirements across 5 Subsystems):
+- Authentication & Access Control: Supports public registration for Creators and Promoters, pre-configured login for internal staff (Customer Support, Admin, Owner), password recovery, and On-Demand Guest Authentication (guestToken generated strictly when an unauthenticated visitor initiates a vote or recommendation, keeping general browsing stateless).   
+- Content Discovery & Interaction: Enables unauthenticated browsing, smart keyword/URL search with duplicate-entry voting prompts, dual-track recommendations (Guest vs. Creator), single-vote enforcement per resource, topic requests, and public static/announcement views.   
+- Points & Rewards: Credits reward points to registered creators upon administrative approval of their submissions, unlocking free promotional placement once defined thresholds are reached.   
+- Monetization & Support: Facilitates tiered ad requests backed by manual payment screenshot uploads, real-time status tracking, Customer Support verification, and structured support ticketing.   
+- Administration & Reporting: Empowers Admins to moderate content, auto-group duplicate URLs with submission counts, and dispatch alerts, while granting the Owner exclusive access to financial and platform analytics.   
+Key Business Rules & Constraints:
+- Strict single-vote and duplicate-submission prevention tied to either userId or guestToken.   
+- Zero financial activation without manual screenshot verification by Customer Support.   
+- System constraints exclude automated email dispatchers, real-time chat modules, and payment gateway APIs to ensure reliable delivery within a standard PHP/MySQL stack.
+2. System Modeling
+The architectural model translates functional needs into clean, modular abstractions ready for Object-Oriented PHP and relational MySQL implementation:
+Behavioral Modeling (18 Use Cases & 6 Actors):
+- Maps distinct workflows across Guest User, Registered User/Creator, Promoter, Customer Support Agent, Administrator, and System Owner.   
+- Enforces separation of concerns: public actors interact with discovery, voting, and promotion flows, while pre-configured administrative actors govern verification, curation, and reporting.
+   
+Structural Modeling (18-Class Object Hierarchy):
+- User Inheritance Hierarchy: An abstract User base class branches into GuestUser (managing on-demand session tokens) and RegisteredUser (handling authentication, voting, and points), which further specializes into Admin, Promoter, CustomerSupport, and Owner.   
+- Content Inheritance Hierarchy: An abstract Content base class unifies shared metadata across Resource (categorized, votable learning links) and Announcement (time-bound platform notices).
+- Transactional & Operational Classes: Standalone classes—Vote, Recommendation, TitleRequest, Promotion, Payment, SupportTicket, Notification, and StaticPage—decouple business logic and map directly to normalized MySQL tables supporting nullable dual-identity keys (userId and guestToken).
+
+### 1.3.3. Software Process Model and Management Strategy
 
 For our Community-Driven Career Navigation Platform, we have chosen a Hybrid Agile Software Process Model utilizing Kanban Methodology combined with Phased Milestones. This section outlines why this model was selected and how we will manage our 60-day project lifecycle with a 6-member team.
 1. Selection and Justification of the Software Process Model
@@ -163,8 +180,8 @@ Phase 2: Core Logic and Backend Integration (Days 11-20)
 Phase 3: Advanced Features, Polish, and Final Submission (Days 21-30)
   - Focus: Integrating voting, recommendations, point systems, promotions, payment verification, and finalizing the project report.
   - Kanban Management: Strict code reviews and manual testing columns are utilized before moving cards to "Done," ensuring a polished product and complete documentation by day 60.
-## 1.5. Scope and Limitation of the Project
-### 1.5.1. Project Scope
+## 1.4. Scope and Limitation of the Project
+### 1.4.1. Project Scope
  
 The scope of the Community-Driven Career Navigation Platform defines the functional boundaries, core workflows, and technical constraints to be delivered within a 2-month (60-day) timeframe by our 6-member team.
 1. In-Scope (What the System Will Do)
@@ -182,14 +199,20 @@ To ensure delivery within the 60-day schedule, the following features are exclud
  - Advanced AI Recommendations: Complex machine learning recommendation algorithms are excluded in favor of keyword search, voting, and manual curation.
  - Real-Time Live Chat: WebSockets-based live chat is excluded; support messaging is handled via structured database workflows.
  - Automated Email Dispatching: External SMTP server emails are out-of-scope; notifications are handled via internal system alerts.
-### 1.5.2. Limitatio
+### 1.4.2. Limitation
 
-Bamlak's Note
-## 1.6. Domain Vocabulary and Glossary
+While the Community-Driven Career Navigation Platform is strategically structured to balance academic requirements with functional efficiency, several implementation boundaries and project limitations should be noted:
 
- # Domain Vocabulary and Glossary
+- Time and Resource Constraints: The platform is developed within a strict 60-day academic timeline by a 6-member student team, requiring an incremental phased development model managed alongside university final exams.
 
- ## 1. Learning Resources and Discovery
+- Manual Processing Limits: To ensure technical manageability within student constraints, payment processing relies on manual transaction screenshot verification by customer support agents rather than an automated third-party payment gateway.
+
+- Communication and Notification Boundaries: The system intentionally omits real-time live chat and external automated email dispatching, utilizing structured ticketing and internal system alerts instead.
+
+- Authentication Scope: Unregistered guest interactions are restricted to on-demand, temporary tokenization exclusively for voting and recommendations, leaving general content browsing entirely stateless.
+
+## 1.5. Domain Vocabulary and Glossary
+ ### 1. Learning Resources and Discovery
 
 | No. |     Domain Term       | Definition |
 |-----|-----------------------|------------|
@@ -201,7 +224,7 @@ Bamlak's Note
 | 6   | Educational Website   | A website that provides educational materials, courses, or learning opportunities. |
 | 7   | Topic Request         | A suggestion submitted by a user asking the platform to include an additional learning topic. |
 
- ## 2. Recommendations and Evaluation
+ ### 2. Recommendations and Evaluation
 
 | No. |     Domain Term         | Definition |
 |-----|-------------------------|------------|
@@ -217,7 +240,7 @@ Bamlak's Note
 | 17  | Resource Ranking       | The relative position assigned by an administrator to an educational resource within a list. |
 | 18  | Recommendation Status  | The current processing condition of a recommendation, such as awaiting review, accepted, or rejected. |
 
- ## 3. Users and Administration
+ ### 3. Users and Administration
 
 | No. |     Domain Term       | Definition |
 |-----|-----------------------|------------|
@@ -230,7 +253,7 @@ Bamlak's Note
 | 25  | User Account          | A registered identity that allows a user to access functions associated with their assigned role. |
 | 26  | User Role             | A classification that identifies a system user's responsibilities and permitted activities. |
 
-## 4. Promotion and Payment
+### 4. Promotion and Payment
 
 | No. |     Domain Term       | Definition |
 |-----|-----------------------|------------|
@@ -246,7 +269,7 @@ Bamlak's Note
 | 36  | Promotion Complaint  | A concern or dissatisfaction reported by a customer regarding a promotional service. |
 | 37  | Homepage Advertisement | Promotional or announcement content displayed within a designated area or popup on the platform's main pages. |
 
- ## 5. Contributor Points and Rewards
+ ### 5. Contributor Points and Rewards
 
 | No. |     Domain Term       | Definition |
 |-----|-----------------------|------------|
@@ -257,7 +280,7 @@ Bamlak's Note
 | 42  | Free Promotion Reward | An opportunity for an eligible contributor to receive a promotional service without paying the normal promotion fee. |
 | 43  | Contributor           | A registered creator who submits recommendations that may qualify for points and promotional rewards. |
 
-## 6. Platform Information and Support
+### 6. Platform Information and Support
 
 | No. |     Domain Term       | Definition |
 |-----|-----------------------|------------|
@@ -267,7 +290,7 @@ Bamlak's Note
 | 47  | Help Page             | A page containing guidance and information about how users can obtain assistance while using the platform. |
 | 48  | Contact Page          | A page providing ways to contact the platform team and find information about its other websites. |
 | 49  | Customer Support      | Assistance provided to customers or users concerning platform services, including promotion-related questions and complaints. |
-## 1.7 Reusable Components and Existing Solutions
+### 1.6 Reusable Components and Existing Solutions
 
 The following reusable components are identified for the Right Guide project:
 
@@ -283,13 +306,13 @@ The following reusable components are identified for the Right Guide project:
 1. YouTube Data API v3 :Searches YouTube videos and channels.  
 2. JavaScript LocalStorage  Stores data in the browser.
 
-## 1.8. Development Tools
+## 1.7. Development Tools
 
 - Frontend - Html, CSS, and Javascirpt
 - Backend  - PHP
 - Database - MySQl
 - Documention - VS Code
-## 1.9. Team Organization
+## 1.8. Team Organization
 
 - Minase Megesha   - Project Management & Documentation
 - MILLION MERKINE  - Backend Development & API
@@ -300,7 +323,7 @@ The following reusable components are identified for the Right Guide project:
 ##### Note: 
   Requirement Gathering, Analyis and Aanlyis Modeling is all members task, we don't perform solely.
 
-### 1.10. Project Cost and Resource Estimation
+### 1.9. Project Cost and Resource Estimation
 
 For our Community-Driven Career Navigation Platform, developed as part of our university web programming course, we have structured our cost and resource estimation keeping our academic scope, less than 60-day timeline, and 6-member team in mind.
 Since this is an academic student project utilizing professional standalone tools and free deployment tiers, our direct financial expenditure is minimal, primarily covering documentation printing and binding.
@@ -321,10 +344,30 @@ Our project operates on a zero-budget software infrastructure, relying entirely 
 # Chapter Two: Requirement Analysis and Specifications
 ## 2.1. Overview
 
-Minase's work
+A community-driven career exploration platform is a structured web-based learning hub designed to systematically collect, rate, and recommend high-quality learning resources through community engagement. It features a frictionless lazy verification method for guests, dual-track recommendations supported by a creative point-reward system, and transparent tiered free promotion processes supported by manual verification workflows. Combining intelligent duplicate detection, robust content moderation and dedicated administrative controls, the platform provides a reliable, secure and user-centric ecosystem for effective career exploration.
+
 ## 2.2. Business Rule
 
-Helu's work
+- BR-01-User Registration Rule: Creators and promoters register with unique emails; staff roles are pre-configured.   
+- BR-02-User Login Rule: All users log in with valid credentials for role-based dashboard access.   
+- BR-03-Password Recovery Rule: Registered users can reset forgotten passwords via their email.   
+- BR-04-Browse Resources Rule: Visitors freely browse categorized educational resources without logging in.   
+- BR-05-Search Resource Rule: Keyword searches prompt users to vote on existing matches rather than creating duplicates.   
+- BR-06-On-Demand Guest Authentication Rule: Temporary guestTokens are auto-generated only when guests vote or recommend, blocking spam without forcing registration.
+- BR-07-Voting Rule: Guests and registered users are strictly limited to one vote per resource.   
+- BR-08-Dual-Track Recommendation Rule: Unregistered guests and registered creators submit recommendations; only creator track submissions earn points.
+- BR-09-Request Title Rule: Users can submit suggestions for new learning topics to be added.   
+- BR-10-Static Pages & Announcements Rule: Public access to static info pages and main-page popup announcements is open to all.   
+- BR-11-Points Management & Redemption Rule: Verified creator contributions accumulate points, unlocking free promotions upon reaching thresholds (e.g., 20 points).   
+- BR-12-Paid Promotion Rule: Promoters secure tiered placements by uploading payment screenshots or redeeming points.   
+- BR-13-Promotion Tracking Rule: Promoters can monitor the real-time review status of their ad requests.   
+- BR-14-Manual Payment Verification Rule: Support agents manually inspect payment screenshots to activate promotions.   
+- BR-15-Promoter Support Rule: Promoters use ticketing for support inquiries while financial transfers remain direct.   
+- BR-16-Content Management & Ranking Rule: Administrators exclusively moderate, rank, and curate platform resources.   
+- BR-17-Recommendation Organization Rule: Identical links are auto-grouped with total user counts on the admin dashboard.   
+- BR-18-Notification Rule: System alerts notify users of status updates, point awards, and verification outcomes.   
+- BR-19-Owner Reporting Rule: Owners have exclusive access to comprehensive financial and performance analytics.
+
 ## 2.3. Functional Requirements
 
 1. Authentication & Access Control Subsystem
@@ -399,13 +442,70 @@ The system shall provide the System Owner with analytical reports summarizing pl
 
 ## 2.4. Non-Functional Requirements
 
-Bamlak's work
+- Performance & Speed: The system shall load public static pages and search results efficiently with minimal server overhead to ensure rapid content discovery.
+
+- Security & Access Control: The system shall secure user credentials using robust password-hashing techniques and enforce strict role-based access control for administrative and staff dashboards.
+
+- Data Integrity & Anti-Abuse: The system shall enforce unique email constraints for registrations and prevent duplicate votes or recommendations per user account or temporary guestToken.
+
+- Usability & Experience: The system shall provide a frictionless, "lazy authentication" experience, allowing guests to browse freely and trigger on-demand tokenization only when voting or recommending.
+
+- Reliability & Tracking: The system shall reliably log promotional details, payment statuses, and user point balances to support manual customer support verification workflows.
+
+- Maintainability & Modularity: The system shall maintain a clean, modular code structure across its frontend and backend components to facilitate collaborative development and maintenance within the project deadline.
+
 ## 2.4. Actor and Use case Identification
 
-Hone's work
+1. Actor Identification
+- Guest User: An unregistered visitor who can freely browse and search the platform; the system automatically generates a temporary guestToken only when they initiate a vote or resource recommendation.
+
+- Registered User / Content Creator: An authenticated user who can register, log in, vote, submit resource recommendations, request new topics, and accumulate reward points.
+
+- Promoter: An authenticated user who submits paid promotion requests and uploads transaction confirmation screenshots.
+
+- Customer Support Agent: A pre-configured staff member who logs in to inspect uploaded payment screenshots and manually verify transactions.
+
+- Administrator: A pre-configured staff member responsible for moderating content, organizing recommendations, managing announcements, and dispatching notifications.
+
+- System Owner: A high-level stakeholder who logs in exclusively to view analytical reports covering platform revenue, user growth, and performance metrics.
+
+2. Use Case Identification
+Authentication & Access Subsystem:
+
+- Register: Allows public users and promoters to create new accounts.
+- Login: Authenticates registered users, promoters, and pre-configured staff roles.
+- Recover Password: Enables account recovery via email verification.
+- Guest Authentication: Automatically assigns a temporary token on-demand to prevent spam during guest voting and recommendations.
+
+Content Discovery & Interaction Subsystem:
+
+- Browse: Public exploration of categorized educational resources.
+- Search Resource: Keyword and link-based lookup with duplicate-prevention prompts.
+- Recommend: Dual-track submission of new learning links by guests and registered creators.
+- Vote: Community voting restricted to one vote per user or guestToken per resource.
+- Request Title: Submission of user suggestions for new learning topics.
+- View Static Pages: Access to informational pages (About, Help, Contact) and announcement popups.
+
+Monetization & Support Subsystem:
+
+- Promote: Submission of ad placement requests and payment screenshots.
+- Track Promotion: Real-time monitoring of promotion request statuses.
+- Verify Payment: Manual inspection and approval of payment proof by support agents.
+
+Administration & Reporting Subsystem:
+
+- Manage Content: Review, editing, approval, and deletion of submitted educational links.
+- Organize Recommendations: Automated grouping of identical URLs with total user recommendation counts.
+- Manage Points: Calculation and tracking of reward points for verified creator contributions.
+- Notify: Internal alert generation for account and transaction updates.
+- Announcement: Publishing of platform-wide popup announcements and featured promotions.
+- Report: Generation of comprehensive financial and performance analytics for the system owner.
+
 ## 2.5. System Model
 ### 2.5.1. Use case Model
 
- Miases's work
+![Use Case](docs/image/diagrams/use-case.png)
+
 ### 2.5.2. Class Diagram
-Meri's work
+
+![Class Diagram](docs/image/diagrams/class-diagram.png)
