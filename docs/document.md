@@ -404,8 +404,8 @@ Bamlak's work
 
 Hone's work
 ## 2.5. System Model
-  ### 2.5.1. Use case Model
+### 2.5.1. Use case Model
 
-  Miases's work
-  ### 2.5.2. Class Diagram
-  Meri's work
+ Miases's work
+### 2.5.2. Class Diagram
+Meri's work
