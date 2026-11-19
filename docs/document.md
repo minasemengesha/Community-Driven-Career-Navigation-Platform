@@ -391,17 +391,41 @@ The system shall provide the System Owner with analytical reports summarizing pl
 
 ## 2.4. Non-Functional Requirements
 
-- Performance & Speed: The system shall load public static pages and search results efficiently with minimal server overhead to ensure rapid content discovery.
+1. Performance: The system should load pages within 3 seconds under normal usage and display search results within 5 seconds.
 
-- Security & Access Control: The system shall secure user credentials using robust password-hashing techniques and enforce strict role-based access control for administrative and staff dashboards.
+2. Usability: The system should provide a simple and user-friendly interface so users can easily browse, search, vote, and recommend educational resources.
 
-- Data Integrity & Anti-Abuse: The system shall enforce unique email constraints for registrations and prevent duplicate votes or recommendations per user account or temporary guestToken.
+3. Security: The system should protect user accounts by storing passwords in encrypted/hashed form and preventing unauthorized access.
 
-- Usability & Experience: The system shall provide a frictionless, "lazy authentication" experience, allowing guests to browse freely and trigger on-demand tokenization only when voting or recommending.
+4. Privacy: The system should protect users' personal information, payment details, and uploaded payment screenshots from unauthorized users.
 
-- Reliability & Tracking: The system shall reliably log promotional details, payment statuses, and user point balances to support manual customer support verification workflows.
+5. Reliability: The system should process user requests correctly and display clear success or failure messages.
 
-- Maintainability & Modularity: The system shall maintain a clean, modular code structure across its frontend and backend components to facilitate collaborative development and maintenance within the project deadline.
+6. Availability: The system should be accessible whenever the hosting server is operating and should display an appropriate message during service interruptions.
+
+7. Compatibility: The system should work properly on commonly used browsers such as Google Chrome, Firefox, and Microsoft Edge.
+
+8. Responsiveness: The system should adjust its layout to work properly on desktop computers, tablets, and mobile phones.
+
+9. Data Integrity: The system should maintain accurate information about educational resources, votes, reviews, rankings, and reward points.
+
+10. Access Control: The system should provide different access permissions for normal users, administrators, and customer support agents.
+
+11. Maintainability: The system should be organized into manageable modules so developers can easily fix errors and update system features.
+
+12. Scalability: The system should allow additional users, learning topics, educational resources, and recommendations as the platform grows.
+
+13. Backup and Recovery: The system should support regular database backups and allow stored information to be restored when data is lost.
+
+14. Accessibility: The system should use readable fonts, appropriate color contrast, clear labels, and easy navigation.
+
+15. File Upload Validation: The system should validate uploaded payment screenshots by checking their file formats and file sizes.
+
+16. Payment Verification Security: Only authorized administrators or support agents should be allowed to verify payments and update payment statuses.
+
+17. Notification Reliability: The system should correctly display announcements and notifications when new topics, payment updates, or promotion updates occur.
+
+18. Activity Tracking: The system should maintain records of important administrative activities, including content management, payment verification, and promotion approval.
 
 ## 2.5. Actor and Use case Identification
 
