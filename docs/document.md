@@ -477,8 +477,8 @@ Administration & Reporting Subsystem:
 ## 2.6. System Model
 ### 2.6.1. Use case Model
 
-![Use Case](docs/image/diagrams/use-case.png)
+![Use Case](image/diagrams/use-case.png)
 
 ### 2.6.2. Class Diagram
 
-![Class Diagram](docs/image/diagrams/class-diagram.png)
+![Class Diagram](image/diagrams/class-diagram.png)
