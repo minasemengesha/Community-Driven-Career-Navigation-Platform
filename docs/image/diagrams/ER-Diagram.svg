@@ -1,0 +1,671 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2175.378 2095.5666666666666" width="2175.378" height="2095.5666666666666" style="--bg:#18181B;--fg:#F4F4F5;--line:#71717A;--muted:#A1A1AA;--surface:#27272A;--border:#3F3F46;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  .mono { font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', ui-monospace, monospace; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+</defs>
+<polyline class="er-relationship" data-entity1="User" data-entity2="User_Role" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R1 has roles" points="667.724,1175.8333333333333 687.724,1175.8333333333333 687.724,124.3 874.7900000000001,124.3 874.7900000000001,116 954.7900000000001,116" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="Role" data-entity2="User_Role" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R1 assigned to" points="667.724,90 954.7900000000001,90" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="GuestIdentifier" data-entity2="Recommendation" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R2 submits" points="667.724,270 959.7400000000001,270" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="GuestIdentifier" data-entity2="Vote" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R3 casts" points="667.724,310.66666666666663 707.724,310.66666666666663 707.724,550 954.7900000000001,550" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="Recommendation" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R4 submits" points="667.724,1189.6666666666667 697.724,1189.6666666666667 697.724,386 959.7400000000001,386" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="Vote" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R5 casts" points="667.724,1203.5 707.724,1203.5 707.724,622 954.7900000000001,622" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="TopicRequest" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R6 requests" points="667.724,1286.5 697.724,1286.5 697.724,1843.9666666666667 954.7900000000001,1843.9666666666667" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="LearningTopic" data-entity2="Resource" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R7 contains" points="213.2,717.3333333333333 394.72400000000005,717.3333333333333 394.72400000000005,635.6666666666666 486.60400000000004,635.6666666666666" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="ResourceCategory" data-entity2="Resource" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R8 categorizes" points="213.2,536.3333333333333 486.60400000000004,536.3333333333333" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="Resource" data-entity2="Recommendation" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R9 recommended via" points="659.8040000000001,511.5 677.724,511.5 677.724,328 959.7400000000001,328" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="Resource" data-entity2="Vote" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R10 receives" points="659.8040000000001,586 954.7900000000001,586" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="PromotionRequest" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R11 submits" points="667.724,1245 954.7900000000001,1245" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="Resource" data-entity2="PromotionRequest" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R12 promoted via" points="659.8040000000001,660.5 737.724,660.5 737.724,1175 954.7900000000001,1175" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="PromotionRequest" data-entity2="PaymentEvidence" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R13 evidenced by" points="1174.19,1189 1447,1189" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="PaymentEvidence" data-entity2="PaymentVerification" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R14 verified by" points="1666.4,1189 1922.5780000000002,1189" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="PaymentVerification" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R15 verifies" points="667.724,1314.1666666666667 677.724,1314.1666666666667 677.724,2031.2666666666667 1842.5780000000002,2031.2666666666667 1842.5780000000002,1244.3333333333335 1922.5780000000002,1244.3333333333335" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="PromotionRequest" data-entity2="PromotionPlacement" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R16 placed as" points="1174.19,1147 1184.19,1147 1184.19,975 1447,975" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="PromotionRequest" data-entity2="PromotionComplaint" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R17 complaint on" points="1174.19,1231 1194.19,1231 1194.19,1375.3333333333333 1447,1375.3333333333333" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="PromotionComplaint" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R18 complains" points="667.724,1258.8333333333333 717.724,1258.8333333333333 717.724,1430.6666666666667 1447,1430.6666666666667" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="PointTransaction" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R19 earns" points="667.724,1231.1666666666667 727.724,1231.1666666666667 727.724,964 1367,964 1367,390.6666666666667 1447,390.6666666666667" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="Recommendation" data-entity2="PointTransaction" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R20 triggers" points="1159.3400000000001,328 1447,328" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="RewardRedemption" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R21 redeems" points="667.724,1300.3333333333333 687.724,1300.3333333333333 687.724,2020.2666666666667 1367,2020.2666666666667 1367,1666.6666666666667 1447,1666.6666666666667" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="PromotionRequest" data-entity2="RewardRedemption" data-cardinality1="one" data-cardinality2="zero-one" data-identifying="true" data-label="R22 redeemed for" points="1174.19,1273 1184.19,1273 1184.19,1611.3333333333333 1447,1611.3333333333333" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="Notification" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R23 receives" points="667.724,1217.3333333333333 717.724,1217.3333333333333 717.724,811 954.7900000000001,811" fill="none" stroke="var(--_line)" stroke-width="1" />
+<polyline class="er-relationship" data-entity1="User" data-entity2="Announcement" data-cardinality1="one" data-cardinality2="zero-many" data-identifying="true" data-label="R24 creates" points="667.724,1272.6666666666667 707.724,1272.6666666666667 707.724,1607.9666666666667 954.7900000000001,1607.9666666666667" fill="none" stroke="var(--_line)" stroke-width="1" />
+<g class="entity" data-id="User" data-label="User">
+  <rect x="487.9240000000001" y="1162" width="179.79999999999998" height="166" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="487.9240000000001" y="1162" width="179.79999999999998" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="577.8240000000001" y="1179" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">User</text>
+  <line x1="487.9240000000001" y1="1196" x2="667.724" y2="1196" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="493.9240000000001" y="1200" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="505.07900000000006" y="1207" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="524.234" y="1207" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="659.724" y="1207" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  <text x="495.9240000000001" y="1229" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="659.724" y="1229" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">full_name</tspan></text>
+  <text x="495.9240000000001" y="1251" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="659.724" y="1251" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">email</tspan></text>
+  <text x="495.9240000000001" y="1273" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="659.724" y="1273" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">password_hash</tspan></text>
+  <text x="495.9240000000001" y="1295" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="659.724" y="1295" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">account_status</tspan></text>
+  <text x="495.9240000000001" y="1317" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="659.724" y="1317" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">created_at</tspan></text>
+</g>
+<g class="entity" data-id="Role" data-label="Role">
+  <rect x="520.924" y="40" width="146.8" height="100" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="520.924" y="40" width="146.8" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="594.324" y="57" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">Role</text>
+  <line x1="520.924" y1="74" x2="667.7239999999999" y2="74" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="526.924" y="78" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="538.079" y="85" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="557.2339999999999" y="85" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="659.7239999999999" y="85" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">role_id</tspan></text>
+  <text x="528.924" y="107" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="659.7239999999999" y="107" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">role_name</tspan></text>
+  <text x="528.924" y="129" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="659.7239999999999" y="129" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">description</tspan></text>
+</g>
+<g class="entity" data-id="User_Role" data-label="User_Role">
+  <rect x="954.7900000000001" y="64" width="140" height="78" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="954.7900000000001" y="64" width="140" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1024.79" y="81" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">User_Role</text>
+  <line x1="954.7900000000001" y1="98" x2="1094.79" y2="98" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <g><title>FK to User</title>
+  <rect x="960.7900000000001" y="102" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="109" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="991.1" y="109" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1086.79" y="109" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  </g>
+  <g><title>FK to Role</title>
+  <rect x="960.7900000000001" y="124" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="131" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="991.1" y="131" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1086.79" y="131" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">role_id</tspan></text>
+  </g>
+</g>
+<g class="entity" data-id="GuestIdentifier" data-label="GuestIdentifier">
+  <rect x="474.72400000000005" y="229.33333333333331" width="193" height="122" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="474.72400000000005" y="229.33333333333331" width="193" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="571.224" y="246.33333333333331" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">GuestIdentifier</text>
+  <line x1="474.72400000000005" y1="263.3333333333333" x2="667.724" y2="263.3333333333333" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="480.72400000000005" y="267.3333333333333" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="491.879" y="274.3333333333333" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="511.03400000000005" y="274.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="659.724" y="274.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">guest_id</tspan></text>
+  <text x="482.72400000000005" y="296.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="659.724" y="296.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">identifier_value</tspan></text>
+  <text x="482.72400000000005" y="318.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="659.724" y="318.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">created_at</tspan></text>
+  <text x="482.72400000000005" y="340.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="659.724" y="340.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">last_seen_at</tspan></text>
+</g>
+<g class="entity" data-id="LearningTopic" data-label="LearningTopic">
+  <rect x="53.19999999999999" y="656.3333333333333" width="160" height="122" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="53.19999999999999" y="656.3333333333333" width="160" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="133.2" y="673.3333333333333" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">LearningTopic</text>
+  <line x1="53.19999999999999" y1="690.3333333333333" x2="213.2" y2="690.3333333333333" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="59.19999999999999" y="694.3333333333333" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="70.35499999999999" y="701.3333333333333" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="89.50999999999999" y="701.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="205.2" y="701.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">topic_id</tspan></text>
+  <text x="61.19999999999999" y="723.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="205.2" y="723.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">topic_name</tspan></text>
+  <text x="61.19999999999999" y="745.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="205.2" y="745.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">description</tspan></text>
+  <text x="61.19999999999999" y="767.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="205.2" y="767.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">created_at</tspan></text>
+</g>
+<g class="entity" data-id="ResourceCategory" data-label="ResourceCategory">
+  <rect x="40" y="486.3333333333333" width="173.2" height="100" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="40" y="486.3333333333333" width="173.2" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="126.6" y="503.3333333333333" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">ResourceCategory</text>
+  <line x1="40" y1="520.3333333333333" x2="213.2" y2="520.3333333333333" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="46" y="524.3333333333333" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="57.155" y="531.3333333333333" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="76.31" y="531.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="205.2" y="531.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">category_id</tspan></text>
+  <text x="48" y="553.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="205.2" y="553.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">category_name</tspan></text>
+  <text x="48" y="575.3333333333333" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="205.2" y="575.3333333333333" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">description</tspan></text>
+</g>
+<g class="entity" data-id="Resource" data-label="Resource">
+  <rect x="486.60400000000004" y="437" width="173.2" height="298" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="486.60400000000004" y="437" width="173.2" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="573.2040000000001" y="454" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">Resource</text>
+  <line x1="486.60400000000004" y1="471" x2="659.8040000000001" y2="471" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="492.60400000000004" y="475" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="503.759" y="482" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="522.914" y="482" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="651.8040000000001" y="482" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">resource_id</tspan></text>
+  <text x="494.60400000000004" y="504" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="651.8040000000001" y="504" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">title</tspan></text>
+  <text x="494.60400000000004" y="526" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="651.8040000000001" y="526" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">description</tspan></text>
+  <text x="494.60400000000004" y="548" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="651.8040000000001" y="548" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">resource_url</tspan></text>
+  <text x="494.60400000000004" y="570" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="651.8040000000001" y="570" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">resource_type</tspan></text>
+  <text x="494.60400000000004" y="592" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="651.8040000000001" y="592" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">status</tspan></text>
+  <rect x="492.60400000000004" y="607" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="503.759" y="614" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="522.914" y="614" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="651.8040000000001" y="614" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">category_id</tspan></text>
+  <rect x="492.60400000000004" y="629" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="503.759" y="636" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="522.914" y="636" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="651.8040000000001" y="636" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">topic_id</tspan></text>
+  <text x="494.60400000000004" y="658" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="651.8040000000001" y="658" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">created_at</tspan></text>
+  <text x="494.60400000000004" y="680" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="651.8040000000001" y="680" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">access_type</tspan></text>
+  <text x="494.60400000000004" y="702" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="651.8040000000001" y="702" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">resource_rank</tspan></text>
+  <text x="494.60400000000004" y="724" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">boolean</tspan></text>
+  <text x="651.8040000000001" y="724" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">is_featured</tspan></text>
+</g>
+<g class="entity" data-id="Recommendation" data-label="Recommendation">
+  <rect x="959.7400000000001" y="212" width="199.6" height="232" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="959.7400000000001" y="212" width="199.6" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1059.5400000000002" y="229" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">Recommendation</text>
+  <line x1="959.7400000000001" y1="246" x2="1159.3400000000001" y2="246" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="965.7400000000001" y="250" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="976.8950000000001" y="257" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="996.0500000000001" y="257" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1151.3400000000001" y="257" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">recommendation_id</tspan></text>
+  <rect x="965.7400000000001" y="272" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="976.8950000000001" y="279" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="996.0500000000001" y="279" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1151.3400000000001" y="279" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">resource_id</tspan></text>
+  <rect x="965.7400000000001" y="294" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="976.8950000000001" y="301" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="996.0500000000001" y="301" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1151.3400000000001" y="301" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  <rect x="965.7400000000001" y="316" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="976.8950000000001" y="323" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="996.0500000000001" y="323" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1151.3400000000001" y="323" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">guest_id</tspan></text>
+  <text x="967.7400000000001" y="345" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1151.3400000000001" y="345" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">submitted_title</tspan></text>
+  <text x="967.7400000000001" y="367" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1151.3400000000001" y="367" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">submitted_url</tspan></text>
+  <text x="967.7400000000001" y="389" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="1151.3400000000001" y="389" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">description</tspan></text>
+  <text x="967.7400000000001" y="411" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1151.3400000000001" y="411" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">status</tspan></text>
+  <text x="967.7400000000001" y="433" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1151.3400000000001" y="433" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">submitted_at</tspan></text>
+</g>
+<g class="entity" data-id="Vote" data-label="Vote">
+  <rect x="954.7900000000001" y="514" width="160" height="144" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="954.7900000000001" y="514" width="160" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1034.79" y="531" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">Vote</text>
+  <line x1="954.7900000000001" y1="548" x2="1114.79" y2="548" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="960.7900000000001" y="552" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="559" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="991.1" y="559" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1106.79" y="559" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">vote_id</tspan></text>
+  <rect x="960.7900000000001" y="574" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="581" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="991.1" y="581" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1106.79" y="581" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">resource_id</tspan></text>
+  <rect x="960.7900000000001" y="596" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="603" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="991.1" y="603" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1106.79" y="603" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  <rect x="960.7900000000001" y="618" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="625" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="991.1" y="625" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1106.79" y="625" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">guest_id</tspan></text>
+  <text x="962.7900000000001" y="647" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1106.79" y="647" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">voted_at</tspan></text>
+</g>
+<g class="entity" data-id="TopicRequest" data-label="TopicRequest">
+  <rect x="954.7900000000001" y="1760.9666666666667" width="173.2" height="166" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="954.7900000000001" y="1760.9666666666667" width="173.2" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1041.39" y="1777.9666666666667" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">TopicRequest</text>
+  <line x1="954.7900000000001" y1="1794.9666666666667" x2="1127.99" y2="1794.9666666666667" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="960.7900000000001" y="1798.9666666666667" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="1805.9666666666667" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="991.1" y="1805.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1119.99" y="1805.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">request_id</tspan></text>
+  <text x="962.7900000000001" y="1827.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1119.99" y="1827.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">topic_name</tspan></text>
+  <text x="962.7900000000001" y="1849.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="1119.99" y="1849.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">description</tspan></text>
+  <rect x="960.7900000000001" y="1864.9666666666667" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="1871.9666666666667" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="991.1" y="1871.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1119.99" y="1871.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  <text x="962.7900000000001" y="1893.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1119.99" y="1893.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">status</tspan></text>
+  <text x="962.7900000000001" y="1915.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1119.99" y="1915.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">submitted_at</tspan></text>
+</g>
+<g class="entity" data-id="PromotionRequest" data-label="PromotionRequest">
+  <rect x="954.7900000000001" y="1105" width="219.4" height="210" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="954.7900000000001" y="1105" width="219.4" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1064.49" y="1122" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">PromotionRequest</text>
+  <line x1="954.7900000000001" y1="1139" x2="1174.19" y2="1139" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="960.7900000000001" y="1143" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="1150" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="991.1" y="1150" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1166.19" y="1150" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">promotion_request_id</tspan></text>
+  <rect x="960.7900000000001" y="1165" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="1172" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="991.1" y="1172" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1166.19" y="1172" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  <rect x="960.7900000000001" y="1187" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="1194" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="991.1" y="1194" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1166.19" y="1194" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">resource_id</tspan></text>
+  <text x="962.7900000000001" y="1216" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1166.19" y="1216" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">promotion_tier</tspan></text>
+  <text x="962.7900000000001" y="1238" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1166.19" y="1238" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">requested_at</tspan></text>
+  <text x="962.7900000000001" y="1260" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1166.19" y="1260" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">status</tspan></text>
+  <text x="962.7900000000001" y="1282" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">decimal</tspan></text>
+  <text x="1166.19" y="1282" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">fee_amount</tspan></text>
+  <text x="962.7900000000001" y="1304" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1166.19" y="1304" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">promotion_type</tspan></text>
+</g>
+<g class="entity" data-id="PaymentEvidence" data-label="PaymentEvidence">
+  <rect x="1447" y="1128" width="219.4" height="122" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1447" y="1128" width="219.4" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1556.7" y="1145" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">PaymentEvidence</text>
+  <line x1="1447" y1="1162" x2="1666.4" y2="1162" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="1453" y="1166" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="1173" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="1483.31" y="1173" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="1173" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">evidence_id</tspan></text>
+  <rect x="1453" y="1188" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="1195" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1483.31" y="1195" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="1195" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">promotion_request_id</tspan></text>
+  <text x="1455" y="1217" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1658.4" y="1217" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">file_path</tspan></text>
+  <text x="1455" y="1239" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1658.4" y="1239" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">uploaded_at</tspan></text>
+</g>
+<g class="entity" data-id="PaymentVerification" data-label="PaymentVerification">
+  <rect x="1922.5780000000002" y="1133.6666666666667" width="212.79999999999998" height="166" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1922.5780000000002" y="1133.6666666666667" width="212.79999999999998" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="2028.9780000000003" y="1150.6666666666667" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">PaymentVerification</text>
+  <line x1="1922.5780000000002" y1="1167.6666666666667" x2="2135.378" y2="1167.6666666666667" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="1928.5780000000002" y="1171.6666666666667" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1939.7330000000002" y="1178.6666666666667" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="1958.8880000000001" y="1178.6666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="2127.378" y="1178.6666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">verification_id</tspan></text>
+  <rect x="1928.5780000000002" y="1193.6666666666667" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1939.7330000000002" y="1200.6666666666667" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1958.8880000000001" y="1200.6666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="2127.378" y="1200.6666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">evidence_id</tspan></text>
+  <rect x="1928.5780000000002" y="1215.6666666666667" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1939.7330000000002" y="1222.6666666666667" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1958.8880000000001" y="1222.6666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="2127.378" y="1222.6666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">agent_id</tspan></text>
+  <text x="1930.5780000000002" y="1244.6666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="2127.378" y="1244.6666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">verification_status</tspan></text>
+  <text x="1930.5780000000002" y="1266.6666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="2127.378" y="1266.6666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">verification_note</tspan></text>
+  <text x="1930.5780000000002" y="1288.6666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="2127.378" y="1288.6666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">verified_at</tspan></text>
+</g>
+<g class="entity" data-id="PromotionPlacement" data-label="PromotionPlacement">
+  <rect x="1447" y="892" width="219.4" height="166" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1447" y="892" width="219.4" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1556.7" y="909" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">PromotionPlacement</text>
+  <line x1="1447" y1="926" x2="1666.4" y2="926" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="1453" y="930" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="937" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="1483.31" y="937" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="937" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">placement_id</tspan></text>
+  <rect x="1453" y="952" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="959" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1483.31" y="959" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="959" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">promotion_request_id</tspan></text>
+  <text x="1455" y="981" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1658.4" y="981" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">placement_location</tspan></text>
+  <text x="1455" y="1003" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">date</tspan></text>
+  <text x="1658.4" y="1003" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">start_date</tspan></text>
+  <text x="1455" y="1025" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">date</tspan></text>
+  <text x="1658.4" y="1025" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">end_date</tspan></text>
+  <text x="1455" y="1047" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1658.4" y="1047" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">placement_status</tspan></text>
+</g>
+<g class="entity" data-id="PromotionComplaint" data-label="PromotionComplaint">
+  <rect x="1447" y="1320" width="219.4" height="166" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1447" y="1320" width="219.4" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1556.7" y="1337" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">PromotionComplaint</text>
+  <line x1="1447" y1="1354" x2="1666.4" y2="1354" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="1453" y="1358" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="1365" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="1483.31" y="1365" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="1365" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">complaint_id</tspan></text>
+  <rect x="1453" y="1380" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="1387" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1483.31" y="1387" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="1387" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">promotion_request_id</tspan></text>
+  <rect x="1453" y="1402" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="1409" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1483.31" y="1409" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="1409" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  <text x="1455" y="1431" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="1658.4" y="1431" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">complaint_description</tspan></text>
+  <text x="1455" y="1453" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1658.4" y="1453" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">status</tspan></text>
+  <text x="1455" y="1475" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1658.4" y="1475" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">submitted_at</tspan></text>
+</g>
+<g class="entity" data-id="PointTransaction" data-label="PointTransaction">
+  <rect x="1447" y="265.33333333333337" width="199.6" height="188" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1447" y="265.33333333333337" width="199.6" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1546.8" y="282.33333333333337" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">PointTransaction</text>
+  <line x1="1447" y1="299.33333333333337" x2="1646.6" y2="299.33333333333337" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="1453" y="303.33333333333337" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="310.33333333333337" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="1483.31" y="310.33333333333337" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1638.6" y="310.33333333333337" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">transaction_id</tspan></text>
+  <rect x="1453" y="325.33333333333337" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="332.33333333333337" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1483.31" y="332.33333333333337" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1638.6" y="332.33333333333337" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  <rect x="1453" y="347.33333333333337" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="354.33333333333337" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1483.31" y="354.33333333333337" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1638.6" y="354.33333333333337" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">recommendation_id</tspan></text>
+  <text x="1455" y="376.33333333333337" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1638.6" y="376.33333333333337" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">points</tspan></text>
+  <text x="1455" y="398.33333333333337" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1638.6" y="398.33333333333337" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">transaction_type</tspan></text>
+  <text x="1455" y="420.33333333333337" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="1638.6" y="420.33333333333337" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">description</tspan></text>
+  <text x="1455" y="442.33333333333337" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1638.6" y="442.33333333333337" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">created_at</tspan></text>
+</g>
+<g class="entity" data-id="RewardRedemption" data-label="RewardRedemption">
+  <rect x="1447" y="1556" width="219.4" height="166" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="1447" y="1556" width="219.4" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1556.7" y="1573" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">RewardRedemption</text>
+  <line x1="1447" y1="1590" x2="1666.4" y2="1590" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="1453" y="1594" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="1601" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="1483.31" y="1601" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="1601" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">redemption_id</tspan></text>
+  <rect x="1453" y="1616" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="1623" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1483.31" y="1623" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="1623" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  <rect x="1453" y="1638" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="1464.155" y="1645" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="1483.31" y="1645" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="1645" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">promotion_request_id</tspan></text>
+  <text x="1455" y="1667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1658.4" y="1667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">points_used</tspan></text>
+  <text x="1455" y="1689" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1658.4" y="1689" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">redemption_status</tspan></text>
+  <text x="1455" y="1711" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1658.4" y="1711" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">redeemed_at</tspan></text>
+</g>
+<g class="entity" data-id="Notification" data-label="Notification">
+  <rect x="954.7900000000001" y="728" width="186.4" height="166" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="954.7900000000001" y="728" width="186.4" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1047.99" y="745" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">Notification</text>
+  <line x1="954.7900000000001" y1="762" x2="1141.19" y2="762" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="960.7900000000001" y="766" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="773" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="991.1" y="773" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1133.19" y="773" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">notification_id</tspan></text>
+  <rect x="960.7900000000001" y="788" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="795" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="991.1" y="795" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1133.19" y="795" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">user_id</tspan></text>
+  <text x="962.7900000000001" y="817" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1133.19" y="817" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">title</tspan></text>
+  <text x="962.7900000000001" y="839" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="1133.19" y="839" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">message</tspan></text>
+  <text x="962.7900000000001" y="861" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">boolean</tspan></text>
+  <text x="1133.19" y="861" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">is_read</tspan></text>
+  <text x="962.7900000000001" y="883" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1133.19" y="883" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">created_at</tspan></text>
+</g>
+<g class="entity" data-id="Announcement" data-label="Announcement">
+  <rect x="954.7900000000001" y="1524.9666666666667" width="186.4" height="166" rx="0" ry="0" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <rect x="954.7900000000001" y="1524.9666666666667" width="186.4" height="34" rx="0" ry="0" fill="var(--_group-hdr)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="1047.99" y="1541.9666666666667" text-anchor="middle" font-size="13" font-weight="700" fill="var(--_text)" dy="4.55">Announcement</text>
+  <line x1="954.7900000000001" y1="1558.9666666666667" x2="1141.19" y2="1558.9666666666667" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <rect x="960.7900000000001" y="1562.9666666666667" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="1569.9666666666667" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">PK</text>
+  <text x="991.1" y="1569.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1133.19" y="1569.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">announcement_id</tspan></text>
+  <rect x="960.7900000000001" y="1584.9666666666667" width="22.31" height="14" rx="2" ry="2" fill="var(--_key-badge)" />
+  <text x="971.945" y="1591.9666666666667" text-anchor="middle" dy="0.35em" font-size="9" font-weight="600" fill="var(--_text-sec)">FK</text>
+  <text x="991.1" y="1591.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">int</tspan></text>
+  <text x="1133.19" y="1591.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">admin_id</tspan></text>
+  <text x="962.7900000000001" y="1613.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1133.19" y="1613.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">title</tspan></text>
+  <text x="962.7900000000001" y="1635.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">text</tspan></text>
+  <text x="1133.19" y="1635.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">content</tspan></text>
+  <text x="962.7900000000001" y="1657.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">datetime</tspan></text>
+  <text x="1133.19" y="1657.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">published_at</tspan></text>
+  <text x="962.7900000000001" y="1679.9666666666667" class="mono" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-muted)">varchar</tspan></text>
+  <text x="1133.19" y="1679.9666666666667" class="mono" text-anchor="end" dy="0.35em" font-size="11" font-weight="400"><tspan fill="var(--_text-sec)">status</tspan></text>
+</g>
+<line x1="671.724" y1="1169.8333333333333" x2="671.724" y2="1181.8333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1169.8333333333333" x2="675.724" y2="1181.8333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="123" x2="938.7900000000001" y2="116" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="116" x2="938.7900000000001" y2="116" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="109" x2="938.7900000000001" y2="116" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="116" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="84" x2="671.724" y2="96" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="84" x2="675.724" y2="96" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="97" x2="938.7900000000001" y2="90" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="90" x2="938.7900000000001" y2="90" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="83" x2="938.7900000000001" y2="90" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="90" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="264" x2="671.724" y2="276" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="264" x2="675.724" y2="276" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="955.7400000000001" y1="277" x2="943.7400000000001" y2="270" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="955.7400000000001" y1="270" x2="943.7400000000001" y2="270" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="955.7400000000001" y1="263" x2="943.7400000000001" y2="270" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="939.7400000000001" cy="270" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="304.66666666666663" x2="671.724" y2="316.66666666666663" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="304.66666666666663" x2="675.724" y2="316.66666666666663" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="557" x2="938.7900000000001" y2="550" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="550" x2="938.7900000000001" y2="550" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="543" x2="938.7900000000001" y2="550" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="550" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1183.6666666666667" x2="671.724" y2="1195.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1183.6666666666667" x2="675.724" y2="1195.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="955.7400000000001" y1="393" x2="943.7400000000001" y2="386" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="955.7400000000001" y1="386" x2="943.7400000000001" y2="386" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="955.7400000000001" y1="379" x2="943.7400000000001" y2="386" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="939.7400000000001" cy="386" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1197.5" x2="671.724" y2="1209.5" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1197.5" x2="675.724" y2="1209.5" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="629" x2="938.7900000000001" y2="622" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="622" x2="938.7900000000001" y2="622" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="615" x2="938.7900000000001" y2="622" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="622" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1280.5" x2="671.724" y2="1292.5" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1280.5" x2="675.724" y2="1292.5" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1850.9666666666667" x2="938.7900000000001" y2="1843.9666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1843.9666666666667" x2="938.7900000000001" y2="1843.9666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1836.9666666666667" x2="938.7900000000001" y2="1843.9666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="1843.9666666666667" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="217.2" y1="711.3333333333333" x2="217.2" y2="723.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="221.2" y1="711.3333333333333" x2="221.2" y2="723.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="482.60400000000004" y1="642.6666666666666" x2="470.60400000000004" y2="635.6666666666666" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="482.60400000000004" y1="635.6666666666666" x2="470.60400000000004" y2="635.6666666666666" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="482.60400000000004" y1="628.6666666666666" x2="470.60400000000004" y2="635.6666666666666" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="466.60400000000004" cy="635.6666666666666" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="217.2" y1="530.3333333333333" x2="217.2" y2="542.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="221.2" y1="530.3333333333333" x2="221.2" y2="542.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="482.60400000000004" y1="543.3333333333333" x2="470.60400000000004" y2="536.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="482.60400000000004" y1="536.3333333333333" x2="470.60400000000004" y2="536.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="482.60400000000004" y1="529.3333333333333" x2="470.60400000000004" y2="536.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="466.60400000000004" cy="536.3333333333333" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="663.8040000000001" y1="505.5" x2="663.8040000000001" y2="517.5" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="667.8040000000001" y1="505.5" x2="667.8040000000001" y2="517.5" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="955.7400000000001" y1="335" x2="943.7400000000001" y2="328" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="955.7400000000001" y1="328" x2="943.7400000000001" y2="328" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="955.7400000000001" y1="321" x2="943.7400000000001" y2="328" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="939.7400000000001" cy="328" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="663.8040000000001" y1="580" x2="663.8040000000001" y2="592" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="667.8040000000001" y1="580" x2="667.8040000000001" y2="592" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="593" x2="938.7900000000001" y2="586" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="586" x2="938.7900000000001" y2="586" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="579" x2="938.7900000000001" y2="586" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="586" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1239" x2="671.724" y2="1251" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1239" x2="675.724" y2="1251" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1252" x2="938.7900000000001" y2="1245" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1245" x2="938.7900000000001" y2="1245" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1238" x2="938.7900000000001" y2="1245" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="1245" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="663.8040000000001" y1="654.5" x2="663.8040000000001" y2="666.5" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="667.8040000000001" y1="654.5" x2="667.8040000000001" y2="666.5" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1182" x2="938.7900000000001" y2="1175" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1175" x2="938.7900000000001" y2="1175" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1168" x2="938.7900000000001" y2="1175" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="1175" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1178.19" y1="1183" x2="1178.19" y2="1195" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1182.19" y1="1183" x2="1182.19" y2="1195" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1196" x2="1431" y2="1189" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1189" x2="1431" y2="1189" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1182" x2="1431" y2="1189" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1427" cy="1189" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1670.4" y1="1183" x2="1670.4" y2="1195" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1674.4" y1="1183" x2="1674.4" y2="1195" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1918.5780000000002" y1="1196" x2="1906.5780000000002" y2="1189" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1918.5780000000002" y1="1189" x2="1906.5780000000002" y2="1189" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1918.5780000000002" y1="1182" x2="1906.5780000000002" y2="1189" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1902.5780000000002" cy="1189" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1308.1666666666667" x2="671.724" y2="1320.1666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1308.1666666666667" x2="675.724" y2="1320.1666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1918.5780000000002" y1="1251.3333333333335" x2="1906.5780000000002" y2="1244.3333333333335" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1918.5780000000002" y1="1244.3333333333335" x2="1906.5780000000002" y2="1244.3333333333335" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1918.5780000000002" y1="1237.3333333333335" x2="1906.5780000000002" y2="1244.3333333333335" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1902.5780000000002" cy="1244.3333333333335" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1178.19" y1="1141" x2="1178.19" y2="1153" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1182.19" y1="1141" x2="1182.19" y2="1153" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="982" x2="1431" y2="975" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="975" x2="1431" y2="975" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="968" x2="1431" y2="975" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1427" cy="975" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1178.19" y1="1225" x2="1178.19" y2="1237" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1182.19" y1="1225" x2="1182.19" y2="1237" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1382.3333333333333" x2="1431" y2="1375.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1375.3333333333333" x2="1431" y2="1375.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1368.3333333333333" x2="1431" y2="1375.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1427" cy="1375.3333333333333" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1252.8333333333333" x2="671.724" y2="1264.8333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1252.8333333333333" x2="675.724" y2="1264.8333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1437.6666666666667" x2="1431" y2="1430.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1430.6666666666667" x2="1431" y2="1430.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1423.6666666666667" x2="1431" y2="1430.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1427" cy="1430.6666666666667" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1225.1666666666667" x2="671.724" y2="1237.1666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1225.1666666666667" x2="675.724" y2="1237.1666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="397.6666666666667" x2="1431" y2="390.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="390.6666666666667" x2="1431" y2="390.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="383.6666666666667" x2="1431" y2="390.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1427" cy="390.6666666666667" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1163.3400000000001" y1="322" x2="1163.3400000000001" y2="334" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1167.3400000000001" y1="322" x2="1167.3400000000001" y2="334" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="335" x2="1431" y2="328" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="328" x2="1431" y2="328" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="321" x2="1431" y2="328" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1427" cy="328" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1294.3333333333333" x2="671.724" y2="1306.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1294.3333333333333" x2="675.724" y2="1306.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1673.6666666666667" x2="1431" y2="1666.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1666.6666666666667" x2="1431" y2="1666.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1659.6666666666667" x2="1431" y2="1666.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1427" cy="1666.6666666666667" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1178.19" y1="1267" x2="1178.19" y2="1279" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1182.19" y1="1267" x2="1182.19" y2="1279" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1443" y1="1617.3333333333333" x2="1443" y2="1605.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="1439" y1="1617.3333333333333" x2="1439" y2="1605.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="1435" cy="1611.3333333333333" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1211.3333333333333" x2="671.724" y2="1223.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1211.3333333333333" x2="675.724" y2="1223.3333333333333" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="818" x2="938.7900000000001" y2="811" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="811" x2="938.7900000000001" y2="811" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="804" x2="938.7900000000001" y2="811" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="811" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="671.724" y1="1266.6666666666667" x2="671.724" y2="1278.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="675.724" y1="1266.6666666666667" x2="675.724" y2="1278.6666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1614.9666666666667" x2="938.7900000000001" y2="1607.9666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1607.9666666666667" x2="938.7900000000001" y2="1607.9666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<line x1="950.7900000000001" y1="1600.9666666666667" x2="938.7900000000001" y2="1607.9666666666667" stroke="var(--_line)" stroke-width="1.25" />
+<circle cx="934.7900000000001" cy="1607.9666666666667" r="4" fill="var(--bg)" stroke="var(--_line)" stroke-width="1.25" />
+<rect x="654.981" y="512.2336666666666" width="65.486" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="687.724" y="522.3836666666666" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R1 has roles</text>
+<rect x="773.7620000000001" y="79.85" width="74.99000000000002" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="811.2570000000001" y="90" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R1 assigned to</text>
+<rect x="783.662" y="259.85" width="60.14" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="813.7320000000001" y="270" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R2 submits</text>
+<rect x="682.4060000000001" y="523.7163333333334" width="50.636" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="707.724" y="533.8663333333334" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R3 casts</text>
+<rect x="667.654" y="661.6753333333334" width="60.14" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="697.724" y="671.8253333333333" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R4 submits</text>
+<rect x="682.4060000000001" y="799.067" width="50.636" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="707.724" y="809.217" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R5 casts</text>
+<rect x="664.09" y="1668.6163333333334" width="67.26800000000001" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="697.724" y="1678.7663333333335" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R6 requests</text>
+<rect x="358.2893333333333" y="707.1833333333333" width="64.89200000000001" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="390.7353333333333" y="717.3333333333333" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R7 contains</text>
+<rect x="309.14000000000004" y="526.1833333333333" width="81.52400000000003" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="349.90200000000004" y="536.3333333333333" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R8 categorizes</text>
+<rect x="664.4890000000001" y="317.85" width="107.066" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="718.0220000000002" y="328" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R9 recommended via</text>
+<rect x="772.475" y="575.85" width="69.644" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="807.297" y="586" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R10 receives</text>
+<rect x="781.7810000000001" y="1234.85" width="58.952000000000005" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="811.2570000000001" y="1245" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R11 submits</text>
+<rect x="694.289" y="977.1730000000001" width="86.87000000000003" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="737.724" y="987.3230000000001" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R12 promoted via</text>
+<rect x="1265.378" y="1178.85" width="90.43400000000003" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1310.595" y="1189" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R13 evidenced by</text>
+<rect x="1756.4" y="1178.85" width="76.17800000000003" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1794.489" y="1189" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R14 verified by</text>
+<rect x="1298.8096666666668" y="2021.1166666666666" width="62.51600000000001" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1330.0676666666668" y="2031.2666666666667" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R15 verifies</text>
+<rect x="1188.288" y="964.85" width="72.61400000000002" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1224.595" y="975" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R16 placed as</text>
+<rect x="1196.1813333333332" y="1365.1833333333332" width="84.49400000000003" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1238.4283333333333" y="1375.3333333333333" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R17 complaint on</text>
+<rect x="934.2473333333334" y="1420.5166666666667" width="74.39600000000002" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="971.4453333333333" y="1430.6666666666667" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R18 complains</text>
+<rect x="1182.7513333333332" y="953.85" width="55.388000000000005" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1210.445333333333" y="964" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R19 earns</text>
+<rect x="1268.942" y="317.85" width="68.45600000000002" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1303.17" y="328" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R20 triggers</text>
+<rect x="839.9673333333333" y="2010.1166666666666" width="68.456" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="874.1953333333332" y="2020.2666666666667" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R21 redeems</text>
+<rect x="1137.785" y="1558.4216666666666" width="92.81000000000003" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="1184.19" y="1568.5716666666667" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R22 redeemed for</text>
+<rect x="681.12" y="910.4836666666666" width="73.208" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="717.724" y="920.6336666666666" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R23 receives</text>
+<rect x="674.09" y="1533.6996666666666" width="67.268" height="20.3" rx="2" ry="2" fill="var(--bg)" stroke="var(--_inner-stroke)" stroke-width="0.5" />
+<text x="707.724" y="1543.8496666666667" text-anchor="middle" font-size="11" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">R24 creates</text>
+</svg>

@@ -4,6 +4,9 @@ bin/
 
 # VS Code
 .vscode/
+.vscode/launch.json
 # OS files
 .DS_Store
 Thumbs.db
+/vendor/
+/.env

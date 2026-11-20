@@ -1,0 +1,236 @@
+/* ==========================================================================
+   RightGuide — Page Structure and Layout Conventions (1.10.2)
+   Depends on: tokens.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Global Page Shells & Headers
+   -------------------------------------------------------------------------- */
+.rg-page-shell {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.rg-hero-banner {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.rg-hero-banner h1 {
+  margin: var(--space-3) 0 var(--space-2);
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+.rg-hero-banner p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  max-width: 65ch;
+}
+
+.rg-section-title {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   2. Discovery & Feed Layout (Browse / Search / Directory)
+   -------------------------------------------------------------------------- */
+.rg-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.rg-filter-bar .rg-input {
+  flex: 1 1 260px;
+}
+
+.rg-resource-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+/* --------------------------------------------------------------------------
+   3. Task & Form Layout (Recommend / Promote / Auth)
+   -------------------------------------------------------------------------- */
+.rg-form-shell {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.rg-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+/* --------------------------------------------------------------------------
+   4. Role Dashboard Layout (Creator / Promoter / Support / Admin / Owner)
+   -------------------------------------------------------------------------- */
+.rg-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.rg-stat-card {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-sm);
+}
+
+.rg-stat-label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.rg-stat-value {
+  margin-top: var(--space-1);
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text-primary);
+}
+
+.rg-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.rg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  text-align: left;
+}
+
+.rg-table th,
+.rg-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.rg-table th {
+  background-color: var(--color-bg-subtle);
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+}
+
+/* --------------------------------------------------------------------------
+   5. Static, FAQ & Support Page Elements
+   -------------------------------------------------------------------------- */
+.rg-topic-list,
+.rg-contact-list {
+  list-style: none;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.rg-faq-item {
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+.rg-faq-item summary {
+  font-weight: var(--font-semibold);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.rg-faq-item p {
+  margin: var(--space-2) 0 0;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+}
+
+/* --------------------------------------------------------------------------
+   6. Shared Footer
+   -------------------------------------------------------------------------- */
+.rg-footer {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: var(--space-8) auto var(--space-6);
+  padding: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.rg-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.rg-footer a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: var(--font-medium);
+}
+
+.rg-footer a:hover {
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   7. Responsive Breakpoints (Mobile-First)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .rg-page-shell {
+    padding: var(--space-8) var(--space-6);
+  }
+
+  .rg-resource-grid,
+  .rg-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .rg-resource-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .rg-stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
