@@ -280,6 +280,26 @@ While the Community-Driven Career Navigation Platform is strategically structure
   Requirement Gathering, Analyis and Aanlyis Modeling is all members task, we don't perform solely.
 
 ### 1.8. Project Cost and Resource Estimation
+
+For our Community-Driven Career Navigation Platform, developed as part of our university web programming course, we have structured our cost and resource estimation keeping our academic scope, less than 60-day timeline, and 6-member team in mind.
+Since this is an academic student project utilizing professional standalone tools and free deployment tiers, our direct financial expenditure is minimal, primarily covering documentation printing and binding.
+
+1. Direct Out-of-Pocket Expenses (Actual Cost)
+- Software & Development Tools: Standalone Apache server, MySQL server, and VS Code with PHP, HTML, CSS, and JavaScript extensions - 0.00 (Free / Open-source)
+- Hosting & Deployment: InfinityFree free web hosting tier for online deployment and local testing via our individual local environments - 0.00 (Free)
+- Documentation Printing & Binding: Printing final project reports and presentation materials - Minimal (Covering physical printing only)
+- Team Communication & Internet: Online coordination and resource research - Covered by personal student packages
+- Total Actual Financial Cost: Restricted strictly to physical documentation printing - Minimal
+
+2. Resource Labor Estimation (Commercial Value Perspective)
+To maintain a professional software engineering documentation standard, we also look at the resource allocation of our team:
+- Team Size: 6 team members.
+- Development Duration: 60 days (2 month).
+- Development Approach & Infrastructure: Professional modular setup using standalone Apache, MySQL, and VS Code extensions handled collaboratively using an Hybrid Agile Software Process Model utilizing Kanban Methodology combined with Phased Milestones.
+- Commercial Equivalent: While our project is executed with a zero-budget infrastructure using free tools and volunteer student labor, a commercial equivalent of this platform would factor in standard developer man-hours and commercial hosting infrastructure fees.
+- Summary:
+Our project operates on a zero-budget software infrastructure, relying entirely on free, open-source development tools (Standalone Apache, MySQL, and VS Code extensions), free cloud hosting (InfinityFree), and our internal team collaboration, with financial expenses occurring only for final documentation and printing needs.
+
 ## Chapter Two: Requirement Analysis and Specifications
 ### 2.1. Description of the Current System
 ### 2.2. Reusable Components and Existing Solutions
