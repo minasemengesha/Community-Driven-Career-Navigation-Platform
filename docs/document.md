@@ -305,22 +305,26 @@ Our project operates on a zero-budget software infrastructure, relying entirely 
 ## Chapter Two: Requirement Analysis and Specifications
 ### 2.1. Description of the Current System
 
+Currently, learners and users seeking educational and career-related information rely on scattered, ad-hoc web searches, unverified links, and informal recommendations across disconnected websites and video platforms without a centralized, structured directory. This fragmented approach makes discovering reliable learning materials time-consuming and disorganized, leaving users uncertain about whether higher-quality or more relevant resources exist elsewhere and unsure of how to systematically locate better alternatives.
 
 ### 2.2. Reusable Components and Existing Solutions
+#### 2.2.1. Reusable UI & Functional Components
 
-The following reusable components are identified for the Right Guide project:
+To keep the interface consistent across pages and reduce repetitive code as the team builds with HTML, CSS, JavaScript, PHP, and MySQL, the following modular components are defined for reuse across RightGuide:
 
-1. Registration Form: Allows users to create accounts.
-2. Login Form: Allows registered users to access their accounts.
-3. Interest Selection: Allows users to select their preferred learning categories.
-4. Recommendation Cards: Display recommended websites and YouTube channels with their descriptions and links.
-5. Voting Component: Allows users to vote for recommended resources.
-6. Recommendation Form: Allows users to submit new websites and YouTube channels.
+- Registration Form: Enables public users (Content Creators / Registered Users and Promoters) to create accounts with unique email addresses and validated fields.
+- Login Form: Enables registered users and pre-configured staff roles (Customer Support Agent, Administrator, and System Owner) to sign in and access their role-specific dashboards.
+- Interest Selection: Allows users to choose or filter preferred learning topics and career categories so resource discovery stays relevant.
+- Recommendation Cards: Standardized card components (built with shared .rg-* styles) that display recommended websites and YouTube channels, descriptions, category tags, source/access indicators, action links, and vote counts.
+- Voting Component: Interactive control that allows guests (via temporary guestToken) and registered users to cast up to one vote per resource and view updated vote totals.
+- Recommendation Form: Structured submission form allowing unregistered guests and registered creators to submit new learning resource links (including websites and YouTube channels) with validation and duplicate checks.
 
-- Existing solutions are already-developed systems, tools, libraries, or services that provide functionality similar to what you need.
+#### 2.2.2. Existing Solutions & Browser Capabilities
 
-1. YouTube Data API v3 :Searches YouTube videos and channels.  
-2. JavaScript LocalStorage  Stores data in the browser.
+- Existing solutions and built-in platform capabilities refer to pre-existing tools, APIs, or browser features that provide helpful functionality without building everything from scratch—while still respecting your project's rule against heavy external frameworks:
+- YouTube Data API v3 (Optional / Reference Integration): An external service from YouTube that can help search or retrieve metadata for YouTube videos and channels (such as titles, channel details, or descriptions) when curating video resources, provided it fits your scope and API key/quota constraints without introducing external UI frameworks.
+
+Browser localStorage (Vanilla Web Storage API): A built-in browser storage feature accessed via plain JavaScript (localStorage) that stores lightweight client-side data locally in the user's browser—useful during early static/mock UI prototyping or temporary client-side state (such as UI preferences or draft/guest state), while MySQL remains the authoritative database for persisted platform records.
 
 ### 2.3. Proposed System
 #### 2.3.1. Overview
@@ -533,9 +537,6 @@ Administration & Reporting Subsystem:
 ##### 2.3.6.1. Use case Model
 
 ![Use Case](image/diagrams/use-case.png)
-
-###### 2.3.6.1.1. Use Case Description
-
 
 ##### 2.3.6.2. Activity Diagrams
 
