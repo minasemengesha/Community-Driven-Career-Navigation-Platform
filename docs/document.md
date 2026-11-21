@@ -272,7 +272,7 @@ The following reusable components are identified for the Right Guide project:
 ##### Note: 
   Requirement Gathering, Analyis and Aanlyis Modeling is all members task, we don't perform solely.
 
-### 1.9. Project Cost and Resource Estimation
+## 1.9. Project Cost and Resource Estimation
 
 For our Community-Driven Career Navigation Platform, developed as part of our university web programming course, we have structured our cost and resource estimation keeping our academic scope, less than 60-day timeline, and 6-member team in mind.
 Since this is an academic student project utilizing professional standalone tools and free deployment tiers, our direct financial expenditure is minimal, primarily covering documentation printing and binding.
@@ -290,6 +290,128 @@ To maintain a professional software engineering documentation standard, we also 
 - Commercial Equivalent: While our project is executed with a zero-budget infrastructure using free tools and volunteer student labor, a commercial equivalent of this platform would factor in standard developer man-hours and commercial hosting infrastructure fees.
 - Summary:
 Our project operates on a zero-budget software infrastructure, relying entirely on free, open-source development tools (Standalone Apache, MySQL, and VS Code extensions), free cloud hosting (InfinityFree), and our internal team collaboration, with financial expenses occurring only for final documentation and printing needs.
+
+## 1.10 Design, Engineering, and Execution Standards
+### 1.10.1 Visual Design Tokens and UI Components
+#### Visual Design Tokens
+Visual Design Tokens are named, reusable design choices—such as colors, font sizes, spacing steps, corner roundness, and subtle shadows—that define how RightGuide looks and feels. Instead of typing raw values like #1E3A8A or 16px repeatedly across different pages and stylesheets, the team gives each choice a clear, meaningful name (a token). When a token is updated in one central place, every screen that references it stays visually aligned.
+
+- Why They Matter for RightGuide: With multiple team members building pages and features across HTML, CSS, JavaScript, PHP, and MySQL, tokens prevent visual drift and make global adjustments fast and predictable.
+
+- Practical Working Model: Start with a small, essential set of tokens in a shared stylesheet layer (colors, typography scale, spacing increments, and border/status styles) so static pages, mock data views, and later dynamic templates all draw from the same single source of truth.
+
+#### UI Components
+
+UI Components are self-contained, reusable building blocks of the user interface—such as navigation bars, resource cards, vote controls, forms, badges, modals, and dashboard panels—assembled from visual design tokens and semantic structure. Rather than crafting each screen from scratch, team members assemble pages out of proven components that share predictable behavior and appearance.
+
+- Why They Matter for RightGuide: Reusable components keep learning resource listings, recommendation and voting interactions, promotion and payment verification views, and role-based dashboards consistent while reducing duplicate markup and styling effort.
+
+- Practical Working Model: Build clean, modular component patterns during static HTML/CSS work with consistent class names and clear states (default, hover/active, disabled, and feedback/status states). That way, when JavaScript, PHP, and MySQL are wired in later, dynamic data drops right into existing components without rewriting the interface.
+
+### 1.10.2 Page Structure and Layout Conventions
+
+Page structure and layout conventions define how every screen on RightGuide is organized from top to bottom so users always know where to look, and teammates can build distinct pages without inventing conflicting layouts.
+
+1. Standard Document & Page Skeleton
+Every page across RightGuide follows a predictable semantic hierarchy so assistive tools, CSS rules, and future PHP/JavaScript templates behave consistently:
+
+Top Navigation Bar (.rg-navbar): Sticky top bar containing the RightGuide brand link, primary navigation links, and account/role entry controls.
+
+Page Header / Context Band: Concise page title (<h1>), one-sentence purpose summary, and optional status badge or back/action link.
+
+Main Content Region (<main>): Houses the primary page workflow (resource directory, search/filter controls, recommendation/promotion forms, or role dashboard).
+
+Footer (.rg-footer): Contains platform copyright, key static/policy links (Terms, Privacy, Contact, Support), and a return link to the main hub.
+
+2. Layout Modes by Page Type
+Rather than forcing every screen into a single mold, RightGuide uses three clear layout patterns:
+
+Discovery & Feed Layout (Home / Browse / Search):
+
+Top navigation + search/filter bar + optional duplicate-match prompt banner.
+
+Responsive card grid (1 column on small screens, 2 columns on tablets, 3 columns on desktop) for learning websites and YouTube channels, with featured/promoted cards clearly distinguished.
+
+Task & Form Layout (Recommend / Request Topic / Promote / Auth):
+
+Focused single-column container (max-width: 680px–760px) centered in the viewport to minimize distractions during data entry, duplicate checks, or payment screenshot uploads.
+
+Role Dashboard Layout (Creator, Promoter, Support, Admin, Owner):
+
+Clear summary metrics or internal notification/ticket/moderation queues paired with structured tables or card lists and status badges (Pending, Approved, Unsuccessful)—using internal dashboard views rather than external email or live chat.
+
+3. Container Width, Grid & Responsive Rules
+Max Content Width: Constrain main content wrappers to --container-max (1200px) with horizontal side padding (--space-4 on mobile, --space-6 on wider screens) so lines and cards remain easy to scan.
+
+Spacing Rhythm: Separate major page sections with consistent vertical gaps (--space-6 to --space-8) and internal card/form spacing using --space-3 and --space-4.
+
+Responsive Breakpoints: Design mobile-first so navigation wraps or stacks cleanly on narrow screens and grids expand smoothly on tablet (≥ 768px) and desktop (≥ 1024px) viewports without horizontal overflow.
+
+Lightweight & Scannable: Keep page sections clean, avoid heavy visual clutter, and keep layouts straightforward so pages load fast and stay easy to maintain as JavaScript, PHP, and MySQL are layered in.
+
+4. Handoff Rules for Static-to-Dynamic Transition
+Keep Layout Wrappers Stable: Teammates building static HTML/CSS should name layout containers clearly (for example, layout-pages.css for page-level grids and shells) while keeping .rg-* components from tokens.css untouched.
+
+Design for Dynamic Injection: Leave clean parent containers (such as a card grid wrapper or list body) where JavaScript mock data or PHP loops can render items without changing outer page structure.
+
+Guard Relative Paths: Keep folder names clean and consistent across subdirectories (such as pages/static-pages/, pages/authentication-pages/, pages/resources-pages/, and pages/controller-pages/) so relative asset and page links do not break when files move or when PHP includes are introduced.
+
+### 1.10.3 Language, Terminology, and Label Standards
+Clear, consistent language keeps RightGuide easy to read for users and prevents confusion among team members writing HTML, JavaScript, PHP, and MySQL. When multiple people build different pages and workflows under a tight timeline, inconsistent wording—such as calling the same status Pending on one page and In Review on another—creates unnecessary bugs and rework.
+
+1. Primary Language and Tone
+Primary Interface Language: Standardize the UI, labels, messages, and documentation in clear, plain English (lang="en"), keeping localization out of the current scope unless future expansion justifies it.
+
+Tone and Clarity: Use direct, supportive, and easy-to-scan wording. Keep instructions concise, avoid jargon in user-facing text, and state security boundaries clearly (such as never asking users to share passwords or sensitive financial details).
+
+2. Standardized Terminology Across Code and Docs
+Platform & Content Terms: Refer to the system consistently as RightGuide (full name: Community-Driven Career Navigation Platform), and refer to curated items consistently as career resources or learning resources (covering websites and YouTube channels).
+
+Roles & Access Terms: Use exact, consistent names for user roles and access states across UI labels, documentation, and code—such as Guest (including temporary guest token actions), Registered User, Creator, Promoter, Support, Admin, and Owner.
+
+Workflow & System Terms: Keep workflow labels aligned with system behavior—such as internal notifications (dashboard alerts rather than external automated emails) and support tickets / inquiries (asynchronous requests rather than live chat).
+
+3. Status Badges, Buttons, and Navigation Labels
+Standardized Status Terms: Use uniform status labels across badges, tables, and dashboards—such as Pending, Approved, and Unsuccessful (or Rejected where already defined in your rules)—paired with matching semantic badge classes (.rg-badge--warning, .rg-badge--success, .rg-badge--danger, .rg-badge--info).
+
+Action & Navigation Labels: Keep button and link labels action-oriented and consistent across pages (for example, Browse, Recommend, Promotions, Support, Sign In, Vote, and Submit).
+
+Capitalization & Formatting: Use Sentence case for headings, labels, alerts, and buttons (e.g., Frequently asked questions, Contact support, Return to RightGuide home) rather than mixing random title casing and all-caps across screens.
+
+4. Practical Rules for the Team
+Match UI Labels to Data Values: Keep display text and underlying status/category values predictable so JavaScript and PHP templates do not need awkward translation maps.
+
+Check Copy Before Merging: During page reviews, verify that new buttons, badges, and headings use existing RightGuide terms instead of inventing synonyms.
+
+### 1.10.4 Shared Data Schema, Naming Conventions, and Access Permissions
+Agreeing on a shared data structure, naming rules, and permission boundaries before full parallel development prevents mismatched fields, broken links, and unauthorized actions across RightGuide. When multiple teammates build frontend views, JavaScript mock logic, PHP endpoints, and MySQL tables under a tight timeline, consistency in these three areas keeps integration predictable.   1. Shared Data Model & Schema AlignmentCore Entities & Identifiers: Align entity and field names across documentation, mock data, and MySQL tables—such as users/roles, career resources (websites and YouTube channels), votes, recommendations/topic requests, promotions/payment proofs, internal notifications, and support tickets—using clear primary and foreign keys.Guest Token & State Tracking: Clearly separate passive browsing from token-based guest actions (such as temporary guest tokens used for voting or recommending without forcing full registration) and record explicit workflow states (such as Pending, Approved, and Unsuccessful) rather than leaving statuses implicit.Duplicate Handling & Validation: Define unique identifiers or normalization checks (such as matching URLs or normalized titles) and enforce server-side validation so duplicate resources or incomplete submissions are caught cleanly.2. Naming Conventions Across Code and FilesFiles & Folders: Use lowercase kebab-case for files and folders (for example, tokens.css, layout-pages.css, support.html, and static-pages/), and keep directory names free of typos so relative paths stay reliable.CSS & Markup: Keep shared design-token variables and reusable component classes prefixed cleanly (such as --color-*, --space-*, and .rg-*), and use data-* attributes or dedicated JS hooks rather than tying JavaScript logic directly to visual layout classes.Database, PHP & JS Identifiers: Use consistent, descriptive names (snake_case for MySQL columns/tables and consistent field names across JSON/JS/PHP payloads) so the same concept is never named three different ways across layers.3. Role-Based Access Permissions & AuditabilityLeast-Privilege Access: Explicitly define what each role—Guest, Registered User, Creator, Promoter, Support, Admin, and Owner—can view, create, update, or approve, and enforce authorization checks on the server rather than relying only on hiding UI buttons.Scope-Aligned Workflows: Keep permissions aligned with project rules—such as internal dashboard notifications (rather than external automated email), asynchronous support tickets (rather than live chat), and manual payment screenshot verification by authorized staff.Basic Auditability: Track key state changes—such as who approved or rejected a promotion, ticket, or resource, and when—so reviews and accountability remain clear without overcomplicating the system.
+
+### 1.10.5 Delivery Sequence, MVP Scope, and Quality Assurance Rules
+A clear delivery sequence, bounded MVP scope, and practical quality assurance rules keep the RightGuide team focused on shipping a reliable, cohesive platform on schedule. Working incrementally—building static HTML/CSS pages first before layering in JavaScript, PHP, and MySQL—reduces integration risk and keeps everyone aligned across both documentation and code.
+
+1. Staged Delivery Sequence
+Stage 1 — Static UI & Shared Styling: Build core pages and shared stylesheets (tokens.css and layout-pages.css) using .rg-* components and mobile-first responsive layouts.
+
+Stage 2 — Mock Interactivity & Screen Flows: Layer in client-side mock data and interactive UI behaviors (such as search/filter views, voting/recommendation flows, duplicate prompts, and role dashboard layouts) while keeping markup and class names stable.
+
+Stage 3 — Backend Integration (PHP & MySQL): Connect forms, authentication/role workflows, promotion/payment proof uploads, internal notifications, and support tickets to PHP endpoints and the MySQL schema defined in 1.10.4.
+
+Stage 4 — End-to-End Verification & Polish: Consolidate fixes, verify cross-page navigation and permissions, and finalize documentation alignment ahead of deadlines.
+
+2. MVP Scope Discipline
+Prioritize Core Value First: Focus MVP effort on browsing and discovering career resources (websites and YouTube channels), core voting/recommendation and topic-request workflows, essential authentication/role views, and core promotion/support flows.
+
+Guard Against Scope Creep: Defer non-essential enhancements or extra visual polish until core flows work end-to-end, and keep interactions aligned with project rules (such as internal notifications rather than external email automation, and asynchronous support requests rather than live chat).
+
+Maintain Single-Source Consistency: Ensure new screens or adjustments update tokens.css, layout-pages.css, terminology, and data/permission rules together rather than introducing one-off exceptions.
+
+3. Quality Assurance & Testing Rules
+Visual & Responsive Checks: Verify pages across mobile, tablet, and desktop widths for layout alignment, readable contrast, working relative paths (../../css/, ../...), and consistent .rg-* component styling.
+
+Functional & Role Boundary Checks: Test form validation, duplicate resource checks, guest token vs. authenticated role actions, status transitions (Pending, Approved, Unsuccessful), and server-side permission enforcement.
+
+Pre-Merge Review Checklist: Confirm clean folder/file naming (kebab-case, no typos), no hardcoded style values bypassing design tokens, and clear error/empty states before merging changes into the shared repository.
+
 # Chapter Two: Requirement Analysis and Specifications
 ## 2.1. Overview
 
