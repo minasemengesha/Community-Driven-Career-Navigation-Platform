@@ -322,8 +322,84 @@ The following reusable components are identified for the Right Guide project:
 
 ### 2.3. Proposed System
 #### 2.3.1. Overview
+
+A community-driven career exploration platform is a structured web-based learning hub designed to systematically collect, rate, and recommend high-quality learning resources through community engagement. It features a frictionless lazy verification method for guests, dual-track recommendations supported by a creative point-reward system, and transparent tiered free promotion processes supported by manual verification workflows. Combining intelligent duplicate detection, robust content moderation and dedicated administrative controls, the platform provides a reliable, secure and user-centric ecosystem for effective career exploration.
+
 #### 2.3.2. Business Rule
+
+
 #### 2.3.3. Functional Requirements
+
+1. Authentication & Access Control Subsystem
+
+- FR-01: User Registration
+The system shall allow public users (Registered User/Content Creator and Promoter) to create accounts.
+
+- FR-02: Pre-configured Staff & Administrative Access
+The system shall provide secure system access for pre-configured administrative roles (Customer Support Agent, Administrator, and System Owner) through direct authentication (Login) without requiring public registration.
+
+- FR-03: System User Authentication
+The system shall authenticate registered actors (Registered User, Promoter, Customer Support Agent, Administrator, and System Owner) using secure session management and password verification (Login).
+
+- FR-04: Password Recovery
+The system shall allow registered account holders to recover access to their accounts via password reset (RecoverPassword).
+
+- FR-05: On-Demand Guest Authentication
+The system shall automatically generate a temporary guestToken (Guest_Authentication) only when an unregistered guest initiates a Vote or Recommend action, preventing multiple submissions while keeping general browsing unauthenticated.
+
+2. Content Discovery & Interaction Subsystem
+
+- FR-06: Dynamic Resource Browsing
+The system shall allow Guest Users and Registered Users to browse curated lists of educational resources (Browse).
+
+- FR-07: Smart Resource Search
+The system shall allow users to search for educational resources by keywords or links (SearchResource) and prompt users to vote on existing entries to prevent duplicates.
+
+- FR-08: Resource Recommendation
+The system shall allow unregistered guests (via Guest_Authentication) and registered content creators to submit new resource links (Recommend).
+
+- FR-09: Community Voting
+The system shall allow guests and registered users to vote on resources (Vote), enforcing a maximum of one vote per resource per user or guestToken.
+
+- FR-10: Topic Request Submission
+The system shall allow registered users to submit requests for new technical learning topics (Request_Title).
+
+- FR-11: Static Page Navigation
+The system shall display informational pages including About, Help, and Contact (View_Static_Pages) to all platform visitors.
+
+3. Points & Reward Subsystem
+
+- FR-12: Points Management & Rewards
+The system shall calculate, award, and manage reward points (Manage_Points) for registered creators upon approval of their recommendations, unlocking options for free promotion redemption.
+
+4. Monetization & Support Subsystem
+
+- FR-13: Paid Promotion Submission
+The system shall allow promoters to submit ad placement requests and upload payment transfer screenshots (Promote).
+
+- FR-14: Promotion Tracking
+The system shall allow promoters to track the real-time review status of their ad submissions (Track_Promotion).
+
+- FR-15: Manual Payment Verification
+The system shall allow Customer Support Agents to inspect payment screenshots and verify transactions (Verify_Payment).
+
+5. Administration, Moderation & Reporting Subsystem
+
+- FR-16: Content Moderation
+The system shall allow Administrators to review, edit, approve, reject, rank, or delete submitted resource links (Manage_Content).
+
+- FR-17: Recommendation Organization
+The system shall group duplicate URL submissions in the Admin dashboard and display total user recommendation counts (Organize_Recommendations).
+
+- FR-18: Announcement Management
+The system shall allow Administrators to publish and manage popup announcements and featured promotions on main pages (Announcement).
+
+- FR-19: System Notifications
+The system shall dispatch internal alerts and updates (Notify) regarding payment approvals, content status, or account actions.
+
+- FR-20: System Owner Reporting
+The system shall provide the System Owner with analytical reports summarizing platform revenue, performance metrics, user growth, and top recommendations (Report).
+
 #### 2.3.4. Non-Functional Requirements
 #### 2.3.5. Actor and Use case Identification
 #### 2.3.6. System Model
