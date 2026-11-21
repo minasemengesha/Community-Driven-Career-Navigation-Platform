@@ -262,7 +262,23 @@ While the Community-Driven Career Navigation Platform is strategically structure
 | 49  | Customer Support      | Assistance provided to customers or users concerning platform services, including promotion-related questions and complaints. |
 
 ### 1.6. Development Tools
+
+- Frontend - Html, CSS, and Javascirpt
+- Backend  - PHP
+- Database - MySQl
+- Documention - VS Code
+
 ### 1.7. Team Organization
+
+- Minase Megesha   - Project Management & Documentation
+- MILLION MERKINE  - Backend Development & API
+- Helen Eshetu     - Database Design & Management
+- Honelign Tekele  - Frontend Development & UI Testing
+- Merihun Meshesha - Integration, Deployment & System Testing
+- Bamlak Tadesse   - System Design & Design Modeling
+##### Note: 
+  Requirement Gathering, Analyis and Aanlyis Modeling is all members task, we don't perform solely.
+
 ### 1.8. Project Cost and Resource Estimation
 ## Chapter Two: Requirement Analysis and Specifications
 ### 2.1. Description of the Current System
