@@ -13,6 +13,7 @@
 ## Executive Summary
 
 
+
 ## Chapter One: Introduction
 ### 1.1 Understanding the Problem Background and Knowing the Exact Problem
 #### 1.1.1. Background of the Problem
@@ -276,7 +277,7 @@ While the Community-Driven Career Navigation Platform is strategically structure
 - Honelign Tekele  - Frontend Development & UI Testing
 - Merihun Meshesha - Integration, Deployment & System Testing
 - Bamlak Tadesse   - System Design & Design Modeling
-##### Note: 
+###### Note: 
   Requirement Gathering, Analyis and Aanlyis Modeling is all members task, we don't perform solely.
 
 ### 1.8. Project Cost and Resource Estimation
@@ -299,6 +300,7 @@ To maintain a professional software engineering documentation standard, we also 
 - Commercial Equivalent: While our project is executed with a zero-budget infrastructure using free tools and volunteer student labor, a commercial equivalent of this platform would factor in standard developer man-hours and commercial hosting infrastructure fees.
 - Summary:
 Our project operates on a zero-budget software infrastructure, relying entirely on free, open-source development tools (Standalone Apache, MySQL, and VS Code extensions), free cloud hosting (InfinityFree), and our internal team collaboration, with financial expenses occurring only for final documentation and printing needs.
+
 
 ## Chapter Two: Requirement Analysis and Specifications
 ### 2.1. Description of the Current System
@@ -327,6 +329,48 @@ A community-driven career exploration platform is a structured web-based learnin
 
 #### 2.3.2. Business Rule
 
+- BR-01 — User Registration Rule (FR-01, FR-02): Public users (Content Creators / Registered Users and Promoters) register with unique email addresses and valid credentials, whereas staff roles (Customer Support Agent, Administrator, and System Owner) are pre-configured by the system and do not use public registration.
+- BR-02 — User Login & Session Rule (FR-02, FR-03, NFR-03, NFR-10): All registered and pre-configured users must authenticate with valid credentials to access their role-specific dashboard and permitted actions.
+- BR-03 — Password Recovery Rule (FR-04): Registered account holders can initiate password recovery through their registered email address without exposing sensitive account data.
+- BR-04 — Public Browsing & Static Pages Rule (FR-06, FR-11, NFR-08, NFR-14): Unauthenticated visitors may freely browse curated educational resources and view static informational pages (such as About, Help/Support, and Contact) as well as public announcements/pop-ups.
+- BR-05 — Smart Search & Duplicate Prevention Rule (FR-07, FR-17): Searching by keyword or URL encourages users to vote on existing matching entries rather than submitting duplicate resources, while duplicate URL submissions are grouped in the Administrator dashboard with total recommendation counts.
+- BR-06 — On-Demand Guest Authentication Rule (FR-05, FR-08, FR-09): A temporary guestToken is generated automatically only when an unregistered guest initiates a vote or recommendation action, preventing repeated spam submissions while keeping general browsing frictionless.
+- BR-07 — Single-Vote Enforcement Rule (FR-09, NFR-09): Both guests (via guestToken) and authenticated users are restricted to a maximum of one vote per resource.
+- BR-08 — Dual-Track Recommendation Rule (FR-08, FR-12): Both unregistered guests and registered content creators can recommend resource links, but only approved submissions made by registered creators earn reward points.
+- BR-09 — Topic Request Rule (FR-10, NFR-12): Registered users can submit requests for new technical learning topics to expand platform categories over time.
+- BR-10 — Points Accumulation & 20-Point Promotion Qualification Rule (FR-12, NFR-09): Approved creator recommendations accrue points; a minimum threshold of 20 points is required to qualify for promotional opportunities. Points below 20 cannot be redeemed for promotions.
+- BR-11 — Promotion Submission & Payment Methods Rule (FR-12, FR-13, FR-14, NFR-15): Promoters and eligible users (with at least 20 points) may request promotional placements by uploading valid payment transfer screenshots (subject to file type/size validation) or redeeming qualifying points (minimum 20 points). Promoters can track real-time promotion status, and authorized support/admin staff manually verify payment screenshots and update statuses.
+- BR-12 — Support & Ticketing Rule (FR-14, FR-15, NFR-04): Users and promoters use structured support channels/ticketing for account, resource, and promotion inquiries without sharing passwords, full card numbers, CVVs/security codes, or one-time verification codes.
+- BR-13 — Content Moderation & Ranking Rule (FR-16, FR-17, NFR-18, NFR-09): Administrators review, edit, approve, reject, rank, organize, or remove resource links and manage main-page announcements/featured placements, with key moderation and approval actions logged for accountability.
+- BR-14 — Internal Notifications Rule (FR-17, FR-19, NFR-18): The system delivers internal alerts/notifications for content approvals/rejections, point milestones (including reaching the 20-point promotion threshold), topic updates, and promotion/payment verification outcomes.
+- BR-15 — System Owner Analytics & Reporting Rule (FR-20, NFR-10, NFR-18): Only the System Owner can access comprehensive analytical reports covering platform revenue, performance metrics, user growth, and top-recommended resources.
+- BR-16 — Verification of the Promoter's Source (FR-13, FR-15, FR-16, NFR-04, NFR-15, NFR-16)
+Before a promoted placement goes live, the promoted source and accompanying payment proof must pass verification:
+    - Sub-points:
+        - Promoted Target / Source Check: Verify the destination URL or channel being promoted is reachable, safe, and aligned with educational/career navigation standards.
+        - Payment & Point Eligibility Check: Confirm either (a) the uploaded payment screenshot is valid, legible, and matches the required fee/amount, or (b) the user holds at least 20 points for point-based promotion eligibility.
+        - Status & Audit Decision: Approve, reject, or mark unsuccessful with clear status tracking and activity records.
+        - Key Criteria: Valid non-broken link; safe/appropriate content; accurate payment proof (or $\ge 20$ points); clear file format/size compliance; no sensitive financial credentials exposed.
+- BR-17 — Verification of the Source Referred by a User (FR-07, FR-08, FR-12, FR-16, FR-17, NFR-09)
+Before a user- or creator-submitted resource is published or rewarded with points, moderators verify the referred source:
+    - Sub-points:
+        - Uniqueness & Duplicate Check: Check whether the URL or resource already exists or matches a grouped duplicate entry in the moderation queue.
+        - Relevance & Quality Check: Confirm the resource provides genuine educational or career-navigation value matching its selected topic/category.
+        - Creator Point Eligibility: Award points only if the submission came from a registered creator track, met quality rules, and was approved by an administrator.
+        - Key Criteria: Active, accessible URL/channel; no malware, spam, or misleading clickbait; accurate category/topic match; non-duplicate (or properly consolidated).
+- BR-18 — Policy Governing Verification of Any Source (FR-06, FR-08, FR-13, FR-16, NFR-09, NFR-14)
+All sources—whether organically recommended or submitted for promotion—are governed by a uniform verification policy across every supported source category:
+    - Supported Source Categories:
+        - Free Educational Sites (open courses, documentation, tutorials, and free learning platforms)
+        - Paid Educational Sites (subscription platforms, paid courses, or paid bootcamps—clearly labeled as paid/access-restricted where applicable)
+        - Websites Providing Such Content (curated hubs, blogs, portals, or reference sites offering educational or career guidance materials)
+        - Free Video-Based YouTube Channels (publicly accessible educational/career YouTube channels without paid membership requirements)
+        - Paid Video-Based YouTube Channels (YouTube channels relying on paid memberships, paid courses, or gated video content)
+        - Createfite YouTube Channel (verified/official Createfite YouTube channel content, subject to standard accuracy, relevance, and policy checks)
+    - Sub-points:
+        - Safety, Legality & Accuracy Baseline: Every source must be free of harmful/illegal material, deceptive redirects, or blatantly false instructional claims.- Access & Cost Transparency: Clearly distinguish free vs. paid/subscription resources so learners know what to expect before clicking.
+        - Category & Format Alignment: Ensure web vs. video/YouTube sources are tagged accurately and organized cleanly for discovery.
+        - Key Criteria: Reachable destination; safe and ethical content; clear free/paid labeling; accurate topic/channel classification; consistent enforcement across all six source categories.
 
 #### 2.3.3. Functional Requirements
 
@@ -500,25 +544,49 @@ Administration & Reporting Subsystem:
 
 ![Class Diagram](image/diagrams/class-diagram.png)
 
+
 ## Chapter Three: Database Design
 ### 3.1. Conceptual Database Design of the New System 
 #### 3.1.1. Entities identification and Description 
+
+
 #### 3.1.2. Attributes identification and description 
+
+
 #### 3.1.3. Relationship identification and description 
+
+
 #### 3.1.4. ER Diagrams
+
+
 ### 3.2. Logical Database Design of the New System 
 #### 3.2.1. ER to Table Mapping 
-#### 3.2.2. Validate Model using Normalization    
+
+
+#### 3.2.2. Validate Model using Normalization  
 ##### 3.2.2.1. First Normal Form (1NF)  
+
+
 ##### 3.2.2.2. Second Normal Form (2NF) 
+
+
 ##### 3.2.2.3. Third Normal form (3NF)  
+
+
 #### 3.2.3. Relational Schema with Referential Integrity after normalization 
-### 3.3. Physical Database Design of the New System 
-#### 3.3.1. Physical Design Strategy 
-## Chapter Four: System Design 
+
+ 
+
+## Chapter Four: System Design
 ### 4.1. Introduction
+
+
 ### 4.2. Software Architecture
+
+
 #### 4.2.1. Subsystem Decomposition
+
+
 #### 4.2.2. Component Diagram 
 
 
@@ -673,9 +741,18 @@ Backend Endpoint (PHP): Tells backend developers which PHP file processes the re
 Database Table(s): Shows which MySQL tables are read or updated (Chapter 3).
 Test ID & Status: Confirms how and when the feature is verified before final submission (Chapter 5).
 
+
 ## Chapter Five: Implementation and Testing 
 ### 5.1. Test Procedure
+
+
 ### 5.2. User Manual Preparation
+
+
+
 ## Chapter Six: Conclusion and Recommendation 
 ### 6.1. Conclusion 
+
+
 ### 6.2. Recommendation
+
