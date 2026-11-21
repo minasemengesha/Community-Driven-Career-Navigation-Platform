@@ -439,11 +439,67 @@ The system shall provide the System Owner with analytical reports summarizing pl
 18. Activity Tracking: The system should maintain records of important administrative activities, including content management, payment verification, and promotion approval.
 
 #### 2.3.5. Actor and Use case Identification
+
+1. Actor Identification
+- Guest User: An unregistered visitor who can freely browse and search the platform; the system automatically generates a temporary guestToken only when they initiate a vote or resource recommendation.
+
+- Registered User / Content Creator: An authenticated user who can register, log in, vote, submit resource recommendations, request new topics, and accumulate reward points.
+
+- Promoter: An authenticated user who submits paid promotion requests and uploads transaction confirmation screenshots.
+
+- Customer Support Agent: A pre-configured staff member who logs in to inspect uploaded payment screenshots and manually verify transactions.
+
+- Administrator: A pre-configured staff member responsible for moderating content, organizing recommendations, managing announcements, and dispatching notifications.
+
+- System Owner: A high-level stakeholder who logs in exclusively to view analytical reports covering platform revenue, user growth, and performance metrics.
+
+2. Use Case Identification
+Authentication & Access Subsystem:
+
+- Register: Allows public users and promoters to create new accounts.
+- Login: Authenticates registered users, promoters, and pre-configured staff roles.
+- Recover Password: Enables account recovery via email verification.
+- Guest Authentication: Automatically assigns a temporary token on-demand to prevent spam during guest voting and recommendations.
+
+Content Discovery & Interaction Subsystem:
+
+- Browse: Public exploration of categorized educational resources.
+- Search Resource: Keyword and link-based lookup with duplicate-prevention prompts.
+- Recommend: Dual-track submission of new learning links by guests and registered creators.
+- Vote: Community voting restricted to one vote per user or guestToken per resource.
+- Request Title: Submission of user suggestions for new learning topics.
+- View Static Pages: Access to informational pages (About, Help, Contact) and announcement popups.
+
+Monetization & Support Subsystem:
+
+- Promote: Submission of ad placement requests and payment screenshots.
+- Track Promotion: Real-time monitoring of promotion request statuses.
+- Verify Payment: Manual inspection and approval of payment proof by support agents.
+
+Administration & Reporting Subsystem:
+
+- Manage Content: Review, editing, approval, and deletion of submitted educational links.
+- Organize Recommendations: Automated grouping of identical URLs with total user recommendation counts.
+- Manage Points: Calculation and tracking of reward points for verified creator contributions.
+- Notify: Internal alert generation for account and transaction updates.
+- Announcement: Publishing of platform-wide popup announcements and featured promotions.
+- Report: Generation of comprehensive financial and performance analytics for the system owner.
+
 #### 2.3.6. System Model
 ##### 2.3.6.1. Use case Model
+
+![Use Case](image/diagrams/use-case.png)
+
 ###### 2.3.6.1.1. Use Case Description
+
+
 ##### 2.3.6.2. Activity Diagrams
+
+
 ##### 2.3.6.3. Class Diagram
+
+![Class Diagram](image/diagrams/class-diagram.png)
+
 ## Chapter Three: Database Design
 ### 3.1. Conceptual Database Design of the New System 
 #### 3.1.1. Entities identification and Description 
