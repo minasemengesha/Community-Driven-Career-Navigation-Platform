@@ -401,6 +401,43 @@ The system shall dispatch internal alerts and updates (Notify) regarding payment
 The system shall provide the System Owner with analytical reports summarizing platform revenue, performance metrics, user growth, and top recommendations (Report).
 
 #### 2.3.4. Non-Functional Requirements
+
+1. Performance: The system should load pages within 3 seconds under normal usage and display search results within 5 seconds.
+
+2. Usability: The system should provide a simple and user-friendly interface so users can easily browse, search, vote, and recommend educational resources.
+
+3. Security: The system should protect user accounts by storing passwords in encrypted/hashed form and preventing unauthorized access.
+
+4. Privacy: The system should protect users' personal information, payment details, and uploaded payment screenshots from unauthorized users.
+
+5. Reliability: The system should process user requests correctly and display clear success or failure messages.
+
+6. Availability: The system should be accessible whenever the hosting server is operating and should display an appropriate message during service interruptions.
+
+7. Compatibility: The system should work properly on commonly used browsers such as Google Chrome, Firefox, and Microsoft Edge.
+
+8. Responsiveness: The system should adjust its layout to work properly on desktop computers, tablets, and mobile phones.
+
+9. Data Integrity: The system should maintain accurate information about educational resources, votes, reviews, rankings, and reward points.
+
+10. Access Control: The system should provide different access permissions for normal users, administrators, and customer support agents.
+
+11. Maintainability: The system should be organized into manageable modules so developers can easily fix errors and update system features.
+
+12. Scalability: The system should allow additional users, learning topics, educational resources, and recommendations as the platform grows.
+
+13. Backup and Recovery: The system should support regular database backups and allow stored information to be restored when data is lost.
+
+14. Accessibility: The system should use readable fonts, appropriate color contrast, clear labels, and easy navigation.
+
+15. File Upload Validation: The system should validate uploaded payment screenshots by checking their file formats and file sizes.
+
+16. Payment Verification Security: Only authorized administrators or support agents should be allowed to verify payments and update payment statuses.
+
+17. Notification Reliability: The system should correctly display announcements and notifications when new topics, payment updates, or promotion updates occur.
+
+18. Activity Tracking: The system should maintain records of important administrative activities, including content management, payment verification, and promotion approval.
+
 #### 2.3.5. Actor and Use case Identification
 #### 2.3.6. System Model
 ##### 2.3.6.1. Use case Model
