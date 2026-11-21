@@ -302,7 +302,24 @@ Our project operates on a zero-budget software infrastructure, relying entirely 
 
 ## Chapter Two: Requirement Analysis and Specifications
 ### 2.1. Description of the Current System
+
+
 ### 2.2. Reusable Components and Existing Solutions
+
+The following reusable components are identified for the Right Guide project:
+
+1. Registration Form: Allows users to create accounts.
+2. Login Form: Allows registered users to access their accounts.
+3. Interest Selection: Allows users to select their preferred learning categories.
+4. Recommendation Cards: Display recommended websites and YouTube channels with their descriptions and links.
+5. Voting Component: Allows users to vote for recommended resources.
+6. Recommendation Form: Allows users to submit new websites and YouTube channels.
+
+- Existing solutions are already-developed systems, tools, libraries, or services that provide functionality similar to what you need.
+
+1. YouTube Data API v3 :Searches YouTube videos and channels.  
+2. JavaScript LocalStorage  Stores data in the browser.
+
 ### 2.3. Proposed System
 #### 2.3.1. Overview
 #### 2.3.2. Business Rule
