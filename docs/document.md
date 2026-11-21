@@ -294,6 +294,7 @@ Our project operates on a zero-budget software infrastructure, relying entirely 
 ## 1.10 Design, Engineering, and Execution Standards
 ### 1.10.1 Visual Design Tokens and UI Components
 #### Visual Design Tokens
+
 Visual Design Tokens are named, reusable design choices—such as colors, font sizes, spacing steps, corner roundness, and subtle shadows—that define how RightGuide looks and feels. Instead of typing raw values like #1E3A8A or 16px repeatedly across different pages and stylesheets, the team gives each choice a clear, meaningful name (a token). When a token is updated in one central place, every screen that references it stays visually aligned.
 
 - Why They Matter for RightGuide: With multiple team members building pages and features across HTML, CSS, JavaScript, PHP, and MySQL, tokens prevent visual drift and make global adjustments fast and predictable.
@@ -313,32 +314,32 @@ UI Components are self-contained, reusable building blocks of the user interface
 Page structure and layout conventions define how every screen on RightGuide is organized from top to bottom so users always know where to look, and teammates can build distinct pages without inventing conflicting layouts.
 
 1. Standard Document & Page Skeleton
-Every page across RightGuide follows a predictable semantic hierarchy so assistive tools, CSS rules, and future PHP/JavaScript templates behave consistently:
+- Every page across RightGuide follows a predictable semantic hierarchy so assistive tools, CSS rules, and future PHP/JavaScript templates behave consistently:
 
-Top Navigation Bar (.rg-navbar): Sticky top bar containing the RightGuide brand link, primary navigation links, and account/role entry controls.
+- Top Navigation Bar (.rg-navbar): Sticky top bar containing the RightGuide brand link, primary navigation links, and account/role entry controls.
 
-Page Header / Context Band: Concise page title (<h1>), one-sentence purpose summary, and optional status badge or back/action link.
+- Page Header / Context Band: Concise page title (<h1>), one-sentence purpose summary, and optional status badge or back/action link.
 
-Main Content Region (<main>): Houses the primary page workflow (resource directory, search/filter controls, recommendation/promotion forms, or role dashboard).
+- Main Content Region (<main>): Houses the primary page workflow (resource directory, search/filter controls, recommendation/promotion forms, or role dashboard).
 
-Footer (.rg-footer): Contains platform copyright, key static/policy links (Terms, Privacy, Contact, Support), and a return link to the main hub.
+- Footer (.rg-footer): Contains platform copyright, key static/policy links (Terms, Privacy, Contact, Support), and a return link to the main hub.
 
 2. Layout Modes by Page Type
 Rather than forcing every screen into a single mold, RightGuide uses three clear layout patterns:
 
-Discovery & Feed Layout (Home / Browse / Search):
+- Discovery & Feed Layout (Home / Browse / Search):
 
-Top navigation + search/filter bar + optional duplicate-match prompt banner.
+  - Top navigation + search/filter bar + optional duplicate-match prompt banner.
 
-Responsive card grid (1 column on small screens, 2 columns on tablets, 3 columns on desktop) for learning websites and YouTube channels, with featured/promoted cards clearly distinguished.
+  - Responsive card grid (1 column on small screens, 2 columns on tablets, 3 columns on desktop) for learning websites and YouTube channels, with featured/promoted cards clearly distinguished.
 
-Task & Form Layout (Recommend / Request Topic / Promote / Auth):
+- Task & Form Layout (Recommend / Request Topic / Promote / Auth):
 
-Focused single-column container (max-width: 680px–760px) centered in the viewport to minimize distractions during data entry, duplicate checks, or payment screenshot uploads.
+  - Focused single-column container (max-width: 680px–760px) centered in the viewport to minimize distractions during data entry, duplicate checks, or payment screenshot uploads.
 
-Role Dashboard Layout (Creator, Promoter, Support, Admin, Owner):
+- Role Dashboard Layout (Creator, Promoter, Support, Admin, Owner):
 
-Clear summary metrics or internal notification/ticket/moderation queues paired with structured tables or card lists and status badges (Pending, Approved, Unsuccessful)—using internal dashboard views rather than external email or live chat.
+  - Clear summary metrics or internal notification/ticket/moderation queues paired with structured tables or card lists and status badges (Pending, Approved, Unsuccessful)—using internal dashboard views rather than external email or live chat.
 
 3. Container Width, Grid & Responsive Rules
 Max Content Width: Constrain main content wrappers to --container-max (1200px) with horizontal side padding (--space-4 on mobile, --space-6 on wider screens) so lines and cards remain easy to scan.
@@ -387,6 +388,7 @@ Check Copy Before Merging: During page reviews, verify that new buttons, badges,
 Agreeing on a shared data structure, naming rules, and permission boundaries before full parallel development prevents mismatched fields, broken links, and unauthorized actions across RightGuide. When multiple teammates build frontend views, JavaScript mock logic, PHP endpoints, and MySQL tables under a tight timeline, consistency in these three areas keeps integration predictable.   1. Shared Data Model & Schema AlignmentCore Entities & Identifiers: Align entity and field names across documentation, mock data, and MySQL tables—such as users/roles, career resources (websites and YouTube channels), votes, recommendations/topic requests, promotions/payment proofs, internal notifications, and support tickets—using clear primary and foreign keys.Guest Token & State Tracking: Clearly separate passive browsing from token-based guest actions (such as temporary guest tokens used for voting or recommending without forcing full registration) and record explicit workflow states (such as Pending, Approved, and Unsuccessful) rather than leaving statuses implicit.Duplicate Handling & Validation: Define unique identifiers or normalization checks (such as matching URLs or normalized titles) and enforce server-side validation so duplicate resources or incomplete submissions are caught cleanly.2. Naming Conventions Across Code and FilesFiles & Folders: Use lowercase kebab-case for files and folders (for example, tokens.css, layout-pages.css, support.html, and static-pages/), and keep directory names free of typos so relative paths stay reliable.CSS & Markup: Keep shared design-token variables and reusable component classes prefixed cleanly (such as --color-*, --space-*, and .rg-*), and use data-* attributes or dedicated JS hooks rather than tying JavaScript logic directly to visual layout classes.Database, PHP & JS Identifiers: Use consistent, descriptive names (snake_case for MySQL columns/tables and consistent field names across JSON/JS/PHP payloads) so the same concept is never named three different ways across layers.3. Role-Based Access Permissions & AuditabilityLeast-Privilege Access: Explicitly define what each role—Guest, Registered User, Creator, Promoter, Support, Admin, and Owner—can view, create, update, or approve, and enforce authorization checks on the server rather than relying only on hiding UI buttons.Scope-Aligned Workflows: Keep permissions aligned with project rules—such as internal dashboard notifications (rather than external automated email), asynchronous support tickets (rather than live chat), and manual payment screenshot verification by authorized staff.Basic Auditability: Track key state changes—such as who approved or rejected a promotion, ticket, or resource, and when—so reviews and accountability remain clear without overcomplicating the system.
 
 ### 1.10.5 Delivery Sequence, MVP Scope, and Quality Assurance Rules
+
 A clear delivery sequence, bounded MVP scope, and practical quality assurance rules keep the RightGuide team focused on shipping a reliable, cohesive platform on schedule. Working incrementally—building static HTML/CSS pages first before layering in JavaScript, PHP, and MySQL—reduces integration risk and keeps everyone aligned across both documentation and code.
 
 1. Staged Delivery Sequence
