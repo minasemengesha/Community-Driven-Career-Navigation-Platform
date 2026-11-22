@@ -620,7 +620,7 @@ Page structure and layout conventions define how every screen on RightGuide is o
 
 - Page Header / Context Band: Concise page title (header one), one-sentence purpose summary, and optional status badge or back/action link.
 
-- Main Content Region (<main>): Houses the primary page workflow (resource directory, search/filter controls, recommendation/promotion forms, or role dashboard).
+- Main Content Region (main tag): Houses the primary page workflow (resource directory, search/filter controls, recommendation/promotion forms, or role dashboard).
 
 - Footer (.rg-footer): Contains platform copyright, key static/policy links (Terms, Privacy, Contact, Support), and a return link to the main hub.
 
