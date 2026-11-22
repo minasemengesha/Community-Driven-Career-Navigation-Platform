@@ -618,7 +618,7 @@ Page structure and layout conventions define how every screen on RightGuide is o
 
 - Top Navigation Bar (.rg-navbar): Sticky top bar containing the RightGuide brand link, primary navigation links, and account/role entry controls.
 
-- Page Header / Context Band: Concise page title (<h1>), one-sentence purpose summary, and optional status badge or back/action link.
+- Page Header / Context Band: Concise page title (header one), one-sentence purpose summary, and optional status badge or back/action link.
 
 - Main Content Region (<main>): Houses the primary page workflow (resource directory, search/filter controls, recommendation/promotion forms, or role dashboard).
 
