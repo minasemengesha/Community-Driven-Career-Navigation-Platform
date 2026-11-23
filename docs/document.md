@@ -547,15 +547,352 @@ Administration & Reporting Subsystem:
 
 
 ## Chapter Three: Database Design
-### 3.1. Conceptual Database Design of the New System 
-#### 3.1.1. Entities identification and Description 
 
+# 3.1 Conceptual Database Design of The new System
 
-#### 3.1.2. Attributes identification and description 
+This task has four deliverables.
 
+| Section | What you need to produce |
+|---|---|
+| 3.1.1 Entities identification and Description | Identify database entities and explain them. |
+| 3.1.2 Attributes identification and description | Identify the properties belonging to each entity. |
+| 3.1.3 Relationship identification and description | Explain how entities relate to one another. |
+| 3.1.4 ER Diagrams | Create the Entity Relationship Diagram |
 
-#### 3.1.3. Relationship identification and description 
+## 3.1.1 Entities identification and Description
 
+### A. User and identification entities
+
+| Entity | Description |
+|---|---|
+| User | Stores information about registered users of the platform. Public registration covers Registered Users/Content Creators and Promoters ; staff roles (Customer Support Agent, Administrator, System Owner) are pre-configured accounts, not publicly registered. |
+| Role | Defines the roles assignable to registered users: Content Creator, Promoter, Administrator, Customer Support Agent, and System Owner. Roles are permissions, not account types — one user may hold more than one role. |
+| GuestIdentifier | Stores the automatically generated guestToken assigned to an unregistered guest on demand — only when the guest initiates a vote or recommendation , keeping plain browsing stateless. The token is "temporary" in the sense that it is not an account and involves no registration or login — it is guest identification, not authentication. The identifier is stored persistently so the system can recognize the same guest across visits and prevent repeated recommendations of, or votes on, the same resource. |
+| User_Role (associative entity, for the logical design) | Resolves the M:N User–Role relationship into a relational form. Listed here so the mapping in 3.2.1 is not a surprise. |
+
+**Why these four?** The platform has registered and unregistered participants. Account information, role permissions, and guest identification must be stored separately. Promoter, Administrator, and Content Creator are roles, not different kinds of accounts — a single User table with role assignments is the agreed design.
+
+### B. Learning resource entities
+
+| Entity | Description |
+|---|---|
+| LearningTopic | Stores learning topics available on the platform, such as Web Development and Networking. New topics can originate from approved TopicRequest submissions |
+| ResourceCategory | Stores categories used to organize educational resources. |
+| Resource | Stores information about educational resources (titles, descriptions, URLs). A Resource can be a YouTube channel, educational website, or other learning resource. Each resource carries a free/paid access label and can carry an administrator-assigned rank and featured flag. |
+
+A Resource can represent a YouTube channel, educational website or another relevant learning resource
+
+### C. Recommendation and community entities
+
+| Entity | Description |
+|---|---|
+| Recommendation | Records educational resource recommendations submitted by guests or registered creators. |
+| Vote | Records votes submitted by users on educational resources. |
+| TopicRequest | Stores requests from users for new learning topics |
+
+### D. Promotion and payment entities
+
+| Entity | Description |
+|---|---|
+| PromotionRequest | Stores requests submitted by promoters for paid or eligible promotional services. |
+| PaymentEvidence | Stores references to transaction screenshots uploaded by promoters. |
+| PaymentVerification | Records the manual verification decision made by a Customer Support Agent. |
+| PromotionPlacement | Records the placement of approved promoted resources on the platform. |
+| PromotionComplaint | Stores complaints related to promotion services and their status. |
+
+### E. Contributor points and rewards entities
+
+| Entity | Description |
+|---|---|
+| PointTransaction | Records points allocated to registered creators for valid recommendations. |
+| RewardRedemption | Records the redemption of eligible contributor points for free promotion rewards. |
+
+### F. Platform communication entities
+
+| Entity | Description |
+|---|---|
+| Notification | Stores internal notifications generated for relevant platform activities. |
+| Announcement | Stores announcements managed by authorized administrators and displayed on the platform. |
+
+## 3.1.2 Attributes Identification and Description
+
+### A. User and identification entities
+
+#### 1. User
+
+| Attribute | Description |
+|---|---|
+| user_id (PK) | Unique identifier for each registered user. |
+| full_name | Full name of the registered user. |
+| email | Email address used by the user. |
+| password_hash | Securely hashed user password. |
+| account_status | Current status of the user's account. |
+| created_at | Date and time the account was created. |
+
+#### 2. Role
+
+| Attribute | Description |
+|---|---|
+| role_id (PK) | Unique identifier for each role. |
+| role_name | Name of the role, such as Administrator or Promoter. |
+| description | Description of the responsibilities associated with the role. |
+
+#### 3. GuestIdentifier
+
+| Attribute | Description |
+|---|---|
+| guest_id (PK) | Unique identifier for an unregistered guest. |
+| identifier_value | The automatically generated random guestToken assigned on demand |
+| created_at | Date and time the identifier was first generated. |
+| last_seen_at | Date and time of the guest's most recent recorded interaction. |
+
+### B. Learning resource entities
+
+#### 4. LearningTopic
+
+| Attribute | Description |
+|---|---|
+| topic_id (PK) | Unique identifier for each learning topic. |
+| topic_name | Name of the learning topic. |
+| description | Description of the learning topic. |
+| created_at | Date and time the topic was created. |
+
+#### 5. ResourceCategory
+
+| Attribute | Description |
+|---|---|
+| category_id (PK) | Unique identifier for each resource category. |
+| category_name | Name of the resource category. |
+| description | Description of the category. |
+
+#### 6. Resource
+
+| Attribute | Description |
+|---|---|
+| resource_id (PK) | Unique identifier for each educational resource. |
+| title | Title or name of the educational resource. |
+| description | Description of the educational resource. |
+| resource_url | Web address of the educational resource. |
+| resource_type | Type of resource, such as YouTube channel or educational website. |
+| status | Current approval or publication status. |
+| category_id (FK) | Identifies the category associated with the resource. |
+| topic_id (FK) | Identifies the associated learning topic. |
+| Created_at | Date and time the resource was added. |
+| access_type | Whether the resource is Free or Paid/subscription |
+| resource_rank | Administrator-assigned relative position of the resource within a listing |
+| is_featured | Whether the resource is selected for prominent display on main pages |
+
+### C. Recommendation and community entities
+
+#### 7. Recommendation
+
+| Attribute | Description |
+|---|---|
+| recommendation_id (PK) | Unique identifier for each recommendation. |
+| resource_id (FK) | Identifies the resource being recommended, where an existing resource has been matched. |
+| user_id (FK) | Identifies the registered creator who submitted the recommendation, if applicable. |
+| guest_id (FK) | Identifies the unregistered guest who submitted the recommendation, if applicable. |
+| submitted_title | Title of the recommended resource. |
+| submitted_url | URL of the recommended resource. |
+| description | Additional information about the recommendation. |
+| status | Current review status of the recommendation. |
+| submitted_at | Date and time the recommendation was submitted. |
+
+#### 8. Vote
+
+| Attribute | Description |
+|---|---|
+| vote_id (PK) | Unique identifier for each vote. |
+| resource_id (FK) | Identifies the educational resource receiving the vote. |
+| user_id (FK) | Identifies the registered user who voted, if applicable. |
+| guest_id (FK) | Identifies the unregistered guest who voted, if applicable. |
+| voted_at | Date and time the vote was submitted. |
+
+#### 9. TopicRequest
+
+| Attribute | Description |
+|---|---|
+| request_id (PK) | Unique identifier for each topic request. |
+| topic_name | Name of the requested learning topic. |
+| description | Explanation of the requested topic. |
+| user_id (FK) | Identifies the registered user submitting the request. |
+| status | Current status of the topic request. |
+| submitted_at | Date and time the request was submitted. |
+
+### D. Promotion and Payment Entities
+
+#### 10. PromotionRequest
+
+Stores promotion requests submitted by promoters who want their resources to be advertised on the platform.
+
+| Attribute | Description |
+|---|---|
+| promotion_request_id (PK) | Unique identifier for each promotion request. |
+| user_id (FK) | Identifies the promoter who submitted the request. |
+| resource_id (FK) | Identifies the resource requested for promotion. |
+| promotion_tier | Indicates the selected promotion package or tier. |
+| requested_at | Date and time the promotion request was submitted. |
+| Status | Current status, such as Pending, Approved or Rejected. |
+| fee_amount | The promotion fee for the selected tier; the data source for the Owner's revenue reports |
+| promotion_type | Whether the promotion is Paid (money) or Points-Based (free reward redemption) — keeps paid and point-redemption promotions distinguishable |
+
+#### 11. PaymentEvidence
+
+Stores references to transaction screenshots or other payment evidence uploaded by promoters.
+
+| Attribute | Description |
+|---|---|
+| evidence_id (PK) | Unique identifier for each payment evidence record. |
+| promotion_request_id (FK) | Identifies the promotion request associated with the payment. |
+| file_path | Stores the location or path of the uploaded transaction screenshot. |
+| uploaded_at | Date and time the payment evidence was uploaded. |
+
+#### 12. PaymentVerification
+
+Records the manual payment verification decisions made by Customer Support Agents.
+
+| Attribute | Description |
+|---|---|
+| verification_id (PK) | Unique identifier for each verification record. |
+| evidence_id (FK) | Identifies the payment evidence being reviewed. |
+| agent_id (FK) | Identifies the Customer Support Agent who performs the verification. |
+| verification_status | Indicates whether the payment is Pending, Verified or Rejected. |
+| verification_note | Stores comments or reasons related to the verification decision. |
+| verified_at | Date and time the verification decision was made. |
+
+#### 13. PromotionPlacement
+
+Records where and when an approved promoted resource is displayed on the platform.
+
+| Attribute | Description |
+|---|---|
+| placement_id (PK) | Unique identifier for each promotion placement. |
+| promotion_request_id (FK) | Identifies the approved promotion request. |
+| placement_location | Indicates where the promoted resource appears, such as the homepage. |
+| start_date | Date when the promotion placement begins. |
+| end_date | Date when the promotion placement ends. |
+| placement_status | Indicates the current status of the placement. |
+
+#### 14. PromotionComplaint
+
+Stores complaints submitted concerning promotion services.
+
+| Attribute | Description |
+|---|---|
+| complaint_id (PK) | Unique identifier for each promotion complaint. |
+| promotion_request_id (FK) | Identifies the promotion request related to the complaint. |
+| user_id (FK) | Identifies the user who submitted the complaint. |
+| complaint_description | Describes the issue or complaint. |
+| status | Indicates the current complaint status. |
+| submitted_at | Date and time the complaint was submitted. |
+
+### E. Contributor Points and Rewards Entities
+
+#### 15. PointTransaction
+
+Records points allocated to registered creators for valid recommendations and other eligible contribution activities.
+
+| Attribute | Description |
+|---|---|
+| transaction_id (PK) | Unique identifier for each point transaction. |
+| user_id (FK) | Identifies the registered creator receiving the points. |
+| recommendation_id (FK) | Identifies the valid recommendation associated with the points. |
+| points | Number of points allocated. |
+| transaction_type | Indicates whether points are awarded or deducted. |
+| description | Explains the reason for the point transaction. |
+| created_at | Date and time the point transaction occurred. |
+
+#### 16. RewardRedemption
+
+Records when registered creators redeem eligible contributor points for free promotional placement.
+
+| Attribute | Description |
+|---|---|
+| redemption_id (PK) | Unique identifier for each reward redemption. |
+| user_id (FK) | Identifies the creator redeeming the points. |
+| promotion_request_id (FK) | Identifies the promotion request associated with the free promotion reward. |
+| points_used | Number of points used for the redemption. |
+| redemption_status | Indicates whether the redemption is Pending, Approved or Rejected. |
+| redeemed_at | Date and time the reward was requested |
+
+### F. Platform Communication Entities
+
+#### 17. Notification
+
+Stores internal notifications generated by the platform to inform users about relevant activities and updates.
+
+| Attribute | Description |
+|---|---|
+| notification_id (PK) | Unique identifier for each notification. |
+| user_id (FK) | Identifies the registered user receiving the notification. |
+| title | Title or subject of the notification. |
+| message | Main notification content. |
+| is_read | Indicates whether the notification has been read. |
+| created_at | Date and time the notification was generated. |
+
+#### 18. Announcement
+
+Stores announcements created by authorized administrators and displayed on the platform.
+
+| Attribute | Description |
+|---|---|
+| announcement_id (PK) | Unique identifier for each announcement. |
+| admin_id (FK) | Identifies the administrator who created the announcement. |
+| title | Title of the announcement. |
+| content | Main announcement message. |
+| published_at | Date and time the announcement was published. |
+| status | Indicates whether the announcement is Draft, Published or Archived. |
+
+## 3.1.3 Relationship Identification and Description
+
+### A. User and Identification Relationships
+
+| No. | Entities | Cardinality | Description |
+|---|---|---|---|
+| R1 | User — Role | M:N | A user can have one or more roles, and a role can be assigned to multiple users. |
+| R2 | GuestIdentifier — Recommendation | 1:N | One guest identifier can be associated with multiple recommendations submitted by the same guest. |
+| R3 | GuestIdentifier — Vote | 1:N | One guest identifier can be associated with multiple votes submitted by the same guest. |
+| R4 | User — Recommendation | 1:N | One registered user can submit multiple recommendations. |
+| R5 | User — Vote | 1:N | One registered user can submit multiple votes on different resources. |
+| R6 | User — TopicRequest | 1:N | One registered user can submit multiple topic requests. |
+
+### B. Learning Resource Relationships
+
+| No. | Entities | Cardinality | Description |
+|---|---|---|---|
+| R7 | LearningTopic — Resource | 1:N | One learning topic can contain multiple resources. |
+| R8 | ResourceCategory — Resource | 1:N | One category can organize multiple resources. |
+| R9 | Resource — Recommendation | 1:N | One resource can be associated with multiple recommendations. |
+| R10 | Resource — Vote | 1:N | One resource can receive multiple votes. |
+
+### C. Promotion and Payment Relationships
+
+| Entities | Cardinality | Description |
+|---|---|---|
+| User — PromotionRequest | 1:N | One promoter can submit multiple promotion requests. |
+| Resource — PromotionRequest | 1:N | One resource can be associated with multiple promotion requests over time. |
+| PromotionRequest — PaymentEvidence | 1:N | One promotion request may have multiple uploaded payment evidence records. |
+| PaymentEvidence — PaymentVerification | 1:N | One payment evidence record may have multiple verification records, for example when reviewed again. |
+| User — PaymentVerification | 1:N | One Customer Support Agent can perform multiple payment verifications. |
+| PromotionRequest — PromotionPlacement | 1:N | One promotion request may have multiple placement records. |
+| PromotionRequest — PromotionComplaint | 1:N | One promotion request may receive multiple complaints. |
+| User — PromotionComplaint | 1:N | One user can submit multiple promotion complaints. |
+
+### D. Contributor Points and Rewards Relationships
+
+| No. | Entities | Cardinality | Description |
+|---|---|---|---|
+| R19 | User — PointTransaction | 1:N | One registered creator can have multiple point transactions. |
+| R20 | Recommendation — PointTransaction | 1:N | One valid recommendation may be associated with a point transaction. |
+| R21 | User — RewardRedemption | 1:N | One registered creator can make multiple reward redemption requests. |
+| R22 | PromotionRequest — RewardRedemption | 1:0..1 | A promotion request may be associated with one reward redemption when it is a free promotion. |
+
+### E. Platform Communication Relationships
+
+| No. | Entities | Cardinality | Description |
+|---|---|---|---|
+| R23 | User — Notification | 1:N | One registered user can receive multiple notifications. |
+| R24 | User — Announcement | 1:N | One administrator can create multiple announcements. |
 
 #### 3.1.4. ER Diagrams
 
