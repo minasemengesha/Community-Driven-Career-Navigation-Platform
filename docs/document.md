@@ -54,73 +54,85 @@ To design and develop RightGuide, a web-based, community-driven programming reso
 
 - To Build Language-Based Discovery & Duplicate-Checked Search: Enable learners to select from five core programming languages to browse curated websites and YouTube channels, supported by keyword and URL lookup that detects duplicate links and prompts users to vote on existing entries rather than creating redundant submissions.
 
-- To Establish Community Voting & Creator Point Rewards: Implement a one-vote-per-user/token voting mechanism alongside a dual-track recommendation pipeline where registered creators earn points for verified submissions—unlocking free promotional placements upon reaching the 20-point threshold.
+- To Establish Community Voting & Referral/Creator Point Rewards: Implement a one-vote-per-user/token voting mechanism alongside a point system where registered users earn reward points from administrator-approved referrals (with guest referrals excluded and internal notifications sent upon approval) and verified resource submissions—unlocking free promotional placements upon reaching the 20-point threshold.
 
 - To Enable New Language & Topic Requests: Provide a structured request workflow allowing users to suggest additional programming languages or learning topics beyond the initial five core languages for administrative review and platform expansion.
 
-- To Support Transparent Promotion & Manual Payment Verification: Build a promotion submission workflow where promoters request placements, submit payment screenshots (or redeem earned points), and track real-time statuses, backed by a manual verification interface for customer support agents.
+- To Support Transparent Bank-Transfer Promotion & Manual Verification: Build a promotion submission workflow where users request placements, submit bank transfer payment proof (such as a screenshot) or redeem earned points, and track real-time statuses, backed by a manual verification interface for customer support agents.
 
-- To Deliver Internal Notifications & Asynchronous Support: Implement an automated internal notification system that alerts users and promoters of account, recommendation, and payment status updates, paired with a structured support ticket workflow for user inquiries.
+- To Deliver Internal Notifications & Asynchronous Support: Implement an automated internal notification system that alerts users and promoters of account, referral, recommendation, and payment status updates, paired with a structured support ticket workflow for user inquiries.
 
 - To Provide Content Moderation, Announcements & Owner Analytics: Create an administrative dashboard to review submissions, group identical URLs with combined recommendation counts, verify free-versus-paid source rules, publish platform-wide popup announcements, and enable the system owner to generate platform performance and financial reports.
 
 ### 1.3. Methodologies
 #### 1.3.1. Requirement Elicitation Methodology
 
-To successfully define and build the Community-Driven Career Navigation Platform within a strict 60-day university timeline, a structured, lightweight, and user-centric requirement elicitation methodology is employed. Given the project's academic constraints and defined feature scope, the elicitation process combines four core techniques:
+To define and deliver RightGuide within a strict 60-day academic timeline, a lightweight, user-centric requirement elicitation methodology is employed using four complementary techniques:
 
-- Document & Project Constraint Analysis: Reviewing academic guidelines, project briefs, and technical boundaries (e.g., manual payment verification, no real-time chat, no automated email dispatching) to establish baseline system constraints.
-
-- Stakeholder & Actor Profiling: Identifying and analyzing distinct system roles—unregistered guests, registered creators, promoters, customer support agents, administrators, and the system owner—to map out precise permissions and dashboard requirements.
-
-- Use-Case & Workflow Modeling: Translating core functional goals into structured use cases and business rules, specifically designing complex workflows like "Lazy Authentication" (on-demand guest tokenization), dual-track recommendations, and duplicate detection.
-
-Iterative Prototyping (Design-First Approach): Utilizing static HTML/CSS layouts and mock data structures as visual prototypes to validate interface flows, ensure team alignment, and refine system logic before full backend (PHP/MySQL) implementation.
+- Document & Constraint Analysis: Reviewing project guidelines and technical boundaries—specifically the vanilla web stack (HTML, CSS, JavaScript, PHP, MySQL), manual bank-transfer payment verification, manual referral review, and internal notifications—to establish clear system constraints.
+- Stakeholder & Role Profiling: Analyzing the needs and access boundaries of all six system actors (Unregistered Guests, Registered Users/Creators, Promoters, Customer Support Agents, Administrators, and the System Owner) to map out precise permissions and dashboard views.
+- Workflow & Rule Modeling: Translating core user journeys—such as selecting from five core programming languages, on-demand guest tokenization (guestToken), duplicate URL detection, and manual verification pipelines—into structured use cases and business rules.
+- Design-First Iterative Prototyping: Building static HTML and CSS layouts with mock data first to validate interface flows and align the 6-member team before writing PHP and MySQL backend logic.
 
 #### 1.3.2. Requirement analysis and Modeling
 
-1. Requirement Analysis
-The Community-Driven Career Navigation Platform is designed to systematically curate, rank, and recommend educational resources through community participation while balancing frictionless accessibility with strict spam control.
-Core Functional Scope (20 Requirements across 5 Subsystems):
-- Authentication & Access Control: Supports public registration for Creators and Promoters, pre-configured login for internal staff (Customer Support, Admin, Owner), password recovery, and On-Demand Guest Authentication (guestToken generated strictly when an unauthenticated visitor initiates a vote or recommendation, keeping general browsing stateless).   
-- Content Discovery & Interaction: Enables unauthenticated browsing, smart keyword/URL search with duplicate-entry voting prompts, dual-track recommendations (Guest vs. Creator), single-vote enforcement per resource, topic requests, and public static/announcement views.   
-- Points & Rewards: Credits reward points to registered creators upon administrative approval of their submissions, unlocking free promotional placement once defined thresholds are reached.   
-- Monetization & Support: Facilitates tiered ad requests backed by manual payment screenshot uploads, real-time status tracking, Customer Support verification, and structured support ticketing.   
-- Administration & Reporting: Empowers Admins to moderate content, auto-group duplicate URLs with submission counts, and dispatch alerts, while granting the Owner exclusive access to financial and platform analytics.
+1. Requirement AnalysisRightGuide is designed to systematically curate, rank, and recommend programming learning resources (websites and YouTube channels) across five core programming languages through community participation while balancing frictionless browsing with strict quality control.
+
+The functional scope is organized across five core subsystems:
+
+- Authentication & Access Control: Supports public registration for Registered Users/Creators and Promoters, pre-configured logins for internal staff (Customer Support, Administrator, System Owner), password recovery, and on-demand guestToken generation triggered strictly when an anonymous visitor votes or submits a resource.
+
+- Content Discovery & Interaction: Enables browsing by selecting one of five core programming languages, keyword/URL search with duplicate-entry voting prompts, dual-track resource submissions (Guest vs. Registered Creator), single-vote enforcement per resource, new language/topic requests, and public announcements.
+
+- Points, Referrals & Rewards: Credits reward points to registered users upon administrator approval of referrals (excluding guest referrals) or verified resource recommendations, sending internal notifications and unlocking free promotional placements at the 20-point threshold.
+
+- Monetization & Support: Facilitates promotion requests backed by bank transfer payment proof (screenshot uploads) or point redemption, real-time status tracking, manual verification by Customer Support Agents, and asynchronous support ticketing.
+
+- Administration & Reporting: Enables Administrators to moderate submissions, group identical URLs with combined vote/recommendation counts, review referrals, and publish popup announcements, while granting the System Owner exclusive access to platform and financial reports.
 
 2. System Modeling
-The architectural model translates functional needs into clean, modular abstractions ready for Object-Oriented PHP and relational MySQL implementation:
-Behavioral Modeling (18 Use Cases & 6 Actors):
-- Maps distinct workflows across Guest User, Registered User/Creator, Promoter, Customer Support Agent, Administrator, and System Owner.   
-- Enforces separation of concerns: public actors interact with discovery, voting, and promotion flows, while pre-configured administrative actors govern verification, curation, and reporting.
-   
-Structural Modeling (18-Class Object Hierarchy):
-- User Inheritance Hierarchy: An abstract User base class branches into GuestUser (managing on-demand session tokens) and RegisteredUser (handling authentication, voting, and points), which further specializes into Admin, Promoter, CustomerSupport, and Owner.   
-- Content Inheritance Hierarchy: An abstract Content base class unifies shared metadata across Resource (categorized, votable learning links) and Announcement (time-bound platform notices).
-- Transactional & Operational Classes: Standalone classes—Vote, Recommendation, TitleRequest, Promotion, Payment, SupportTicket, Notification, and StaticPage—decouple business logic and map directly to normalized MySQL tables supporting nullable dual-identity keys (userId and guestToken).
+The system architecture translates functional requirements into modular Object-Oriented PHP classes and a normalized MySQL schema:
+
+- Behavioral Modeling (6 Actors & Core Use Cases): Enforces clear separation of concerns—public actors interact with discovery, voting, referral, and promotion flows, while internal staff govern verification, curation, and reporting.
+
+- Structural Modeling (Object Hierarchy):
+
+  - User Hierarchy: An abstract User base class branches into GuestUser (managing guestToken sessions) and RegisteredUser (managing authentication, voting, referrals, and points), which further specializes into Promoter, CustomerSupport, Admin, and Owner.
+
+  - Content Hierarchy: An abstract Content base class unifies shared attributes across Resource (language-categorized websites and YouTube channels) and Announcement (platform-wide notices).
+
+  - Transactional & Operational Classes: Dedicated classes—Vote, Recommendation, Referral, TitleRequest, Promotion, Payment, SupportTicket, Notification, and StaticPage—decouple business logic and map directly to normalized MySQL tables supporting nullable dual-identity keys (userId and guestToken).
 
 #### 1.3.3. Software Process Model and Management Strategy
 
-For our Community-Driven Career Navigation Platform, we have chosen a Hybrid Agile Software Process Model utilizing Kanban Methodology combined with Phased Milestones. This section outlines why this model was selected and how we will manage our 60-day project lifecycle with a 6-member team.
+To manage our 6-member team across the 60-day schedule, we selected a Hybrid Agile Process Model combining a Kanban Workflow with Phased Milestones.
 
-1. Selection and Justification of the Software Process Model
-We selected this hybrid approach after carefully evaluating our team dynamics, technical constraints, and academic goals for the following reasons:
-- Handling Variable Team Performance: Our 6-member team has diverse skill levels and paces. Kanban relies on a visual task board (such as GitHub Projects or Trello) where tasks are broken down into granular cards. This allows faster members to pull additional tasks seamlessly while slower or learning members can focus on completing their assigned cards without feeling overwhelmed by rigid, time-boxed deadlines.
-- Gradual Technical Learning Curve via Phased Milestones: Since our team members are actively learning PHP and backend development, a strict sequential model would cause bottlenecks. By blending Kanban with structured phases, we can separate tasks logically-focusing initially on frontend layouts before smoothly transitioning into database integration and PHP backend logic as our skills develop.
-- Evolving Requirements: Because not all stakeholders or final edge cases are fully known at day one, our flexible workflow gives us the adaptability to continuously add new tasks to the backlog without disrupting the overall project execution.
-- Balanced Documentation and Testing: To ensure a high-quality academic report without getting bogged down by heavy enterprise testing overhead, this model keeps our workflow lean and transparent, ensuring that documentation of our architecture and code progresses hand-in-hand with development.
+1. Justification of the Process Model
 
-2. Project Management and Execution Strategy
-To manage our 60-day timeline effectively, we will execute our hybrid Kanban workflow across three structured operational phases:
-Phase 1: Foundation and Frontend (Days 1-10)
- - Focus: UI/UX design, static pages (About, Help, Contact), and foundational HTML, CSS, and JavaScript layouts.
- - Kanban Management: All frontend layout tasks are placed in the backlog and pulled by team members based on availability.
-Phase 2: Core Logic and Backend Integration (Days 11-20)
- - Focus: Setting up the MySQL database, implementing user registration, login, session management, and search functionalities using PHP.
- - Kanban Management: Tasks transition from "To Do" to "In Progress" as team members finish learning and testing basic backend scripts on their local Apache servers.
-Phase 3: Advanced Features, Polish, and Final Submission (Days 21-30)
-  - Focus: Integrating voting, recommendations, point systems, promotions, payment verification, and finalizing the project report.
-  - Kanban Management: Strict code reviews and manual testing columns are utilized before moving cards to "Done," ensuring a polished product and complete documentation by day 60.
+- Accommodating Variable Team Pace: Because team members have varying levels of backend experience, a visual Kanban board (To Do, In Progress, Testing/Review, Done) allows faster members to pull new cards continuously while others progress steadily without rigid sprint bottlenecks.
+
+- Phased Technical Progression: Organizing work into milestone phases enables the team to master and complete static HTML/CSS interfaces first before transitioning into MySQL schema design and PHP integration.
+
+- Controlled Adaptability: Evolving requirements and edge cases (such as duplicate URL grouping and manual referral checks) can be added cleanly to the backlog without disrupting active work.
+
+- Integrated Documentation & Testing: Diagrams, business rules, and manual test cases are updated alongside each completed feature card so documentation stays synchronized with code.
+
+2. Project Execution Phases (60-Day Schedule)
+
+Phase 1: Foundation, Analysis & Frontend Prototyping (Days 1–20)
+
+- Focus: Finalizing system requirements, UML diagrams, static HTML/CSS layouts for the five core programming languages, and client-side JavaScript validation.
+- Kanban Flow: UI and documentation tasks are broken into granular cards and pulled based on member availability.
+
+Phase 2: Database & Core Backend Integration (Days 21–40)
+
+- Focus: Implementing the normalized MySQL database, user registration/login, guestToken session handling, language-filtered browsing, and duplicate-checked search in PHP.
+- Kanban Flow: Cards move from To Do to In Progress as members build and verify PHP modules on local Apache/MySQL environments.
+
+Phase 3: Advanced Workflows, Testing & Final Delivery (Days 41–60)
+
+- Focus: Implementing one-per-user voting, administrator referral/resource approval, the 20-point reward threshold, bank-transfer promotion verification, internal notifications, owner analytics, and final report compilation.
+- Kanban Flow: Every card must pass peer code review and functional verification in the Testing/Review column before moving to Done by Day 60.
 
 ### 1.4. Scope and Limitation of the Project
 #### 1.4.1. Project Scope
