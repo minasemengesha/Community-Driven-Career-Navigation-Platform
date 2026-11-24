@@ -1022,7 +1022,7 @@ Req ID & Feature: Identifies what we are building (matching 2.3.3 Functional Req
 Use Case / Rule: Points to the exact behavior and validation rules (2.3.2 & 2.3.6.1).
 Frontend Page: Tells UI developers where the screen lives (frontend/...).
 Backend Endpoint (PHP): Tells backend developers which PHP file processes the request (backend/...).
-Database Table(s): Shows which MySQL tables are read or updated (Chapter 3).
+Database Table(s): Shows which MySQL tables are read or updated (Chapter 3). 
 Test ID & Status: Confirms how and when the feature is verified before final submission (Chapter 5).
 
 
