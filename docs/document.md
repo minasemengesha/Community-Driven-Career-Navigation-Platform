@@ -233,7 +233,6 @@ Developed for our university web programming course by a **6-member team** withi
 - Team Structure & Duration: 6 student developers working across a 60-day schedule using a Hybrid Agile (Kanban + Phased Milestones) workflow.
 - Commercial Value Perspective: While executed as an academic project using student labor and zero-cost infrastructure, a commercial build of RightGuide would require standard developer man-hours, paid cloud hosting, and custom domain fees.
 
-
 ## Chapter Two: Requirement Analysis and Specifications
 ### 2.1. Description of the Current System
 
@@ -431,18 +430,7 @@ The system shall provide the System Owner with analytical reports (Report) summa
 ## Chapter Three: Database Design
 
 # 3.1 Conceptual Database Design of The new System
-
-This task has four deliverables.
-
-| Section | What you need to produce |
-|---|---|
-| 3.1.1 Entities identification and Description | Identify database entities and explain them. |
-| 3.1.2 Attributes identification and description | Identify the properties belonging to each entity. |
-| 3.1.3 Relationship identification and description | Explain how entities relate to one another. |
-| 3.1.4 ER Diagrams | Create the Entity Relationship Diagram |
-
 ## 3.1.1 Entities identification and Description
-
 ### A. User and identification entities
 
 | Entity | Description |
@@ -497,9 +485,7 @@ A Resource can represent a YouTube channel, educational website or another relev
 | Announcement | Stores announcements managed by authorized administrators and displayed on the platform. |
 
 ## 3.1.2 Attributes Identification and Description
-
 ### A. User and identification entities
-
 #### 1. User
 
 | Attribute | Description |
