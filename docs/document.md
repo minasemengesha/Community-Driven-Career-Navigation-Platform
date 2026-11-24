@@ -378,49 +378,42 @@ The system shall provide the System Owner with analytical reports (Report) summa
 #### 2.3.5. Actor and Use case Identification
 
 1. Actor Identification
-- Guest User: An unregistered visitor who can freely browse and search the platform; the system automatically generates a temporary guestToken only when they initiate a vote or resource recommendation.
-
-- Registered User / Content Creator: An authenticated user who can register, log in, vote, submit resource recommendations, request new topics, and accumulate reward points.
-
-- Promoter: An authenticated user who submits paid promotion requests and uploads transaction confirmation screenshots.
-
-- Customer Support Agent: A pre-configured staff member who logs in to inspect uploaded payment screenshots and manually verify transactions.
-
-- Administrator: A pre-configured staff member responsible for moderating content, organizing recommendations, managing announcements, and dispatching notifications.
-
-- System Owner: A high-level stakeholder who logs in exclusively to view analytical reports covering platform revenue, user growth, and performance metrics.
+- Guest User: An unregistered visitor who browses and searches resources across the five core programming languages without logging in; the system generates a temporary guestToken on demand only when they vote or submit a resource recommendation.
+- Registered User / Content Creator: An authenticated public member who signs up using a username and password (selecting the Registered User / Content Creator option) to vote, submit resource links, request new programming languages or topics, refer new members for manual admin approval, earn points toward the 20-point free promotion threshold, submit support tickets, and track internal notifications.
+- Promoter: An authenticated public member who registers using a username and password (selecting the Promoter option) to request featured placements via bank transfer screenshot upload or redeemed points, track promotion status, submit support tickets, and receive internal alerts.
+- Customer Support Agent: A pre-configured staff member (login only, no public registration) who inspects uploaded bank-transfer payment screenshots, manually verifies or rejects transactions, and resolves user support tickets.
+- Administrator: A pre-configured staff member (login only, no public registration) who reviews and moderates submitted websites and YouTube channels, groups duplicate URLs with combined counts, manually approves registered-user referrals, manages homepage announcements and featured spots, and dispatches internal notifications.
+- System Owner: A pre-configured executive role (login only, no public registration) who accesses analytical reports on promotion revenue, user growth, engagement, and top-voted resources.
 
 2. Use Case Identification
-Authentication & Access Subsystem:
+- Authentication & Access Subsystem
+  - Register: Lets new public visitors create an account with a username and password and choose their role as either a Registered User / Content Creator or a Promoter (staff roles do not register publicly).
+  - Login: Authenticates registered public users and pre-configured staff roles (login only for Customer Support Agent, Administrator, and System Owner) to open their role-specific workspace.
+  - Recover Password: Lets registered account holders reset or recover forgotten account access safely.
+  - Guest Authentication: Automatically issues a temporary guestToken on demand when an unregistered visitor votes or recommends a resource, keeping general browsing stateless while limiting duplicate actions.
 
-- Register: Allows public users and promoters to create new accounts.
-- Login: Authenticates registered users, promoters, and pre-configured staff roles.
-- Recover Password: Enables account recovery via email verification.
-- Guest Authentication: Automatically assigns a temporary token on-demand to prevent spam during guest voting and recommendations.
+- Content Discovery & Interaction Subsystem
+  - Browse: Lets visitors and registered users explore websites and YouTube channels across the five core programming languages (with clear free or paid indicators).
+  - Search Resource: Enables keyword or URL searches with duplicate-detection prompts that encourage voting on existing resources first.
+  - Recommend: Supports dual-track resource submissions (websites and YouTube channels) from guests (via guestToken) and registered users/creators.
+  - Vote: Records community votes while enforcing a strict limit of one vote per resource per user or guestToken.
+  - Request Title: Lets registered users request new programming languages or learning topics beyond the initial five so the directory can expand regularly.
+  - View Static Pages: Displays informational pages (About, Help, and Contact) along with public announcements and pop-ups.
 
-Content Discovery & Interaction Subsystem:
+- Referrals, Monetization & Support Subsystem
+  - Refer User: Lets registered users refer new members (guest referrals do not earn points), sending the referral to an Administrator for manual approval and point crediting.
+  - Promote: Lets Promoters and eligible users (with at least 20 points) submit promotion requests via bank-transfer screenshot upload or point redemption.
+  - Track Promotion: Lets users and Promoters monitor real-time verification statuses of their submitted promotions.
+  - Submit Support Ticket: Lets users and Promoters open structured support tickets for promotion, payment, or account help.
+  - Verify Payment & Tickets: Lets Customer Support Agents manually inspect bank-transfer screenshots, update payment statuses, and respond to support tickets.
 
-- Browse: Public exploration of categorized educational resources.
-- Search Resource: Keyword and link-based lookup with duplicate-prevention prompts.
-- Recommend: Dual-track submission of new learning links by guests and registered creators.
-- Vote: Community voting restricted to one vote per user or guestToken per resource.
-- Request Title: Submission of user suggestions for new learning topics.
-- View Static Pages: Access to informational pages (About, Help, Contact) and announcement popups.
-
-Monetization & Support Subsystem:
-
-- Promote: Submission of ad placement requests and payment screenshots.
-- Track Promotion: Real-time monitoring of promotion request statuses.
-- Verify Payment: Manual inspection and approval of payment proof by support agents.
-
-Administration & Reporting Subsystem:
-
-- Manage Content: Review, editing, approval, and deletion of submitted educational links.
-- Organize Recommendations: Automated grouping of identical URLs with total user recommendation counts.
-- Manage Points: Calculation and tracking of reward points for verified creator contributions.
-- Notify: Internal alert generation for account and transaction updates.
-- Announcement: Publishing of platform-wide popup announcements and featured promotions.
-- Report: Generation of comprehensive financial and performance analytics for the system owner.
+- Administration & Reporting Subsystem
+  - Manage Content: Lets Administrators review, edit, approve, reject, remove, or organize submitted resource links and approve valid user referrals.
+  - Organize Recommendations: Groups identical submitted URLs in the Admin view with combined recommendation counts.
+  - Manage Points: Tracks and awards reward points for approved registered-user referrals and verified creator submissions toward the 20-point free promotion threshold.
+  - Notify: Sends internal dashboard notifications for referral approvals, resource moderation outcomes, 20-point milestones, topic requests, and payment updates.
+  - Announcement: Publishes and manages homepage popup announcements and featured placements.
+  - Report: Generates revenue, user growth, engagement, and top-resource analytics exclusively for the System Owner.
 
 #### 2.3.6. System Model
 ##### 2.3.6.1. Use case Model
