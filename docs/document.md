@@ -261,52 +261,46 @@ Existing solutions and built-in platform capabilities refer to pre-existing brow
 ### 2.3. Proposed System
 #### 2.3.1. Overview
 
-A community-driven career exploration platform is a structured web-based learning hub designed to systematically collect, rate, and recommend high-quality learning resources through community engagement. It features a frictionless lazy verification method for guests, dual-track recommendations supported by a creative point-reward system, and transparent tiered free promotion processes supported by manual verification workflows. Combining intelligent duplicate detection, robust content moderation and dedicated administrative controls, the platform provides a reliable, secure and user-centric ecosystem for effective career exploration.
+RightGuide is a community-driven web platform designed to systematically curate, rank, and recommend high-quality programming learning resources—specifically websites and YouTube channels—across five core programming languages at launch, with an expandable structure to add new languages frequently as community demand grows. The system pairs frictionless, on-demand guest tokenization (guestToken) for anonymous voting and submissions with a dual-track recommendation and referral point system for registered users, unlocking free promotional placements at a 20-point threshold. Supported by automated duplicate-URL detection, manual administrator verification for referrals and resource submissions, manual customer support verification for bank-transfer promotions, and role-based dashboards, RightGuide provides a reliable, structured ecosystem for technical skill acquisition.
 
 #### 2.3.2. Business Rule
 
-- BR-01 — User Registration Rule (FR-01, FR-02): Public users (Content Creators / Registered Users and Promoters) register with unique email addresses and valid credentials, whereas staff roles (Customer Support Agent, Administrator, and System Owner) are pre-configured by the system and do not use public registration.
-- BR-02 — User Login & Session Rule (FR-02, FR-03, NFR-03, NFR-10): All registered and pre-configured users must authenticate with valid credentials to access their role-specific dashboard and permitted actions.
-- BR-03 — Password Recovery Rule (FR-04): Registered account holders can initiate password recovery through their registered email address without exposing sensitive account data.
-- BR-04 — Public Browsing & Static Pages Rule (FR-06, FR-11, NFR-08, NFR-14): Unauthenticated visitors may freely browse curated educational resources and view static informational pages (such as About, Help/Support, and Contact) as well as public announcements/pop-ups.
-- BR-05 — Smart Search & Duplicate Prevention Rule (FR-07, FR-17): Searching by keyword or URL encourages users to vote on existing matching entries rather than submitting duplicate resources, while duplicate URL submissions are grouped in the Administrator dashboard with total recommendation counts.
-- BR-06 — On-Demand Guest Authentication Rule (FR-05, FR-08, FR-09): A temporary guestToken is generated automatically only when an unregistered guest initiates a vote or recommendation action, preventing repeated spam submissions while keeping general browsing frictionless.
-- BR-07 — Single-Vote Enforcement Rule (FR-09, NFR-09): Both guests (via guestToken) and authenticated users are restricted to a maximum of one vote per resource.
-- BR-08 — Dual-Track Recommendation Rule (FR-08, FR-12): Both unregistered guests and registered content creators can recommend resource links, but only approved submissions made by registered creators earn reward points.
-- BR-09 — Topic Request Rule (FR-10, NFR-12): Registered users can submit requests for new technical learning topics to expand platform categories over time.
-- BR-10 — Points Accumulation & 20-Point Promotion Qualification Rule (FR-12, NFR-09): Approved creator recommendations accrue points; a minimum threshold of 20 points is required to qualify for promotional opportunities. Points below 20 cannot be redeemed for promotions.
-- BR-11 — Promotion Submission & Payment Methods Rule (FR-12, FR-13, FR-14, NFR-15): Promoters and eligible users (with at least 20 points) may request promotional placements by uploading valid payment transfer screenshots (subject to file type/size validation) or redeeming qualifying points (minimum 20 points). Promoters can track real-time promotion status, and authorized support/admin staff manually verify payment screenshots and update statuses.
-- BR-12 — Support & Ticketing Rule (FR-14, FR-15, NFR-04): Users and promoters use structured support channels/ticketing for account, resource, and promotion inquiries without sharing passwords, full card numbers, CVVs/security codes, or one-time verification codes.
-- BR-13 — Content Moderation & Ranking Rule (FR-16, FR-17, NFR-18, NFR-09): Administrators review, edit, approve, reject, rank, organize, or remove resource links and manage main-page announcements/featured placements, with key moderation and approval actions logged for accountability.
-- BR-14 — Internal Notifications Rule (FR-17, FR-19, NFR-18): The system delivers internal alerts/notifications for content approvals/rejections, point milestones (including reaching the 20-point promotion threshold), topic updates, and promotion/payment verification outcomes.
-- BR-15 — System Owner Analytics & Reporting Rule (FR-20, NFR-10, NFR-18): Only the System Owner can access comprehensive analytical reports covering platform revenue, performance metrics, user growth, and top-recommended resources.
-- BR-16 — Verification of the Promoter's Source (FR-13, FR-15, FR-16, NFR-04, NFR-15, NFR-16)
-Before a promoted placement goes live, the promoted source and accompanying payment proof must pass verification:
-    - Sub-points:
-        - Promoted Target / Source Check: Verify the destination URL or channel being promoted is reachable, safe, and aligned with educational/career navigation standards.
-        - Payment & Point Eligibility Check: Confirm either (a) the uploaded payment screenshot is valid, legible, and matches the required fee/amount, or (b) the user holds at least 20 points for point-based promotion eligibility.
-        - Status & Audit Decision: Approve, reject, or mark unsuccessful with clear status tracking and activity records.
-        - Key Criteria: Valid non-broken link; safe/appropriate content; accurate payment proof (or $\ge 20$ points); clear file format/size compliance; no sensitive financial credentials exposed.
-- BR-17 — Verification of the Source Referred by a User (FR-07, FR-08, FR-12, FR-16, FR-17, NFR-09)
-Before a user- or creator-submitted resource is published or rewarded with points, moderators verify the referred source:
-    - Sub-points:
-        - Uniqueness & Duplicate Check: Check whether the URL or resource already exists or matches a grouped duplicate entry in the moderation queue.
-        - Relevance & Quality Check: Confirm the resource provides genuine educational or career-navigation value matching its selected topic/category.
-        - Creator Point Eligibility: Award points only if the submission came from a registered creator track, met quality rules, and was approved by an administrator.
-        - Key Criteria: Active, accessible URL/channel; no malware, spam, or misleading clickbait; accurate category/topic match; non-duplicate (or properly consolidated).
-- BR-18 — Policy Governing Verification of Any Source (FR-06, FR-08, FR-13, FR-16, NFR-09, NFR-14)
-All sources—whether organically recommended or submitted for promotion—are governed by a uniform verification policy across every supported source category:
-    - Supported Source Categories:
-        - Free Educational Sites (open courses, documentation, tutorials, and free learning platforms)
-        - Paid Educational Sites (subscription platforms, paid courses, or paid bootcamps—clearly labeled as paid/access-restricted where applicable)
-        - Websites Providing Such Content (curated hubs, blogs, portals, or reference sites offering educational or career guidance materials)
-        - Free Video-Based YouTube Channels (publicly accessible educational/career YouTube channels without paid membership requirements)
-        - Paid Video-Based YouTube Channels (YouTube channels relying on paid memberships, paid courses, or gated video content)
-        - Createfite YouTube Channel (verified/official Createfite YouTube channel content, subject to standard accuracy, relevance, and policy checks)
-    - Sub-points:
-        - Safety, Legality & Accuracy Baseline: Every source must be free of harmful/illegal material, deceptive redirects, or blatantly false instructional claims.- Access & Cost Transparency: Clearly distinguish free vs. paid/subscription resources so learners know what to expect before clicking.
-        - Category & Format Alignment: Ensure web vs. video/YouTube sources are tagged accurately and organized cleanly for discovery.
-        - Key Criteria: Reachable destination; safe and ethical content; clear free/paid labeling; accurate topic/channel classification; consistent enforcement across all six source categories.
+- BR-01 — User Registration Rule (FR-01, FR-02): Public visitors who want to join as Registered Users or Content Creators, or who want to promote resources as Promoters, register using a unique email address and valid credentials. Staff roles—Customer Support Agents, Administrators, and the System Owner—are pre-configured directly in the system and do not go through public registration.
+- BR-02 — User Login & Session Rule (FR-02, FR-03, NFR-03, NFR-10): Both registered public users and pre-configured staff members must sign in with valid credentials to open their role-specific workspace and carry out permitted actions.
+- BR-03 — Password Recovery Rule (FR-04): Registered account holders can start a password recovery flow using their registered email address without exposing sensitive details about the account.
+- BR-04 — Public Browsing & Static Pages Rule (FR-06, FR-11, NFR-08, NFR-14): Anyone visiting the platform can freely browse curated websites and YouTube channels across the five core programming languages, read informational pages (About, Help, and Contact), and view public announcements or pop-ups without logging in.
+- BR-05 — Smart Search & Duplicate Prevention Rule (FR-07, FR-17): When someone searches by keyword or URL, the platform encourages voting on an existing match rather than submitting a duplicate link. If duplicate URLs still get submitted, Administrators see them grouped together with their combined recommendation counts.
+- BR-06 — On-Demand Guest Authentication Rule (FR-05, FR-08, FR-09): General browsing stays frictionless with no login required, and the system generates a temporary guestToken only when an unregistered visitor tries to cast a vote or submit a resource—helping curb repeated spam without getting in the way of casual browsing.
+- BR-07 — Single-Vote Enforcement Rule (FR-09, NFR-09): Whether a visitor is browsing with a guestToken or signed in as a registered user, they can cast at most one vote per resource.
+- BR-08 — Dual-Track Recommendation Rule (FR-08, FR-12): Unregistered guests and registered users/creators can both suggest helpful learning links, though only approved submissions coming from a registered account earn reward points.
+- BR-09 — New Language & Topic Request Rule (FR-10, NFR-12): Registered users can request additional programming languages or learning topics beyond the initial five core languages so the platform can grow steadily with learner demand.
+- BR-10 — Referrals, Points Accumulation & 20-Point Promotion Qualification Rule (FR-12, NFR-09): Registered users can build up reward points by inviting new members through user referrals that an Administrator manually reviews and approves—while invitations or referrals from unregistered guests do not earn points—as well as by having their submitted resources approved. Once a registered user reaches 20 points, they qualify to redeem a free promotional placement; balances under 20 points cannot be redeemed for promotions.
+- BR-11 — Promotion Submission & Bank-Transfer Verification Rule (FR-12, FR-13, FR-14, NFR-15): Promoters and eligible users with at least 20 points can request promotional placements either by redeeming qualifying points or by paying via bank transfer and uploading a screenshot of their payment proof (checked for valid file type and size). Users can follow their promotion status in real time, while Customer Support Agents manually check bank-transfer proof and update payment statuses.
+- BR-12 — Support & Ticketing Rule (FR-14, FR-15, NFR-04): Users and promoters can submit structured support tickets for help with accounts, resources, or promotions, while keeping sensitive details—like passwords, full bank or card numbers, and one-time verification codes—out of support messages.
+- BR-13 — Content Moderation & Ranking Rule (FR-16, FR-17, NFR-18, NFR-09): Administrators review, edit, approve, reject, organize, or remove resource links, handle manual referral approvals, and manage homepage announcements and featured spots, with key moderation and approval actions recorded for accountability.
+- BR-14 — Internal Notifications Rule (FR-17, FR-19, NFR-18): The platform sends internal dashboard notifications whenever a user's referral is approved, a resource submission is approved or rejected, a point milestone like the 20-point mark is reached, a language/topic request is updated, or a bank-transfer payment is verified.
+- BR-15 — System Owner Analytics & Reporting Rule (FR-20, NFR-10, NFR-18): Only the System Owner can view full analytical reports covering platform promotion revenue, user growth, engagement trends, and top-voted resources.
+- BR-16 — Verification of Promoted Resources & Payment Proof (FR-13, FR-15, FR-16, NFR-04, NFR-15, NFR-16): Before a promoted listing goes live, both the destination link and the payment or point eligibility have to clear verification:
+  - Promoted Source Check: Confirm the target website or YouTube channel loads properly, is safe to visit, and fits programming education standards.
+  - Payment & Point Eligibility Check: Verify either that the uploaded bank transfer screenshot is clear, genuine, and matches the required fee (manually checked by a Customer Support Agent), or that the requester has at least 20 points for point-based redemption.
+  - Status & Audit Decision: Mark the request as approved, rejected, or unsuccessful with clear status updates and activity records.
+  - Key Criteria: Working, safe link; appropriate educational content; valid bank-transfer proof (or 20 or more points); acceptable file format and size; no exposed sensitive credentials.
+- BR-17 — Verification of User-Submitted Resources (FR-07, FR-08, FR-12, FR-16, FR-17, NFR-09): Before a user- or creator-submitted link is published or rewarded with points, Administrators check the submitted resource:
+  - Uniqueness & Duplicate Check: See whether the URL is already listed or matches a grouped duplicate entry waiting in moderation.
+  - Relevance & Quality Check: Make sure the website or YouTube channel offers real programming learning value that fits the chosen language or topic.
+  - Point Eligibility Check: Award points only when the submission came from a registered account, met quality standards, and received Administrator approval.
+  - Key Criteria: Reachable link or channel; free from malware, spam, or clickbait;
+- BR-18 — Policy Governing Verification of All Supported Sources (FR-06, FR-08, FR-13, FR-16, NFR-09, NFR-14): Every website or YouTube channel on RightGuide—whether submitted organically or put up for promotion—follows the same baseline verification standard across all supported source types:
+  - Supported Source Categories:
+    - Free Educational Websites: Open tutorials, documentation, courses, and free coding sites.
+    - Paid Educational Websites: Subscription platforms, paid courses, or paid bootcamps, clearly marked as paid or access-restricted.
+    - Free Educational YouTube Channels: Publicly accessible programming channels on YouTube that do not require paid channel memberships.
+    - Paid Educational YouTube Channels: YouTube channels built around paid memberships or gated lessons, clearly marked as paid.
+  - Baseline Standards:
+    - Safety, Legality & Accuracy: Every link must be free of harmful or illegal content, deceptive redirects, and misleading technical claims.
+    - Access & Cost Transparency: Clearly label free versus paid resources so learners know what to expect before opening a link.
+    - Category & Format Alignment: Tag whether a source is a website or YouTube channel and match it to the right programming language for smooth browsing.
+  - Key Criteria: Working destination; safe, honest educational value; clear free-or-paid labels; accurate language and format tags; consistent rules across every source type.
 
 #### 2.3.3. Functional Requirements
 
