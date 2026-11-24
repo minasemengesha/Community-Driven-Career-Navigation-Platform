@@ -41,24 +41,28 @@ These limitations directly affect key participants in the programming learning e
 
 #### 1.1.5. The Exact Problem
 
-The exact problem this project addresses is the absence of a centralized, community-validated web directory where learners can select a specific programming language—starting with more than ten core languages—and immediately discover trustworthy, peer-ranked websites and YouTube channels. RightGuide solves this problem by combining language-specific resource categorization, duplicate-checked user submissions, community voting, and administrator moderation in a single platform.
+The exact problem this project addresses is the absence of a centralized, community-validated web directory where learners can select a specific programming language—starting with more than five core languages—and immediately discover trustworthy, peer-ranked websites and YouTube channels. RightGuide solves this problem by combining language-specific resource categorization, duplicate-checked user submissions, community voting, and administrator moderation in a single platform.
 
 ### 1.2. Objectives of the project
 #### 1.2.1. General objective
 
-To design and develop a web-based, community-driven career navigation platform that facilitates the collaborative curation, ranking, and discovery of high-quality educational resources, while implementing a frictionless lazy-authentication system, a creator point-reward mechanism, and a transparent manual monetization workflow.
+To design and develop RightGuide, a web-based, community-driven programming resource discovery platform built with pure HTML, CSS, JavaScript, PHP, and MySQL that enables learners to select from more than five programming languages and discover peer-recommended websites and YouTube channels, supported by on-demand guest authentication (guestToken), duplicate-checked submissions, a creator point-reward system, and a manual payment-verification workflow for promotions.
 
 #### 1.2.2. Specific objectives
 
-- To Implement Flexible Authentication & Access Control: Develop a secure role-based architecture supporting public registration for creators and promoters, pre-configured staff logins for administrators, support agents, and owners, and on-demand guestTokens for anonymous visitors.
+- To Implement Role-Based Authentication & On-Demand Guest Access: Develop a secure access-control system supporting public registration for registered users/content creators and promoters, pre-configured staff logins for administrators, customer support agents, and the system owner, and automatic on-demand guestToken assignment for anonymous visitors.
 
-- To Enable Dual-Track Content Discovery & Search: Build dynamic browsing and keyword/URL search features that automatically detect duplicate resource submissions and encourage community voting over redundant entries.
+- To Build Language-Based Discovery & Duplicate-Checked Search: Enable learners to select from five core programming languages to browse curated websites and YouTube channels, supported by keyword and URL lookup that detects duplicate links and prompts users to vote on existing entries rather than creating redundant submissions.
 
-- To Establish Community Participation & Point Systems: Implement a secure voting mechanism (restricted to one vote per user or guestToken) alongside a point accumulation and redemption system that rewards approved creator contributions with free promotions.
+- To Establish Community Voting & Creator Point Rewards: Implement a one-vote-per-user/token voting mechanism alongside a dual-track recommendation pipeline where registered creators earn points for verified submissions—unlocking free promotional placements upon reaching the 20-point threshold.
 
-- To Support Transparent Monetization & Verification: Provide a structured ad-submission pipeline where promoters can request tiered placements, upload payment screenshots, and track statuses, backed by a manual verification interface for customer support agents.
+- To Enable New Language & Topic Requests: Provide a structured request workflow allowing users to suggest additional programming languages or learning topics beyond the initial five core languages for administrative review and platform expansion.
 
-- To Provide Comprehensive Administration & Reporting: Create a robust management dashboard enabling administrators to moderate content, group duplicate recommendations, manage announcements, and allow the system owner to generate performance and financial analytical reports.
+- To Support Transparent Promotion & Manual Payment Verification: Build a promotion submission workflow where promoters request placements, submit payment screenshots (or redeem earned points), and track real-time statuses, backed by a manual verification interface for customer support agents.
+
+- To Deliver Internal Notifications & Asynchronous Support: Implement an automated internal notification system that alerts users and promoters of account, recommendation, and payment status updates, paired with a structured support ticket workflow for user inquiries.
+
+- To Provide Content Moderation, Announcements & Owner Analytics: Create an administrative dashboard to review submissions, group identical URLs with combined recommendation counts, verify free-versus-paid source rules, publish platform-wide popup announcements, and enable the system owner to generate platform performance and financial reports.
 
 ### 1.3. Methodologies
 #### 1.3.1. Requirement Elicitation Methodology
