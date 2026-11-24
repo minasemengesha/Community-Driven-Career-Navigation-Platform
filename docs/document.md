@@ -829,7 +829,7 @@ Stores announcements created by authorized administrators and displayed on the p
 
 #### 3.1.4. ER Diagram
 
-![ER Diagram](image/diagrams/er-diagram.png)
+![ER Diagram](image/diagrams/er-diagram.svg)
 
 ### 3.2. Logical Database Design of the New System 
 #### 3.2.1. ER to Table Mapping 
