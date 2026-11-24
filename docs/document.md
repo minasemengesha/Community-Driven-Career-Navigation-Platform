@@ -3,16 +3,14 @@
 
 ## Acknowledgement
 
+First and foremost, we give thanks to God for granting us the strength, patience, and wisdom to undertake and complete this project. We would also like to express our sincere gratitude to our Web Programming course instructor for assigning this project and providing the academic guidance necessary to carry it out. Finally, we recognize the dedicated collaboration, effort, and commitment of all six team members who worked together throughout every stage of the system's planning, design, and development.
 
 ## Table of Contents
 
 
-## Acronym
-
-
 ## Executive Summary
 
-
+RightGuide is a community-driven web platform built with pure HTML, CSS, JavaScript, PHP, and MySQL that helps learners discover reliable websites and YouTube channels for learning specific programming languages—starting with more than five core languages—through peer recommendations and community voting. Instead of struggling with scattered search results and unverified links, users simply select a target programming language to view curated free and paid learning sources ranked by community feedback. To encourage active participation and trustworthy curation, registered contributors earn reward points for approved recommendations—unlocking promotional placements upon reaching a 20-point threshold—while promoters can submit paid promotion requests verified manually by support agents, and administrators moderate submissions to prevent duplicates and maintain content quality.
 
 ## Chapter One: Introduction
 ### 1.1 Understanding the Problem Background and Knowing the Exact Problem
@@ -109,11 +107,7 @@ Core Functional Scope (20 Requirements across 5 Subsystems):
 - Content Discovery & Interaction: Enables unauthenticated browsing, smart keyword/URL search with duplicate-entry voting prompts, dual-track recommendations (Guest vs. Creator), single-vote enforcement per resource, topic requests, and public static/announcement views.   
 - Points & Rewards: Credits reward points to registered creators upon administrative approval of their submissions, unlocking free promotional placement once defined thresholds are reached.   
 - Monetization & Support: Facilitates tiered ad requests backed by manual payment screenshot uploads, real-time status tracking, Customer Support verification, and structured support ticketing.   
-- Administration & Reporting: Empowers Admins to moderate content, auto-group duplicate URLs with submission counts, and dispatch alerts, while granting the Owner exclusive access to financial and platform analytics.   
-Key Business Rules & Constraints:
-- Strict single-vote and duplicate-submission prevention tied to either userId or guestToken.   
-- Zero financial activation without manual screenshot verification by Customer Support.   
-- System constraints exclude automated email dispatchers, real-time chat modules, and payment gateway APIs to ensure reliable delivery within a standard PHP/MySQL stack.
+- Administration & Reporting: Empowers Admins to moderate content, auto-group duplicate URLs with submission counts, and dispatch alerts, while granting the Owner exclusive access to financial and platform analytics.
 
 2. System Modeling
 The architectural model translates functional needs into clean, modular abstractions ready for Object-Oriented PHP and relational MySQL implementation:
@@ -154,7 +148,7 @@ Phase 3: Advanced Features, Polish, and Final Submission (Days 21-30)
 
 The scope of the Community-Driven Career Navigation Platform defines the functional boundaries, core workflows, and technical constraints to be delivered within a 2-month (60-day) timeframe by our 6-member team.
 
-1. In-Scope (What the System Will Do)
+What the System Will Do:
  - Authentication & Access Control: Role-based access for 6 actors (Guest, User/Creator, Promoter, Support Agent, Admin, Owner). Guests can browse and recommend, while login/registration is required for creators, promoters, and staff.
  - Content Discovery & Smart Search: Categorized educational resources (YouTube/websites) ranked by community validation. Smart search includes automatic duplicate detection—prompting users to vote if a resource already exists.
  - Recommendations & Voting: Dual recommendation tracks (User and Creator). Creators earn points for valid submissions. Includes custom topic requests (RequestTitle) and grouped admin views displaying total counts (e.g., website.com (3 users)). Users are restricted to a one-time vote per resource.
@@ -162,14 +156,7 @@ The scope of the Community-Driven Career Navigation Platform defines the functio
  - Monetization & Support Workflow: Paid promotion via account transfers, transaction screenshot uploads, and manual verification by Support Agents. Support chat is restricted to troubleshooting promotion status. Promoted products are manually placed on main pages based on payment tiers.
  - Administration & Reporting: Admin content moderation (ManageContent), duplicate organization, and Owner reporting (Report) on revenue and top recommendations.
  - Static Pages & UI Elements: About, Help, Contact pages, main page popup notifications, and featured top-tier resource displays.
- - Deployment & Tech Stack: Local development using standalone Apache, MySQL, and VS Code extensions; deployed to InfinityFree hosting.
-
-2. Out-of-Scope (What the System Will NOT Do)
-To ensure delivery within the 60-day schedule, the following features are excluded:
- - Automated Payment Gateways: Third-party payment APIs (Stripe, PayPal, Chapa) are excluded; all payments use manual screenshot and account transfer verification.
- - Advanced AI Recommendations: Complex machine learning recommendation algorithms are excluded in favor of keyword search, voting, and manual curation.
- - Real-Time Live Chat: WebSockets-based live chat is excluded; support messaging is handled via structured database workflows.
- - Automated Email Dispatching: External SMTP server emails are out-of-scope; notifications are handled via internal system alerts.
+ - Deployment & Tech Stack: Local development using standalone Apache, MySQL, and VS Code extensions; deployed to InfinityFree hosting. 
 
 #### 1.4.2. Limitation
 
@@ -261,6 +248,9 @@ While the Community-Driven Career Navigation Platform is strategically structure
 | 47  | Help Page             | A page containing guidance and information about how users can obtain assistance while using the platform. |
 | 48  | Contact Page          | A page providing ways to contact the platform team and find information about its other websites. |
 | 49  | Customer Support      | Assistance provided to customers or users concerning platform services, including promotion-related questions and complaints. |
+
+#### Note:- 
+Within the scope of RightGuide, 'career navigation' refers specifically to guiding learners toward structured technical skill acquisition by helping them select a programming language (starting with 5+ core languages) and discover community-verified websites and YouTube channels to learn it.
 
 ### 1.6. Development Tools
 
