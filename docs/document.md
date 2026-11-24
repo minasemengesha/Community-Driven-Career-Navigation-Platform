@@ -51,17 +51,11 @@ To design and develop RightGuide, a web-based, community-driven programming reso
 #### 1.2.2. Specific objectives
 
 - To Implement Role-Based Authentication & On-Demand Guest Access: Develop a secure access-control system supporting public registration for registered users/content creators and promoters, pre-configured staff logins for administrators, customer support agents, and the system owner, and automatic on-demand guestToken assignment for anonymous visitors.
-
 - To Build Language-Based Discovery & Duplicate-Checked Search: Enable learners to select from five core programming languages to browse curated websites and YouTube channels, supported by keyword and URL lookup that detects duplicate links and prompts users to vote on existing entries rather than creating redundant submissions.
-
 - To Establish Community Voting & Referral/Creator Point Rewards: Implement a one-vote-per-user/token voting mechanism alongside a point system where registered users earn reward points from administrator-approved referrals (with guest referrals excluded and internal notifications sent upon approval) and verified resource submissions—unlocking free promotional placements upon reaching the 20-point threshold.
-
 - To Enable New Language & Topic Requests: Provide a structured request workflow allowing users to suggest additional programming languages or learning topics beyond the initial five core languages for administrative review and platform expansion.
-
 - To Support Transparent Bank-Transfer Promotion & Manual Verification: Build a promotion submission workflow where users request placements, submit bank transfer payment proof (such as a screenshot) or redeem earned points, and track real-time statuses, backed by a manual verification interface for customer support agents.
-
 - To Deliver Internal Notifications & Asynchronous Support: Implement an automated internal notification system that alerts users and promoters of account, referral, recommendation, and payment status updates, paired with a structured support ticket workflow for user inquiries.
-
 - To Provide Content Moderation, Announcements & Owner Analytics: Create an administrative dashboard to review submissions, group identical URLs with combined recommendation counts, verify free-versus-paid source rules, publish platform-wide popup announcements, and enable the system owner to generate platform performance and financial reports.
 
 ### 1.3. Methodologies
@@ -81,13 +75,9 @@ To define and deliver RightGuide within a strict 60-day academic timeline, a lig
 The functional scope is organized across five core subsystems:
 
 - Authentication & Access Control: Supports public registration for Registered Users/Creators and Promoters, pre-configured logins for internal staff (Customer Support, Administrator, System Owner), password recovery, and on-demand guestToken generation triggered strictly when an anonymous visitor votes or submits a resource.
-
 - Content Discovery & Interaction: Enables browsing by selecting one of five core programming languages, keyword/URL search with duplicate-entry voting prompts, dual-track resource submissions (Guest vs. Registered Creator), single-vote enforcement per resource, new language/topic requests, and public announcements.
-
 - Points, Referrals & Rewards: Credits reward points to registered users upon administrator approval of referrals (excluding guest referrals) or verified resource recommendations, sending internal notifications and unlocking free promotional placements at the 20-point threshold.
-
 - Monetization & Support: Facilitates promotion requests backed by bank transfer payment proof (screenshot uploads) or point redemption, real-time status tracking, manual verification by Customer Support Agents, and asynchronous support ticketing.
-
 - Administration & Reporting: Enables Administrators to moderate submissions, group identical URLs with combined vote/recommendation counts, review referrals, and publish popup announcements, while granting the System Owner exclusive access to platform and financial reports.
 
 2. System Modeling
@@ -98,9 +88,7 @@ The system architecture translates functional requirements into modular Object-O
 - Structural Modeling (Object Hierarchy):
 
   - User Hierarchy: An abstract User base class branches into GuestUser (managing guestToken sessions) and RegisteredUser (managing authentication, voting, referrals, and points), which further specializes into Promoter, CustomerSupport, Admin, and Owner.
-
   - Content Hierarchy: An abstract Content base class unifies shared attributes across Resource (language-categorized websites and YouTube channels) and Announcement (platform-wide notices).
-
   - Transactional & Operational Classes: Dedicated classes—Vote, Recommendation, Referral, TitleRequest, Promotion, Payment, SupportTicket, Notification, and StaticPage—decouple business logic and map directly to normalized MySQL tables supporting nullable dual-identity keys (userId and guestToken).
 
 #### 1.3.3. Software Process Model and Management Strategy
@@ -110,11 +98,8 @@ To manage our 6-member team across the 60-day schedule, we selected a Hybrid Agi
 1. Justification of the Process Model
 
 - Accommodating Variable Team Pace: Because team members have varying levels of backend experience, a visual Kanban board (To Do, In Progress, Testing/Review, Done) allows faster members to pull new cards continuously while others progress steadily without rigid sprint bottlenecks.
-
 - Phased Technical Progression: Organizing work into milestone phases enables the team to master and complete static HTML/CSS interfaces first before transitioning into MySQL schema design and PHP integration.
-
 - Controlled Adaptability: Evolving requirements and edge cases (such as duplicate URL grouping and manual referral checks) can be added cleanly to the backlog without disrupting active work.
-
 - Integrated Documentation & Testing: Diagrams, business rules, and manual test cases are updated alongside each completed feature card so documentation stays synchronized with code.
 
 2. Project Execution Phases (60-Day Schedule)
@@ -137,29 +122,26 @@ Phase 3: Advanced Workflows, Testing & Final Delivery (Days 41–60)
 ### 1.4. Scope and Limitation of the Project
 #### 1.4.1. Project Scope
 
-The scope of the Community-Driven Career Navigation Platform defines the functional boundaries, core workflows, and technical constraints to be delivered within a 2-month (60-day) timeframe by our 6-member team.
+The scope of RightGuide defines the functional boundaries and technical deliverables to be completed within a 60-day timeline by our 6-member team using pure HTML, CSS, JavaScript, PHP, and MySQL.
 
-What the System Will Do:
- - Authentication & Access Control: Role-based access for 6 actors (Guest, User/Creator, Promoter, Support Agent, Admin, Owner). Guests can browse and recommend, while login/registration is required for creators, promoters, and staff.
- - Content Discovery & Smart Search: Categorized educational resources (YouTube/websites) ranked by community validation. Smart search includes automatic duplicate detection—prompting users to vote if a resource already exists.
- - Recommendations & Voting: Dual recommendation tracks (User and Creator). Creators earn points for valid submissions. Includes custom topic requests (RequestTitle) and grouped admin views displaying total counts (e.g., website.com (3 users)). Users are restricted to a one-time vote per resource.
- - Points & Free Promotions: Users accumulate points via valid recommendations and can redeem them for free promotional placements upon reaching a set threshold (e.g., 20 points).
- - Monetization & Support Workflow: Paid promotion via account transfers, transaction screenshot uploads, and manual verification by Support Agents. Support chat is restricted to troubleshooting promotion status. Promoted products are manually placed on main pages based on payment tiers.
- - Administration & Reporting: Admin content moderation (ManageContent), duplicate organization, and Owner reporting (Report) on revenue and top recommendations.
- - Static Pages & UI Elements: About, Help, Contact pages, main page popup notifications, and featured top-tier resource displays.
- - Deployment & Tech Stack: Local development using standalone Apache, MySQL, and VS Code extensions; deployed to InfinityFree hosting. 
+What the System Will Deliver:
+ - Role-Based Access & On-Demand Guest Tokens: Supports six distinct roles—Unregistered Guests (assigned an automatic guestToken strictly when voting or submitting a link), Registered Users/Creators, Promoters, Customer Support Agents, Administrators, and the System Owner.
+- Five-Language Discovery & Duplicate-Checked Search: Allows learners to select from five core programming languages to browse community-ranked websites and YouTube channels (labeled free or paid), supported by keyword/URL search that detects existing links and prompts users to vote rather than submit duplicates.
+- Community Voting, Submissions & Topic Requests: Enforces one vote per user or guestToken per resource, supports dual-track link submissions (Guest vs. Registered Creator), groups identical URLs in admin views with combined counts (e.g., website.com (3 users)), and allows users to request new programming languages or topics.
+- Referral & Creator Point-Reward System: Enables registered users to earn reward points through administrator-approved referrals (excluding guest referrals) and verified resource submissions—triggering internal notifications upon approval and unlocking free promotional placements at the 20-point threshold.
+- Bank-Transfer Promotion & Support Ticketing: Allows users to request featured placements via bank transfer by uploading payment proof screenshots (or redeeming 20 points), backed by manual verification from Customer Support Agents, real-time status tracking, and asynchronous support ticketing.
+- Administration, Announcements & Owner Analytics: Provides an admin dashboard to moderate resources, review referrals, and publish popup announcements, while giving the System Owner access to platform engagement and promotion revenue reports.
+- Supporting Pages & Deployment: Includes core informational pages (About, Help, Contact), built locally on Apache and MySQL and deployed to InfinityFree hosting.
 
 #### 1.4.2. Limitation
 
-While the Community-Driven Career Navigation Platform is strategically structured to balance academic requirements with functional efficiency, several implementation boundaries and project limitations should be noted:
+To maintain technical quality and deliver a complete working system within our academic constraints, the following boundaries apply:
 
-- Time and Resource Constraints: The platform is developed within a strict 60-day academic timeline by a 6-member student team, requiring an incremental phased development model managed alongside university final exams.
-
-- Manual Processing Limits: To ensure technical manageability within student constraints, payment processing relies on manual transaction screenshot verification by customer support agents rather than an automated third-party payment gateway.
-
-- Communication and Notification Boundaries: The system intentionally omits real-time live chat and external automated email dispatching, utilizing structured ticketing and internal system alerts instead.
-
-- Authentication Scope: Unregistered guest interactions are restricted to on-demand, temporary tokenization exclusively for voting and recommendations, leaving general content browsing entirely stateless.
+- Domain Focus (No Job or Recruitment Portal): Within the broader theme of technical career preparation, RightGuide focuses strictly on discovering programming language learning resources (websites and YouTube channels) and does not include job listings, CV builders, or employer recruitment tools.
+- Initial Language Coverage: At launch, resource browsing is scoped to five core programming languages, with additional languages added only after administrative review of user topic requests.
+- Manual Verification Workflows: Payment processing relies on bank transfer screenshot uploads manually verified by Customer Support Agents (rather than automated payment gateways), and user referrals require manual verification by an Administrator.
+- Asynchronous Communication Only: The platform omits real-time live chat and automated external email dispatching, relying instead on structured support tickets and internal dashboard notifications.
+- Stateless Guest Browsing & Timeline: General browsing requires no login (guestToken is created only upon voting or recommending), and all development and testing are bounded by a 60-day student schedule alongside final coursework.
 
 ### 1.5. Domain Vocabulary and Glossary
 
