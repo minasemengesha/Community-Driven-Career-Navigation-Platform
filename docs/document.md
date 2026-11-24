@@ -205,14 +205,14 @@ To maintain technical quality and deliver a complete working system within our a
 
 ### 1.6. Development Tools
 
-- Frontend - HTML5, CSS3, JavaScript (ES6)
-- Backend  - PHP 8.x
-- Database & Admin - MySQL, phpMyAdmin
-- Local Server - Apache HTTP Server (Standalone)
-- Code & Docs Editor - VS Code
-- Version Control- Git and Github
-- UML & Modeling - Visual paradem and Enterprise arctict
-- Testing & Hosting -InfinityFree
+- Frontend: Vanilla HTML5, CSS3, and JavaScript (ES6) (no external CSS or JS frameworks)
+- Backend: Vanilla PHP 8.x (no PHP frameworks)
+- Database & Admin: MySQL, phpMyAdmin
+- Local Server: Apache HTTP Server (Standalone)
+- Code & Docs Editor: Visual Studio Code (VS Code)
+- Version Control: Git and GitHub
+- UML & Modeling: Visual Paradigm and Enterprise Architect
+- Testing & Hosting: Browser DevTools (testing), InfinityFree (hosting)
 
 ### 1.7. Team Organization
 
