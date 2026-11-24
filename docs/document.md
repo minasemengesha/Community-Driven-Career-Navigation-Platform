@@ -237,26 +237,26 @@ Developed for our university web programming course by a **6-member team** withi
 ## Chapter Two: Requirement Analysis and Specifications
 ### 2.1. Description of the Current System
 
-Currently, learners and users seeking educational and career-related information rely on scattered, ad-hoc web searches, unverified links, and informal recommendations across disconnected websites and video platforms without a centralized, structured directory. This fragmented approach makes discovering reliable learning materials time-consuming and disorganized, leaving users uncertain about whether higher-quality or more relevant resources exist elsewhere and unsure of how to systematically locate better alternatives.
+Currently, learners seeking programming resources rely on scattered, ad-hoc web searches, unverified links, and informal recommendations across disconnected websites and video platforms without a centralized, structured directory. This fragmented approach makes discovering reliable learning materials time-consuming and disorganized, leaving learners unsure which websites and YouTube channels best cover five core programming languages or how to systematically find community-verified alternatives without sifting through duplicate or low-quality links.
 
 ### 2.2. Reusable Components and Existing Solutions
 #### 2.2.1. Reusable UI & Functional Components
 
-To keep the interface consistent across pages and reduce repetitive code as the team builds with HTML, CSS, JavaScript, PHP, and MySQL, the following modular components are defined for reuse across RightGuide:
+To keep the interface consistent across pages and reduce repetitive code as the team builds with vanilla HTML, CSS, JavaScript, PHP, and MySQL, the following modular components are defined for reuse across RightGuide:
 
-- Registration Form: Enables public users (Content Creators / Registered Users and Promoters) to create accounts with unique email addresses and validated fields.
-- Login Form: Enables registered users and pre-configured staff roles (Customer Support Agent, Administrator, and System Owner) to sign in and access their role-specific dashboards.
-- Interest Selection: Allows users to choose or filter preferred learning topics and career categories so resource discovery stays relevant.
-- Recommendation Cards: Standardized card components (built with shared .rg-* styles) that display recommended websites and YouTube channels, descriptions, category tags, source/access indicators, action links, and vote counts.
-- Voting Component: Interactive control that allows guests (via temporary guestToken) and registered users to cast up to one vote per resource and view updated vote totals.
-- Recommendation Form: Structured submission form allowing unregistered guests and registered creators to submit new learning resource links (including websites and YouTube channels) with validation and duplicate checks.
+- Registration Form: Enables public visitors (Registered Users / Content Creators and Promoters) to register with unique email addresses and client/server-side field validation.
+- Login Form: Enables registered users and pre-configured staff roles (Customer Support Agents, Administrators, and the System Owner) to sign in and route to their role-specific dashboards.
+- Language & Topic Selector: Lets learners filter and switch between the five core programming languages at launch—while supporting frequent addition of new programming languages and topics over time as the directory expands—alongside a topic-request trigger when a desired language isn't listed yet.
+- Recommendation Cards: Reusable card components (styled with shared .rg-* classes) that present approved websites and YouTube channels, descriptions, programming language tags, free/paid indicators, external links, and live vote counts.
+- Voting Component: Interactive control that allows unregistered guests (via an automatic guestToken) and registered users to cast up to one vote per resource and view updated vote totals.
+- Recommendation Form: Structured submission form enabling guests and registered creators to suggest new website or YouTube channel links with input validation and automatic duplicate-URL checks that prompt users to vote on existing entries instead.
 
 #### 2.2.2. Existing Solutions & Browser Capabilities
 
-- Existing solutions and built-in platform capabilities refer to pre-existing tools, APIs, or browser features that provide helpful functionality without building everything from scratch—while still respecting your project's rule against heavy external frameworks:
-- YouTube Data API v3 (Optional / Reference Integration): An external service from YouTube that can help search or retrieve metadata for YouTube videos and channels (such as titles, channel details, or descriptions) when curating video resources, provided it fits your scope and API key/quota constraints without introducing external UI frameworks.
+Existing solutions and built-in platform capabilities refer to pre-existing browser APIs and optional external services that streamline development without introducing external UI or backend frameworks:
 
-Browser localStorage (Vanilla Web Storage API): A built-in browser storage feature accessed via plain JavaScript (localStorage) that stores lightweight client-side data locally in the user's browser—useful during early static/mock UI prototyping or temporary client-side state (such as UI preferences or draft/guest state), while MySQL remains the authoritative database for persisted platform records.
+- YouTube Data API v3 (Optional Metadata Integration): An external REST service from YouTube that can retrieve basic metadata for submitted YouTube channels (such as channel names, thumbnails, or descriptions) during resource curation, operating strictly via standard server-side PHP requests without adding third-party frameworks.
+- Browser localStorage & Session Cookies (Vanilla Web Storage): Built-in browser storage accessed via plain JavaScript and PHP cookies to persist lightweight client-side state—such as the selected programming language filter, UI preferences, and the anonymous guestToken identifier—while MySQL remains the authoritative store for all verified resources, votes, referrals, and promotion records.
 
 ### 2.3. Proposed System
 #### 2.3.1. Overview
