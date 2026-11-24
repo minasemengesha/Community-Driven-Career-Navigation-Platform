@@ -7,19 +7,29 @@ First and foremost, we give thanks to God for granting us the strength, patience
 
 ## Table of Contents
 
-### Title Page & Front Matter------------------------------------------------------------------------------1-82
+### Title Page & Front Matter------------------------------------------------------------------------------01-82
 
-Acknowledgement
+  Acknowledgement------------------------------------------------------------------------------------------04-07
 
-Table of Contents
+  Table of Contents----------------------------------------------------------------------------------------08-77
 
-Executive Summary
+  Executive Summary----------------------------------------------------------------------------------------78-82
 
-### Chapter One: Introduction-----------------------------------------------------------------------------83-297
+### Chapter One: Introduction------------------------------------------------------------------------------083-296
 
-1.1. Background and Problem Statement
+  1.1. Understanding the Problem Background and Knowing the Exact Problem----------------------------------084-114
 
-1.2. Objectives (General and Specific)
+    1.1.1. Background of the Problem-----------------------------------------------------------------------085-091
+
+    1.1.2. The Real Environment----------------------------------------------------------------------------099-102
+
+    1.1.3. Root Causes of the Problem----------------------------------------------------------------------103-110
+
+    1.1.4. Impact on Target Users--------------------------------------------------------------------------111-117
+
+    1.1.5. The Exact Problem-------------------------------------------------------------------------------118-121
+
+1.2. Objectives (General and Specific)---------------------------------------------------------------------122-
 
 1.3. Methodology and Process Model (Elicitation, Hybrid Agile / Kanban + Milestones)
 
@@ -29,7 +39,7 @@ Executive Summary
 
 1.6. Development Tools, Cost Estimation, and Team Organization
 
-### Chapter Two: System Requirements Analysis
+### Chapter Two: System Requirements Analysis--------------------------------------------------------------297-471
 
 2.1. Current System and Problem Analysis
 
@@ -43,7 +53,7 @@ Executive Summary
 
 2.6. Actors, Use Cases, and System Models (Use Case, Activity, Class Diagrams)
 
-### Chapter Three: Database Design
+### Chapter Three: Database Design-------------------------------------------------------------------------472-
 
 3.1. Conceptual Design (Entities, Attributes, Relationships, ERD)
 
@@ -462,7 +472,21 @@ The system shall provide the System Owner with analytical reports (Report) summa
 ![Use Case](image/diagrams/use-case.png)
 
 ##### 2.2.6.2. Activity Diagrams
+###### Activity Diagrams for use case ..
 
+![Activity Diagram-1](image/diagrams/activity-diagram-1.png)
+
+###### Activity Diagrams for use case ..
+
+![Activity Diagram-2](image/diagrams/activity-diagram-2.png)
+
+###### Activity Diagrams for use case ..
+
+![Activity Diagram-3](image/diagrams/activity-diagram-3.png)
+
+###### Activity Diagrams for use case ..
+
+![Activity Diagram-4](image/diagrams/activity-diagram-4.png)
 
 ##### 2.2.6.3. Class Diagram
 
@@ -803,8 +827,9 @@ Stores announcements created by authorized administrators and displayed on the p
 | R23 | User — Notification | 1:N | One registered user can receive multiple notifications. |
 | R24 | User — Announcement | 1:N | One administrator can create multiple announcements. |
 
-#### 3.1.4. ER Diagrams
+#### 3.1.4. ER Diagram
 
+![ER Diagram](image/diagrams/er-diagram.png)
 
 ### 3.2. Logical Database Design of the New System 
 #### 3.2.1. ER to Table Mapping 
@@ -836,6 +861,7 @@ Stores announcements created by authorized administrators and displayed on the p
 
 #### 4.2.2. Component Diagram
 
+![Component Diagram](image/diagrams/component-diagram.png)
 
 ### 4.3. Design, Engineering, and Execution Standards
 #### 4.3.1. Visual Design Tokens and UI Components
