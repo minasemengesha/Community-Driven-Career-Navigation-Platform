@@ -993,11 +993,21 @@ A clear delivery sequence, bounded MVP scope, and practical quality assurance ru
 - Local Apache vs. InfinityFree Hosting Path Considerations[cite: 1]
 
 ### 4.5. Security & Input Validation Rules
+#### 4.5.1. Input & File Upload Validation
 
-1. Input & File Upload Validation: Client-side checks for smooth UX plus strict server-side PHP validation for required fields, valid URLs/formats, single-vote / duplicate / point eligibility rules, and bank-transfer screenshot file types and sizes (NFR-15).   
-2. Authentication, Session & Role Enforcement: Password hashing, session management, on-demand guestToken handling, login-only staff boundaries, and server-side permission checks across all six roles (NFR-03, NFR-10, NFR-16).   
-3. Database & Output Protection: Parameterized SQL queries / prepared statements to prevent SQL injection, and proper output encoding/escaping to prevent cross-site scripting (NFR-03, NFR-09).   
-4. Data Privacy & Auditability: Protecting user details, support ticket messages, and uploaded payment proofs from unauthorized access, and logging key moderation, referral, and payment verification actions (NFR-04, NFR-18).
+Client-side checks for smooth UX plus strict server-side PHP validation for required fields, valid URLs/formats, single-vote / duplicate / point eligibility rules, and bank-transfer screenshot file types and sizes (NFR-15). 
+
+#### 4.5.2. Authentication, Session & Role Enforcement
+
+Password hashing, session management, on-demand guestToken handling, login-only staff boundaries, and server-side permission checks across all six roles (NFR-03, NFR-10, NFR-16). 
+
+#### 4.5.3. Database & Output Protection
+
+Parameterized SQL queries / prepared statements to prevent SQL injection, and proper output encoding/escaping to prevent cross-site scripting (NFR-03, NFR-09).  
+ 
+#### 4.5.4. Data Privacy & Auditability
+
+Protecting user details, support ticket messages, and uploaded payment proofs from unauthorized access, and logging key moderation, referral, and payment verification actions (NFR-04, NFR-18).
 
 ### 4.6. Traceability Matrix
 #### 4.6.1. Role-Based Access Matrix
