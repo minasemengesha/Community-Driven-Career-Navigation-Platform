@@ -356,41 +356,24 @@ The system shall provide the System Owner with analytical reports (Report) summa
 
 #### 2.3.4. Non-Functional Requirements
 
-1. Performance: The system should load pages within 3 seconds under normal usage and display search results within 5 seconds.
-
-2. Usability: The system should provide a simple and user-friendly interface so users can easily browse, search, vote, and recommend educational resources.
-
-3. Security: The system should protect user accounts by storing passwords in encrypted/hashed form and preventing unauthorized access.
-
-4. Privacy: The system should protect users' personal information, payment details, and uploaded payment screenshots from unauthorized users.
-
-5. Reliability: The system should process user requests correctly and display clear success or failure messages.
-
-6. Availability: The system should be accessible whenever the hosting server is operating and should display an appropriate message during service interruptions.
-
-7. Compatibility: The system should work properly on commonly used browsers such as Google Chrome, Firefox, and Microsoft Edge.
-
-8. Responsiveness: The system should adjust its layout to work properly on desktop computers, tablets, and mobile phones.
-
-9. Data Integrity: The system should maintain accurate information about educational resources, votes, reviews, rankings, and reward points.
-
-10. Access Control: The system should provide different access permissions for normal users, administrators, and customer support agents.
-
-11. Maintainability: The system should be organized into manageable modules so developers can easily fix errors and update system features.
-
-12. Scalability: The system should allow additional users, learning topics, educational resources, and recommendations as the platform grows.
-
-13. Backup and Recovery: The system should support regular database backups and allow stored information to be restored when data is lost.
-
-14. Accessibility: The system should use readable fonts, appropriate color contrast, clear labels, and easy navigation.
-
-15. File Upload Validation: The system should validate uploaded payment screenshots by checking their file formats and file sizes.
-
-16. Payment Verification Security: Only authorized administrators or support agents should be allowed to verify payments and update payment statuses.
-
-17. Notification Reliability: The system should correctly display announcements and notifications when new topics, payment updates, or promotion updates occur.
-
-18. Activity Tracking: The system should maintain records of important administrative activities, including content management, payment verification, and promotion approval.
+- NFR-01 — Performance: The system shall load standard pages within 3 seconds under normal usage and return keyword or URL search results within 5 seconds.
+- NFR-02 — Usability: The platform shall offer a clean, intuitive interface so learners and visitors can easily select programming languages, browse websites and YouTube channels, cast votes, and submit recommendations without confusion.
+- NFR-03 — Security: The system shall protect user accounts by hashing passwords securely in PHP, sanitizing inputs against SQL injection and cross-site scripting (XSS), and blocking unauthorized session access.
+- NFR-04 — Privacy: The system shall safeguard users' personal details, support ticket messages, and uploaded bank-transfer payment screenshots so they are visible only to the submitting user and authorized staff.
+- NFR-05 — Reliability: The system shall process user actions—such as voting, link submissions, referrals, and promotion requests—accurately and display clear confirmation or error messages for every operation.
+- NFR-06 — Availability: The platform shall remain accessible whenever the hosting server (InfinityFree) is operational and display a clear, user-friendly notice during maintenance or unexpected interruptions.
+- NFR-07 — Compatibility: The application shall render and function consistently across modern web browsers, including Google Chrome, Mozilla Firefox, and Microsoft Edge.
+- NFR-08 — Responsiveness: The interface shall adapt smoothly across desktop monitors, tablets, and mobile screens using responsive vanilla CSS layouts.
+- NFR-09 — Data Integrity: The database shall maintain accurate, consistent records across educational websites and YouTube channels, single-vote limits (userId and guestToken), duplicate URL groupings, registered-user referrals, and 20-point reward balances.
+- NFR-10 — Access Control: The system shall strictly enforce role-based permissions across all six actors—Unregistered Guests, Registered Users / Content Creators, Promoters, Customer Support Agents, Administrators, and the System Owner—preventing unauthorized access to restricted dashboards or actions.
+- NFR-11 — Maintainability: The codebase shall be organized into clean, modular vanilla HTML, CSS, JavaScript, PHP, and MySQL components so developers can isolate bugs and update features easily.
+- NFR-12 — Scalability: The database and directory structure shall support growing numbers of users, frequent additions of new programming languages beyond the initial five core languages, and expanding resource submissions without requiring architectural rewrites.
+- NFR-13 — Backup and Recovery: The system shall support regular MySQL database exports and backups (via phpMyAdmin) so platform records can be restored reliably in the event of data loss.
+- NFR-14 — Accessibility: The interface shall follow clear accessibility practices, including readable typography, sufficient color contrast, descriptive form labels, and straightforward keyboard and screen navigation.
+- NFR-15 — File Upload Validation: The system shall validate every uploaded bank-transfer payment proof screenshot on both client and server sides by checking allowed image formats (such as JPG, PNG, or WebP) and enforcing maximum file-size limits.
+- NFR-16 — Payment Verification Security: Only authorized Customer Support Agents shall be permitted to inspect uploaded bank-transfer payment proofs, verify transactions, and update promotion payment statuses.
+- NFR-17 — Notification Reliability: The system shall reliably deliver internal dashboard notifications and main-page announcements whenever referrals are approved, resources are moderated, 20-point reward thresholds are reached, new languages/topics are added, or payment statuses change.
+- NFR-18 — Activity Tracking & Accountability: The system shall maintain clear records of critical staff and moderation actions—including resource approvals/rejections, user referral approvals, duplicate URL groupings, bank-transfer payment verifications, and featured promotion placements.
 
 #### 2.3.5. Actor and Use case Identification
 
