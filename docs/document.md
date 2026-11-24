@@ -305,74 +305,54 @@ RightGuide is a community-driven web platform designed to systematically curate,
 #### 2.3.3. Functional Requirements
 
 1. Authentication & Access Control Subsystem
-
 - FR-01: User Registration
-The system shall allow public users (Registered User/Content Creator and Promoter) to create accounts.
-
+The system shall allow public visitors to register as Registered Users / Content Creators or Promoters using a unique email address and validated credentials.
 - FR-02: Pre-configured Staff & Administrative Access
-The system shall provide secure system access for pre-configured administrative roles (Customer Support Agent, Administrator, and System Owner) through direct authentication (Login) without requiring public registration.
-
+The system shall provide direct login access for pre-configured staff roles (Customer Support Agent, Administrator, and System Owner) without using public registration.
 - FR-03: System User Authentication
-The system shall authenticate registered actors (Registered User, Promoter, Customer Support Agent, Administrator, and System Owner) using secure session management and password verification (Login).
-
+The system shall authenticate registered users and pre-configured staff roles (Login) through secure password verification and role-based session management.
 - FR-04: Password Recovery
-The system shall allow registered account holders to recover access to their accounts via password reset (RecoverPassword).
-
+The system shall allow registered account holders to recover access to their accounts via a secure password reset workflow (RecoverPassword).
 - FR-05: On-Demand Guest Authentication
-The system shall automatically generate a temporary guestToken (Guest_Authentication) only when an unregistered guest initiates a Vote or Recommend action, preventing multiple submissions while keeping general browsing unauthenticated.
+The system shall automatically generate a temporary guestToken (Guest_Authentication) only when an unregistered visitor initiates a vote or resource recommendation, keeping general browsing stateless while preventing duplicate submissions.
 
 2. Content Discovery & Interaction Subsystem
-
 - FR-06: Dynamic Resource Browsing
-The system shall allow Guest Users and Registered Users to browse curated lists of educational resources (Browse).
-
+The system shall allow unregistered guests and registered users to browse curated educational websites and YouTube channels (Browse) across the five core programming languages, clearly labeled as free or paid.
 - FR-07: Smart Resource Search
-The system shall allow users to search for educational resources by keywords or links (SearchResource) and prompt users to vote on existing entries to prevent duplicates.
-
+The system shall allow users to search for websites and YouTube channels by keyword or URL (SearchResource) and prompt them to vote on existing entries rather than submitting duplicates.
 - FR-08: Resource Recommendation
-The system shall allow unregistered guests (via Guest_Authentication) and registered content creators to submit new resource links (Recommend).
-
+The system shall allow both unregistered guests (via guestToken) and registered users/creators to submit new educational website or YouTube channel links (Recommend).
 - FR-09: Community Voting
-The system shall allow guests and registered users to vote on resources (Vote), enforcing a maximum of one vote per resource per user or guestToken.
-
-- FR-10: Topic Request Submission
-The system shall allow registered users to submit requests for new technical learning topics (Request_Title).
-
+The system shall allow guests and registered users to vote on listed resources (Vote), enforcing a limit of one vote per resource per registered user or guestToken.
+- FR-10: New Language & Topic Request Submission
+The system shall allow registered users to submit requests for additional programming languages or learning topics (Request_Title) beyond the initial five core languages so the directory can expand over time.
 - FR-11: Static Page Navigation
-The system shall display informational pages including About, Help, and Contact (View_Static_Pages) to all platform visitors.
+The system shall display informational pages—including About, Help, and Contact (View_Static_Pages)—alongside public announcements to all platform visitors.
 
-3. Points & Reward Subsystem
-
-- FR-12: Points Management & Rewards
-The system shall calculate, award, and manage reward points (Manage_Points) for registered creators upon approval of their recommendations, unlocking options for free promotion redemption.
+3. Referrals, Points & Reward Subsystem
+- FR-12: Referrals, Points Management & Rewards
+The system shall track registered-user referrals (excluding unregistered guest referrals) and approved resource recommendations, awarding reward points (Manage_Points) upon Administrator approval and unlocking free promotional placement once a user reaches the 20-point threshold.
 
 4. Monetization & Support Subsystem
-
-- FR-13: Paid Promotion Submission
-The system shall allow promoters to submit ad placement requests and upload payment transfer screenshots (Promote).
-
-- FR-14: Promotion Tracking
-The system shall allow promoters to track the real-time review status of their ad submissions (Track_Promotion).
-
-- FR-15: Manual Payment Verification
-The system shall allow Customer Support Agents to inspect payment screenshots and verify transactions (Verify_Payment).
+- FR-13: Promotion Submission (Bank Transfer or Points)
+The system shall allow Promoters and eligible registered users (holding at least 20 points) to submit promotional placement requests (Promote) by either uploading a valid bank transfer payment proof screenshot or redeeming qualifying reward points.
+- FR-14: Promotion Tracking & Support Ticketing
+The system shall allow users and promoters to track the real-time verification status of their promotion requests (Track_Promotion) and submit asynchronous support tickets for payment, promotion, or account inquiries.
+- FR-15: Manual Bank-Transfer Verification & Ticket Resolution
+The system shall allow Customer Support Agents to inspect uploaded bank-transfer payment screenshots, manually confirm or reject transactions (Verify_Payment), and respond to user support tickets.
 
 5. Administration, Moderation & Reporting Subsystem
-
-- FR-16: Content Moderation
-The system shall allow Administrators to review, edit, approve, reject, rank, or delete submitted resource links (Manage_Content).
-
-- FR-17: Recommendation Organization
-The system shall group duplicate URL submissions in the Admin dashboard and display total user recommendation counts (Organize_Recommendations).
-
-- FR-18: Announcement Management
-The system shall allow Administrators to publish and manage popup announcements and featured promotions on main pages (Announcement).
-
-- FR-19: System Notifications
-The system shall dispatch internal alerts and updates (Notify) regarding payment approvals, content status, or account actions.
-
-- FR-20: System Owner Reporting
-The system shall provide the System Owner with analytical reports summarizing platform revenue, performance metrics, user growth, and top recommendations (Report).
+- FR-16: Content Moderation & Referral Approval
+The system shall allow Administrators to review, edit, approve, reject, organize, or delete submitted resource links (Manage_Content), as well as manually review and approve registered-user referrals.
+- FR-17: Duplicate Recommendation Grouping
+The system shall group identical URL submissions in the Administrator dashboard and display combined recommendation counts (Organize_Recommendations) to streamline moderation.
+- FR-18: Announcement & Featured Placement Management
+The system shall allow Administrators to publish and manage platform-wide popup announcements and featured placements on the main pages (Announcement).
+- FR-19: Internal System Notifications
+The system shall dispatch internal dashboard alerts (Notify) for referral approvals, resource moderation outcomes, 20-point reward milestones, language/topic request updates, and bank-transfer payment verification results.
+- FR-20: System Owner Analytics & Reporting
+The system shall provide the System Owner with analytical reports (Report) summarizing promotion revenue, platform engagement metrics, user growth, and top-voted resources.
 
 #### 2.3.4. Non-Functional Requirements
 
