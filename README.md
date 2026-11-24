@@ -16,7 +16,12 @@ A comprehensive web-based platform designed to guide software engineering studen
 
 ## 🛠️ Tech Stack
 
-- Frontend: HTML5, CSS3, JavaScript
-- Backend: PHP
-- Database: MySQL
+- Frontend: Vanilla HTML5, CSS3, and JavaScript (ES6) (no external CSS or JS frameworks)
+- Backend: Vanilla PHP 8.x (no PHP frameworks)
+- Database & Admin: MySQL, phpMyAdmin
+- Local Server: Apache HTTP Server (Standalone)
+- Code & Docs Editor: Visual Studio Code (VS Code)
+- Version Control: Git and GitHub
+- UML & Modeling: Visual Paradigm and Enterprise Architect
+- Testing & Hosting: Browser DevTools (testing), InfinityFree (hosting)
 - Project Type: University Web Programming Course Group Project (6 Members)
