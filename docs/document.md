@@ -84,9 +84,7 @@ The functional scope is organized across five core subsystems:
 The system architecture translates functional requirements into modular Object-Oriented PHP classes and a normalized MySQL schema:
 
 - Behavioral Modeling (6 Actors & Core Use Cases): Enforces clear separation of concerns—public actors interact with discovery, voting, referral, and promotion flows, while internal staff govern verification, curation, and reporting.
-
 - Structural Modeling (Object Hierarchy):
-
   - User Hierarchy: An abstract User base class branches into GuestUser (managing guestToken sessions) and RegisteredUser (managing authentication, voting, referrals, and points), which further specializes into Promoter, CustomerSupport, Admin, and Owner.
   - Content Hierarchy: An abstract Content base class unifies shared attributes across Resource (language-categorized websites and YouTube channels) and Announcement (platform-wide notices).
   - Transactional & Operational Classes: Dedicated classes—Vote, Recommendation, Referral, TitleRequest, Promotion, Payment, SupportTicket, Notification, and StaticPage—decouple business logic and map directly to normalized MySQL tables supporting nullable dual-identity keys (userId and guestToken).
@@ -104,20 +102,15 @@ To manage our 6-member team across the 60-day schedule, we selected a Hybrid Agi
 
 2. Project Execution Phases (60-Day Schedule)
 
-Phase 1: Foundation, Analysis & Frontend Prototyping (Days 1–20)
-
-- Focus: Finalizing system requirements, UML diagrams, static HTML/CSS layouts for the five core programming languages, and client-side JavaScript validation.
-- Kanban Flow: UI and documentation tasks are broken into granular cards and pulled based on member availability.
-
-Phase 2: Database & Core Backend Integration (Days 21–40)
-
-- Focus: Implementing the normalized MySQL database, user registration/login, guestToken session handling, language-filtered browsing, and duplicate-checked search in PHP.
-- Kanban Flow: Cards move from To Do to In Progress as members build and verify PHP modules on local Apache/MySQL environments.
-
-Phase 3: Advanced Workflows, Testing & Final Delivery (Days 41–60)
-
-- Focus: Implementing one-per-user voting, administrator referral/resource approval, the 20-point reward threshold, bank-transfer promotion verification, internal notifications, owner analytics, and final report compilation.
-- Kanban Flow: Every card must pass peer code review and functional verification in the Testing/Review column before moving to Done by Day 60.
+- Phase 1: Foundation, Analysis & Frontend Prototyping (Days 1–20)
+  - Focus: Finalizing system requirements, UML diagrams, static HTML/CSS layouts for the five core programming languages, and client-side JavaScript validation.
+  - Kanban Flow: UI and documentation tasks are broken into granular cards and pulled based on member availability.
+- Phase 2: Database & Core Backend Integration (Days 21–40)
+  - Focus: Implementing the normalized MySQL database, user registration/login, guestToken session handling, language-filtered browsing, and duplicate-checked search in PHP.
+  - Kanban Flow: Cards move from To Do to In Progress as members build and verify PHP modules on local Apache/MySQL environments.
+- Phase 3: Advanced Workflows, Testing & Final Delivery (Days 41–60)
+  - Focus: Implementing one-per-user voting, administrator referral/resource approval, the 20-point reward threshold, bank-transfer promotion verification, internal notifications, owner analytics, and final report compilation.
+  - Kanban Flow: Every card must pass peer code review and functional verification in the Testing/Review column before moving to Done by Day 60.
 
 ### 1.4. Scope and Limitation of the Project
 #### 1.4.1. Project Scope
@@ -144,14 +137,11 @@ To maintain technical quality and deliver a complete working system within our a
 - Stateless Guest Browsing & Timeline: General browsing requires no login (guestToken is created only upon voting or recommending), and all development and testing are bounded by a 60-day student schedule alongside final coursework.
 
 ### 1.5. Domain Vocabulary and Glossary
-
-## Domain Dictionary (Glossary of Terms)
-
 ### 1. Core Domain & Learning Resources
 
 | No. | Domain Term | Definition |
 | :--- | :--- | :--- |
-| 1 | Career Navigation (RightGuide Scope) | Guiding learners toward technical skill acquisition by helping them select one of five core programming languages and discover community-verified websites and YouTube channels to learn it. |
+| 1 | **Career Navigation (RightGuide Scope)** | Guiding learners toward technical skill acquisition by helping them select one of five core programming languages and discover community-verified websites and YouTube channels to learn it. |
 | 2 | Core Programming Language | One of the five foundational programming languages supported by the platform at launch for categorized resource discovery. |
 | 3 | Learning Resource | An approved educational website or YouTube channel listed in the platform directory (labeled as free or paid) to help users learn a specific language. |
 | 4 | Resource Directory | The centralized, searchable collection of approved websites and YouTube channels organized by programming language. |
@@ -227,24 +217,21 @@ To maintain technical quality and deliver a complete working system within our a
 
 ### 1.8. Project Cost and Resource Estimation
 
-For our Community-Driven Career Navigation Platform, developed as part of our university web programming course, we have structured our cost and resource estimation keeping our academic scope, less than 60-day timeline, and 6-member team in mind.
-Since this is an academic student project utilizing professional standalone tools and free deployment tiers, our direct financial expenditure is minimal, primarily covering documentation printing and binding.
+Developed for our university web programming course by a **6-member team** within a **60-day (2-month) timeline**, **RightGuide** relies entirely on free, open-source software and free hosting tiers—keeping actual financial costs limited strictly to physical documentation printing.
 
-1. Direct Out-of-Pocket Expenses (Actual Cost)
-- Software & Development Tools: Standalone Apache server, MySQL server, and VS Code with PHP, HTML, CSS, and JavaScript extensions - 0.00 (Free / Open-source)
-- Hosting & Deployment: InfinityFree free web hosting tier for online deployment and local testing via our individual local environments - 0.00 (Free)
-- Documentation Printing & Binding: Printing final project reports and presentation materials - Minimal (Covering physical printing only)
-- Team Communication & Internet: Online coordination and resource research - Covered by personal student packages
-- Total Actual Financial Cost: Restricted strictly to physical documentation printing - Minimal
+#### 1. Direct Out-of-Pocket Expenses (Actual Cost)
 
-2. Resource Labor Estimation (Commercial Value Perspective)
-To maintain a professional software engineering documentation standard, we also look at the resource allocation of our team:
-- Team Size: 6 team members.
-- Development Duration: 60 days (2 month).
-- Development Approach & Infrastructure: Professional modular setup using standalone Apache, MySQL, and VS Code extensions handled collaboratively using an Hybrid Agile Software Process Model utilizing Kanban Methodology combined with Phased Milestones.
-- Commercial Equivalent: While our project is executed with a zero-budget infrastructure using free tools and volunteer student labor, a commercial equivalent of this platform would factor in standard developer man-hours and commercial hosting infrastructure fees.
-- Summary:
-Our project operates on a zero-budget software infrastructure, relying entirely on free, open-source development tools (Standalone Apache, MySQL, and VS Code extensions), free cloud hosting (InfinityFree), and our internal team collaboration, with financial expenses occurring only for final documentation and printing needs.
+| Expense Category | Tools / Resources Used | Estimated Cost |
+| :--- | :--- | :--- |
+| **Development Software** | Standalone Apache, MySQL, phpMyAdmin, VS Code, Git/GitHub, Visual Paradigm / Enterprise Architect | **0.00 (Free / Open-Source)** |
+| **Hosting & Testing** | Local environments and InfinityFree web hosting tier | **0.00 (Free)** |
+| **Internet & Coordination** | Online team collaboration and technical research | **Covered by personal student data** |
+| **Documentation & Printing** | Printing and binding final project reports and presentation materials | **Minimal (Physical printing only)** |
+
+#### 2. Team & Resource Allocation
+
+- Team Structure & Duration: 6 student developers working across a 60-day schedule using a Hybrid Agile (Kanban + Phased Milestones) workflow.
+- Commercial Value Perspective: While executed as an academic project using student labor and zero-cost infrastructure, a commercial build of RightGuide would require standard developer man-hours, paid cloud hosting, and custom domain fees.
 
 
 ## Chapter Two: Requirement Analysis and Specifications
