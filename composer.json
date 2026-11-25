@@ -1,0 +1,7 @@
+- composer.json is a configuration file used by Composer, which is the dependency manager for PHP.
+
+In simple terms, it tells Composer:
+- What external PHP libraries your project needs.
+- Which PHP versions your project supports.
+- How your PHP classes and namespaces should be loaded.
+- Other project information and configuration.
