@@ -474,11 +474,11 @@ The system shall provide the System Owner with analytical reports (Report) summa
 ##### 2.2.6.2. Activity Diagrams
 ###### Activity Diagrams for use case ..
 
-![Activity Diagram-1](image/diagrams/activity-diagram-1.png)
+![Activity Diagram-1](image/diagrams/activity-diagram-1.jpg)
 
 ###### Activity Diagrams for use case ..
 
-![Activity Diagram-2](image/diagrams/activity-diagram-2.png)
+![Activity Diagram-2](image/diagrams/activity-diagram-2.jpg)
 
 ###### Activity Diagrams for use case ..
 
